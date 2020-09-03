@@ -61,12 +61,18 @@ Open the `server` and `client` in separate VSCode workspaces or open the combine
 
 ### Purpose
 
-2-5 sentences describing what the system does
+Our system will help users to find cafes they want to visit by looking at other users’ reviews or searching by area in the locations tab. The users will be able to create cafe pages, leave reviews for cafes they have visited and save cafe pages to create a personal favourites list.
 
 ### Pages
 
-* Home: 1-3 sentences describing what the page displays and what a user can do
-* Shopping cart: ...
+* Home: Displays the logo, option to register/sign, possibly a search function (but this isn’t an implementation priority)
+* Cafes: list of cafes in alphabetical order, possibly have a drop down or sort feature to display by rating, location etc.
+* Locations: groups cafes by location (could be streets, cities etc.)
+* Specific cafe page: shows cafe details including location, opening hours, reviews
+* User profile: displays user information, favourites list 
+* Settings: change email and password
+* User registration: user registers their information and login details
+* Review page: where the user creates the review or cafe page if it doesn’t already exist
 
 ### Entity-Relationship (ER) Diagram
 
