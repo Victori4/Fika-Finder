@@ -10,4 +10,62 @@ router.get('/api/categories', function(req, res, next) {
     });
 });
 
+// Return the category with the given ID
+router.get('/api/categories/:id', function(req, res, next) {
+    var id = req.params.id;
+    Category.findById(req.params.id, function(err, category) {
+        if (err) { return next(err); }
+        if (category == null) {
+            return res.status(404).json({"message": "Category not found"});
+        }
+        res.json(category);
+    });
+});
+
+//Create a category
+router.post('/api/categories', function(req, res, next) {
+    var category = new Category(req.body);
+    category.save(function(err) {
+        if (err) { return next(err); }
+        res.status(201).json(category);
+    });
+});
+
+//Delete category with given ID
+router.delete('/api/categories/:id', function(req, res, next) {
+    var id = req.params.id;
+    Category.findOneAndDelete({_id: id}, function(err, category) {
+        if (err) { return next(err); }
+        if (category == null) {
+            return res.status(404).json({"message": "Category not found"});
+        }
+        res.json(category);
+    });
+});
+
+//Delete all categories
+router.delete('/api/categories', function(req, res, next) {
+    Category.deleteMany(function(err, category) {
+        if (err) { return next(err); }
+        if (category == null) {
+            return res.status(404).json({"message": "No categories found."});
+        }
+        res.json(category);
+    });
+});
+
+// Partially update the category with the given ID
+router.patch('/api/categories/:id', function(req, res, next) {
+    var id = req.params.id;
+    Category.findById(id, function(err, category) {
+        if (err) { return next(err); }
+        if (category == null) {
+            return res.status(404).json({"message": "Category not found"});
+        }
+        category.name = (req.body.name || category.name);
+        category.save();
+        res.json(category);
+    });
+});
+
 module.exports = router;

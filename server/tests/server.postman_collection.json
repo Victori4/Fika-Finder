@@ -1,6 +1,6 @@
 {
 	"info": {
-		"_postman_id": "7e16d533-69da-4f78-a33a-d2bce4c6f018",
+		"_postman_id": "1fb28b5d-f838-4c3b-b791-82dcc997b29f",
 		"name": "server",
 		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
 	},
@@ -11,7 +11,7 @@
 				{
 					"listen": "prerequest",
 					"script": {
-						"id": "6aeee846-51ac-4d71-bd92-bb40271be917",
+						"id": "d11013cf-5cb6-4fcd-a7b5-03dc2579e4e2",
 						"exec": [
 							""
 						],
@@ -21,7 +21,7 @@
 				{
 					"listen": "test",
 					"script": {
-						"id": "fef8f2e4-bd80-473e-ac05-2c3689631b84",
+						"id": "f07c163c-9ac9-4348-94d5-3af7eef27a31",
 						"exec": [
 							"pm.test(\"Correct status code\", function() {\r",
 							"    pm.response.to.have.status(200);\r",
@@ -52,13 +52,77 @@
 				}
 			},
 			"response": []
+		},
+		{
+			"name": "Post a category",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\"name\": \"Deletable\"}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{host}}/api/categories",
+					"host": [
+						"{{host}}"
+					],
+					"path": [
+						"api",
+						"categories"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Delete all categories",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "{{host}}/api/categories",
+					"host": [
+						"{{host}}"
+					],
+					"path": [
+						"api",
+						"categories"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Delete category by id",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "{{host}}/api/categories/5f59f73f74e8581154bfb28b",
+					"host": [
+						"{{host}}"
+					],
+					"path": [
+						"api",
+						"categories",
+						"5f59f73f74e8581154bfb28b"
+					]
+				}
+			},
+			"response": []
 		}
 	],
 	"event": [
 		{
 			"listen": "prerequest",
 			"script": {
-				"id": "aecb173f-360a-4056-982e-b30af54422a0",
+				"id": "fbabb8c5-72b0-46bf-876b-b99b75a5209e",
 				"type": "text/javascript",
 				"exec": [
 					""
@@ -68,7 +132,7 @@
 		{
 			"listen": "test",
 			"script": {
-				"id": "7a2127f5-6439-4234-958e-a93488ed221a",
+				"id": "3c57f689-8047-4295-bd4d-129d0cf0cb58",
 				"type": "text/javascript",
 				"exec": [
 					""
