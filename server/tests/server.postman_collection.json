@@ -1,30 +1,28 @@
 {
 	"info": {
-		"_postman_id": "1fb28b5d-f838-4c3b-b791-82dcc997b29f",
+		"_postman_id": "7e173ac7-2554-45fe-b6ee-3f9b2041faf6",
 		"name": "server",
 		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
 	},
 	"item": [
 		{
-			"name": "GET /api",
+			"name": "Post a category",
 			"event": [
-				{
-					"listen": "prerequest",
-					"script": {
-						"id": "d11013cf-5cb6-4fcd-a7b5-03dc2579e4e2",
-						"exec": [
-							""
-						],
-						"type": "text/javascript"
-					}
-				},
 				{
 					"listen": "test",
 					"script": {
-						"id": "f07c163c-9ac9-4348-94d5-3af7eef27a31",
+						"id": "5e775acc-223d-42c3-8c14-32d49030fe47",
 						"exec": [
-							"pm.test(\"Correct status code\", function() {\r",
-							"    pm.response.to.have.status(200);\r",
+							"var jsonData = pm.response.json();\r",
+							"var categoryId = jsonData._id;\r",
+							"pm.environment.set(\"category_id\", categoryId);\r",
+							"\r",
+							"pm.test(\"Correct status code\", function () {\r",
+							"    pm.response.to.have.status(201);\r",
+							"});\r",
+							"\r",
+							"pm.test(\"Correct category response\", function () {\r",
+							"    pm.expect(jsonData.name).to.eql(\"Dog friendly\");\r",
 							"});"
 						],
 						"type": "text/javascript"
@@ -32,35 +30,11 @@
 				}
 			],
 			"request": {
-				"method": "GET",
-				"header": [
-					{
-						"key": "Accept",
-						"value": "application/json",
-						"type": "text"
-					}
-				],
-				"url": {
-					"raw": "{{host}}/api/categories",
-					"host": [
-						"{{host}}"
-					],
-					"path": [
-						"api",
-						"categories"
-					]
-				}
-			},
-			"response": []
-		},
-		{
-			"name": "Post a category",
-			"request": {
 				"method": "POST",
 				"header": [],
 				"body": {
 					"mode": "raw",
-					"raw": "{\"name\": \"Deletable\"}",
+					"raw": "{\"name\": \"Dog friendly\"}",
 					"options": {
 						"raw": {
 							"language": "json"
@@ -81,7 +55,339 @@
 			"response": []
 		},
 		{
+			"name": "Post a second category",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "dad637c6-1a82-420b-8264-be8816e5f8b1",
+						"exec": [
+							"var jsonData = pm.response.json();\r",
+							"var categoryId = jsonData._id;\r",
+							"pm.environment.set(\"category_id2\", categoryId);\r",
+							"\r",
+							"pm.test(\"Correct status code\", function () {\r",
+							"    pm.response.to.have.status(201);\r",
+							"});\r",
+							"\r",
+							"pm.test(\"Correct category response\", function () {\r",
+							"    pm.expect(jsonData.name).to.eql(\"Gluten free\");\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\"name\": \"Gluten free\"}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{host}}/api/categories",
+					"host": [
+						"{{host}}"
+					],
+					"path": [
+						"api",
+						"categories"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Post a third category",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "e0188e34-1041-41f3-bc11-aa3cbabb0008",
+						"exec": [
+							"var jsonData = pm.response.json();\r",
+							"var categoryId = jsonData._id;\r",
+							"pm.environment.set(\"category_id3\", categoryId);\r",
+							"\r",
+							"pm.test(\"Correct status code\", function () {\r",
+							"    pm.response.to.have.status(201);\r",
+							"});\r",
+							"\r",
+							"pm.test(\"Correct category response\", function () {\r",
+							"    pm.expect(jsonData.name).to.eql(\"Vegan friendly\");\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\"name\": \"Vegan friendly\"}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{host}}/api/categories",
+					"host": [
+						"{{host}}"
+					],
+					"path": [
+						"api",
+						"categories"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get all categories",
+			"event": [
+				{
+					"listen": "prerequest",
+					"script": {
+						"id": "73ec0c53-c615-4e25-a664-5307ff0ec801",
+						"exec": [
+							""
+						],
+						"type": "text/javascript"
+					}
+				},
+				{
+					"listen": "test",
+					"script": {
+						"id": "5db2c18f-7bc7-4edc-9592-ce7788ff5862",
+						"exec": [
+							"var jsonBody = pm.response.json();\r",
+							"var category_id = pm.environment.get(\"category_id\");\r",
+							"var category_id2 = pm.environment.get(\"category_id2\");\r",
+							"var category_id3 = pm.environment.get(\"category_id3\");\r",
+							"\r",
+							"pm.test(\"All categories retrieved\", function () {\r",
+							"    pm.response.to.have.body({\r",
+							"    \"categories\": [\r",
+							"        {\r",
+							"            \"_id\": category_id,\r",
+							"            \"name\": \"Dog friendly\",\r",
+							"            \"__v\": 0\r",
+							"        },\r",
+							"        {\r",
+							"            \"_id\": category_id2,\r",
+							"            \"name\": \"Gluten free\",\r",
+							"            \"__v\": 0\r",
+							"        },\r",
+							"        {\r",
+							"            \"_id\": category_id3,\r",
+							"            \"name\": \"Vegan friendly\",\r",
+							"            \"__v\": 0\r",
+							"        }\r",
+							"    ]\r",
+							"});\r",
+							"});\r",
+							"\r",
+							"pm.test(\"Correct status code\", function () {\r",
+							"    pm.response.to.have.status(200);\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Accept",
+						"type": "text",
+						"value": "application/json"
+					}
+				],
+				"url": {
+					"raw": "{{host}}/api/categories",
+					"host": [
+						"{{host}}"
+					],
+					"path": [
+						"api",
+						"categories"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get category by id",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "099b772a-bc84-4fa5-a0f0-1f076d15decf",
+						"exec": [
+							"var category_id = pm.environment.get(\"category_id\");\r",
+							"\r",
+							"pm.test(\"Correct status code\", function() {\r",
+							"\tpm.response.to.have.status(200);\r",
+							"});\r",
+							"\r",
+							"pm.test(\"Correct category response\", function () {\r",
+							"\tvar jsonData = pm.response.json();\r",
+							"\tpm.expect(jsonData.name).to.eql(\"Dog friendly\");\r",
+							"    pm.expect(jsonData._id).to.eql(category_id);\r",
+							"\t});\r",
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{host}}/api/categories/{{category_id}}",
+					"host": [
+						"{{host}}"
+					],
+					"path": [
+						"api",
+						"categories",
+						"{{category_id}}"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Patch category",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "abaeffc6-3aa9-41cc-b7f3-3bcfec0d2937",
+						"exec": [
+							"var category_id = pm.environment.get(\"category_id\");\r",
+							"\r",
+							"pm.test(\"Correct status code\", function () {\r",
+							"    pm.response.to.have.status(200);\r",
+							"});\r",
+							"\r",
+							"pm.test(\"Correct category response\", function () {\r",
+							"\tvar jsonData = pm.response.json();\r",
+							"\tpm.expect(jsonData.name).to.eql(\"Cat friendly\");\r",
+							"    pm.expect(jsonData._id).to.eql(category_id);\r",
+							"\t});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "PATCH",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\"name\" : \"Cat friendly\"}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{host}}/api/categories/{{category_id}}",
+					"host": [
+						"{{host}}"
+					],
+					"path": [
+						"api",
+						"categories",
+						"{{category_id}}"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Delete category by id",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "7ea9e4df-f233-45de-8416-5c069ae7778c",
+						"exec": [
+							"var category_id = pm.environment.get(\"category_id\");\r",
+							"\r",
+							"pm.test(\"Correct status code\", function() {\r",
+							"\tpm.response.to.have.status(200);\r",
+							"});\r",
+							"\r",
+							"pm.test(\"Correct category response\", function () {\r",
+							"\tvar jsonData = pm.response.json();\r",
+							"    pm.expect(jsonData._id).to.eql(category_id);\r",
+							"\t});\r",
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "{{host}}/api/categories/{{category_id}}",
+					"host": [
+						"{{host}}"
+					],
+					"path": [
+						"api",
+						"categories",
+						"{{category_id}}"
+					]
+				}
+			},
+			"response": []
+		},
+		{
 			"name": "Delete all categories",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "f29ecab1-09aa-4db7-850e-f46502461443",
+						"exec": [
+							"var jsonBody = pm.response.json();\r",
+							"var category_id2 = pm.environment.get(\"category_id2\");\r",
+							"var category_id3 = pm.environment.get(\"category_id3\");\r",
+							"\r",
+							"pm.test(\"All categories deleted\", function () {\r",
+							"    pm.response.to.have.body({\r",
+							"    \"n\": 2,\r",
+							"    \"ok\": 1,\r",
+							"    \"deletedCount\": 2\r",
+							"});\r",
+							"});\r",
+							"\r",
+							"pm.test(\"Correct status code\", function () {\r",
+							"    pm.response.to.have.status(200);\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
 			"request": {
 				"method": "DELETE",
 				"header": [],
@@ -97,32 +403,13 @@
 				}
 			},
 			"response": []
-		},
-		{
-			"name": "Delete category by id",
-			"request": {
-				"method": "DELETE",
-				"header": [],
-				"url": {
-					"raw": "{{host}}/api/categories/5f59f73f74e8581154bfb28b",
-					"host": [
-						"{{host}}"
-					],
-					"path": [
-						"api",
-						"categories",
-						"5f59f73f74e8581154bfb28b"
-					]
-				}
-			},
-			"response": []
 		}
 	],
 	"event": [
 		{
 			"listen": "prerequest",
 			"script": {
-				"id": "fbabb8c5-72b0-46bf-876b-b99b75a5209e",
+				"id": "d28b5fbb-11cc-43ea-86ff-8ee5a3bb03b2",
 				"type": "text/javascript",
 				"exec": [
 					""
@@ -132,7 +419,7 @@
 		{
 			"listen": "test",
 			"script": {
-				"id": "3c57f689-8047-4295-bd4d-129d0cf0cb58",
+				"id": "75df1463-bd94-4c32-9129-f1f660571272",
 				"type": "text/javascript",
 				"exec": [
 					""
