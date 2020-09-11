@@ -13,11 +13,11 @@ router.get('/api/categories', function(req, res, next) {
 // Return the category with the given ID
 router.get('/api/categories/:id', function(req, res, next) {
     var id = req.params.id;
-    Category.findById(req.params.id, function(err, category) {
-        if (err) { return next(err); }
+    Category.findById(id, function(err, category) {
         if (category == null) {
             return res.status(404).json({"message": "Category not found"});
         }
+        if (err) { return next(err); }
         res.json(category);
     });
 });
@@ -35,11 +35,11 @@ router.post('/api/categories', function(req, res, next) {
 router.delete('/api/categories/:id', function(req, res, next) {
     var id = req.params.id;
     Category.findOneAndDelete({_id: id}, function(err, category) {
-        if (err) { return next(err); }
         if (category == null) {
             return res.status(404).json({"message": "Category not found"});
         }
-        res.json(category);
+        if (err) { return next(err); }
+        res.status(204).json();
     });
 });
 
@@ -47,10 +47,7 @@ router.delete('/api/categories/:id', function(req, res, next) {
 router.delete('/api/categories', function(req, res, next) {
     Category.deleteMany(function(err, category) {
         if (err) { return next(err); }
-        if (category == null) {
-            return res.status(404).json({"message": "No categories found."});
-        }
-        res.json(category);
+        res.status(204).json();
     });
 });
 
@@ -58,9 +55,11 @@ router.delete('/api/categories', function(req, res, next) {
 router.patch('/api/categories/:id', function(req, res, next) {
     var id = req.params.id;
     Category.findById(id, function(err, category) {
-        if (err) { return next(err); }
         if (category == null) {
             return res.status(404).json({"message": "Category not found"});
+        }
+        if (err) { 
+            return next(err); 
         }
         category.name = (req.body.name || category.name);
         category.save();
