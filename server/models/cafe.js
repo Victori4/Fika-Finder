@@ -6,12 +6,13 @@ var Schema = mongoose.Schema;
 var cafeSchema = new Schema({
     name: { type: String },
     openingHours: { type: String },
-    offerAlternatives: { type: String },
     location: { type: String },
     price: { type: Number },
-    contact: { email: String,
-               website: String,
-               phoneNumber: Number }
+    contact: { 
+        email: { type: String},
+        website: {type: String},
+        phoneNumber: {type: Number} 
+    }
 });
 
 module.exports = mongoose.model('cafes', cafeSchema);
