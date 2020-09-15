@@ -1,512 +1,1032 @@
 {
 	"info": {
-		"_postman_id": "deb46ce1-d0a1-460a-9530-8cfb7ab4ec35",
+		"_postman_id": "47cf47c0-e76c-4484-be3b-db2e67fe6164",
 		"name": "server",
 		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
 	},
 	"item": [
 		{
-			"name": "Post a category",
-			"event": [
+			"name": "CategoryTests",
+			"item": [
 				{
-					"listen": "test",
-					"script": {
-						"id": "b52ec30d-8ffc-46fa-a002-109e2af993b1",
-						"exec": [
-							"var jsonData = pm.response.json();\r",
-							"var categoryId = jsonData._id;\r",
-							"pm.environment.set(\"category_id\", categoryId);\r",
-							"\r",
-							"pm.test(\"Correct status code\", function () {\r",
-							"    pm.response.to.have.status(201);\r",
-							"});\r",
-							"\r",
-							"pm.test(\"Correct category response\", function () {\r",
-							"    pm.expect(jsonData.name).to.eql(\"Dog friendly\");\r",
-							"});"
-						],
-						"type": "text/javascript"
-					}
-				}
-			],
-			"request": {
-				"method": "POST",
-				"header": [],
-				"body": {
-					"mode": "raw",
-					"raw": "{\"name\": \"Dog friendly\"}",
-					"options": {
-						"raw": {
-							"language": "json"
+					"name": "Post a category",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "c39e668b-fe00-42bb-b9fe-7366c1709f14",
+								"exec": [
+									"var jsonData = pm.response.json();\r",
+									"var categoryId = jsonData._id;\r",
+									"pm.environment.set(\"category_id\", categoryId);\r",
+									"\r",
+									"pm.test(\"Correct status code\", function () {\r",
+									"    pm.response.to.have.status(201);\r",
+									"});\r",
+									"\r",
+									"pm.test(\"Correct category response\", function () {\r",
+									"    pm.expect(jsonData.name).to.eql(\"Dog friendly\");\r",
+									"});"
+								],
+								"type": "text/javascript"
+							}
 						}
-					}
-				},
-				"url": {
-					"raw": "{{host}}/api/categories",
-					"host": [
-						"{{host}}"
 					],
-					"path": [
-						"api",
-						"categories"
-					]
-				}
-			},
-			"response": []
-		},
-		{
-			"name": "Post a second category",
-			"event": [
-				{
-					"listen": "test",
-					"script": {
-						"id": "e9bf406b-1f09-4bdf-a26a-690c9388fbf5",
-						"exec": [
-							"var jsonData = pm.response.json();\r",
-							"var categoryId = jsonData._id;\r",
-							"pm.environment.set(\"category_id2\", categoryId);\r",
-							"\r",
-							"pm.test(\"Correct status code\", function () {\r",
-							"    pm.response.to.have.status(201);\r",
-							"});\r",
-							"\r",
-							"pm.test(\"Correct category response\", function () {\r",
-							"    pm.expect(jsonData.name).to.eql(\"Gluten free\");\r",
-							"});"
-						],
-						"type": "text/javascript"
-					}
-				}
-			],
-			"request": {
-				"method": "POST",
-				"header": [],
-				"body": {
-					"mode": "raw",
-					"raw": "{\"name\": \"Gluten free\"}",
-					"options": {
-						"raw": {
-							"language": "json"
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\"name\": \"Dog friendly\"}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{host}}/api/categories",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"api",
+								"categories"
+							]
 						}
-					}
+					},
+					"response": []
 				},
-				"url": {
-					"raw": "{{host}}/api/categories",
-					"host": [
-						"{{host}}"
-					],
-					"path": [
-						"api",
-						"categories"
-					]
-				}
-			},
-			"response": []
-		},
-		{
-			"name": "Post a third category",
-			"event": [
 				{
-					"listen": "test",
-					"script": {
-						"id": "c3f2e449-d915-436c-afa4-28131628068e",
-						"exec": [
-							"var jsonData = pm.response.json();\r",
-							"var categoryId = jsonData._id;\r",
-							"pm.environment.set(\"category_id3\", categoryId);\r",
-							"\r",
-							"pm.test(\"Correct status code\", function () {\r",
-							"    pm.response.to.have.status(201);\r",
-							"});\r",
-							"\r",
-							"pm.test(\"Correct category response\", function () {\r",
-							"    pm.expect(jsonData.name).to.eql(\"Vegan friendly\");\r",
-							"});"
-						],
-						"type": "text/javascript"
-					}
-				}
-			],
-			"request": {
-				"method": "POST",
-				"header": [],
-				"body": {
-					"mode": "raw",
-					"raw": "{\"name\": \"Vegan friendly\"}",
-					"options": {
-						"raw": {
-							"language": "json"
+					"name": "Post a second category",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "8c4217de-5e14-422f-88e0-fcb9a0158ae6",
+								"exec": [
+									"var jsonData = pm.response.json();\r",
+									"var categoryId = jsonData._id;\r",
+									"pm.environment.set(\"category_id2\", categoryId);\r",
+									"\r",
+									"pm.test(\"Correct status code\", function () {\r",
+									"    pm.response.to.have.status(201);\r",
+									"});\r",
+									"\r",
+									"pm.test(\"Correct category response\", function () {\r",
+									"    pm.expect(jsonData.name).to.eql(\"Gluten free\");\r",
+									"});"
+								],
+								"type": "text/javascript"
+							}
 						}
-					}
-				},
-				"url": {
-					"raw": "{{host}}/api/categories",
-					"host": [
-						"{{host}}"
 					],
-					"path": [
-						"api",
-						"categories"
-					]
-				}
-			},
-			"response": []
-		},
-		{
-			"name": "Get all categories",
-			"event": [
-				{
-					"listen": "prerequest",
-					"script": {
-						"id": "88760c3c-a5e6-498b-92a0-7dcdf61c30e2",
-						"exec": [
-							""
-						],
-						"type": "text/javascript"
-					}
-				},
-				{
-					"listen": "test",
-					"script": {
-						"id": "68a41419-352c-4c25-b05d-0b20f941e638",
-						"exec": [
-							"var jsonBody = pm.response.json();\r",
-							"var category_id = pm.environment.get(\"category_id\");\r",
-							"var category_id2 = pm.environment.get(\"category_id2\");\r",
-							"var category_id3 = pm.environment.get(\"category_id3\");\r",
-							"\r",
-							"pm.test(\"All categories retrieved\", function () {\r",
-							"    pm.response.to.have.body({\r",
-							"    \"categories\": [\r",
-							"        {\r",
-							"            \"_id\": category_id,\r",
-							"            \"name\": \"Dog friendly\",\r",
-							"            \"__v\": 0\r",
-							"        },\r",
-							"        {\r",
-							"            \"_id\": category_id2,\r",
-							"            \"name\": \"Gluten free\",\r",
-							"            \"__v\": 0\r",
-							"        },\r",
-							"        {\r",
-							"            \"_id\": category_id3,\r",
-							"            \"name\": \"Vegan friendly\",\r",
-							"            \"__v\": 0\r",
-							"        }\r",
-							"    ]\r",
-							"});\r",
-							"});\r",
-							"\r",
-							"pm.test(\"Correct status code\", function () {\r",
-							"    pm.response.to.have.status(200);\r",
-							"});"
-						],
-						"type": "text/javascript"
-					}
-				}
-			],
-			"request": {
-				"method": "GET",
-				"header": [
-					{
-						"key": "Accept",
-						"type": "text",
-						"value": "application/json"
-					}
-				],
-				"url": {
-					"raw": "{{host}}/api/categories",
-					"host": [
-						"{{host}}"
-					],
-					"path": [
-						"api",
-						"categories"
-					]
-				}
-			},
-			"response": []
-		},
-		{
-			"name": "Get category by id",
-			"event": [
-				{
-					"listen": "test",
-					"script": {
-						"id": "a43a352d-ef29-41ae-9772-726dd314ea54",
-						"exec": [
-							"var category_id = pm.environment.get(\"category_id\");\r",
-							"\r",
-							"pm.test(\"Correct status code\", function() {\r",
-							"\tpm.response.to.have.status(200);\r",
-							"});\r",
-							"\r",
-							"pm.test(\"Correct category response\", function () {\r",
-							"\tvar jsonData = pm.response.json();\r",
-							"\tpm.expect(jsonData.name).to.eql(\"Dog friendly\");\r",
-							"    pm.expect(jsonData._id).to.eql(category_id);\r",
-							"\t});\r",
-							""
-						],
-						"type": "text/javascript"
-					}
-				}
-			],
-			"request": {
-				"method": "GET",
-				"header": [],
-				"url": {
-					"raw": "{{host}}/api/categories/{{category_id}}",
-					"host": [
-						"{{host}}"
-					],
-					"path": [
-						"api",
-						"categories",
-						"{{category_id}}"
-					]
-				}
-			},
-			"response": []
-		},
-		{
-			"name": "Patch category",
-			"event": [
-				{
-					"listen": "test",
-					"script": {
-						"id": "7e60a571-a737-40e1-831f-57173138fac6",
-						"exec": [
-							"var category_id = pm.environment.get(\"category_id\");\r",
-							"\r",
-							"pm.test(\"Correct status code\", function () {\r",
-							"    pm.response.to.have.status(200);\r",
-							"});\r",
-							"\r",
-							"pm.test(\"Correct category response\", function () {\r",
-							"\tvar jsonData = pm.response.json();\r",
-							"\tpm.expect(jsonData.name).to.eql(\"Cat friendly\");\r",
-							"    pm.expect(jsonData._id).to.eql(category_id);\r",
-							"\t});"
-						],
-						"type": "text/javascript"
-					}
-				}
-			],
-			"request": {
-				"method": "PATCH",
-				"header": [],
-				"body": {
-					"mode": "raw",
-					"raw": "{\"name\" : \"Cat friendly\"}",
-					"options": {
-						"raw": {
-							"language": "json"
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\"name\": \"Gluten free\"}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{host}}/api/categories",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"api",
+								"categories"
+							]
 						}
-					}
+					},
+					"response": []
 				},
-				"url": {
-					"raw": "{{host}}/api/categories/{{category_id}}",
-					"host": [
-						"{{host}}"
-					],
-					"path": [
-						"api",
-						"categories",
-						"{{category_id}}"
-					]
-				}
-			},
-			"response": []
-		},
-		{
-			"name": "Delete category by id",
-			"event": [
 				{
-					"listen": "test",
-					"script": {
-						"id": "f3ff754e-97ea-4866-8004-366641afaaf4",
-						"exec": [
-							"pm.test(\"Correct status code\", function() {\r",
-							"\tpm.response.to.have.status(204);\r",
-							"});\r",
-							"\r",
-							"pm.test(\"Category deleted\", function () {\r",
-							"    pm.response.to.have.body(\"\");\r",
-							"});\r",
-							""
-						],
-						"type": "text/javascript"
-					}
-				}
-			],
-			"request": {
-				"method": "DELETE",
-				"header": [],
-				"url": {
-					"raw": "{{host}}/api/categories/{{category_id}}",
-					"host": [
-						"{{host}}"
-					],
-					"path": [
-						"api",
-						"categories",
-						"{{category_id}}"
-					]
-				}
-			},
-			"response": []
-		},
-		{
-			"name": "Delete all categories",
-			"event": [
-				{
-					"listen": "test",
-					"script": {
-						"id": "0036c321-b2e1-43d4-bad3-0bfe5279137c",
-						"exec": [
-							"pm.test(\"All categories deleted\", function () {\r",
-							"    pm.response.to.have.body(\"\");\r",
-							"});\r",
-							"\r",
-							"pm.test(\"Correct status code\", function () {\r",
-							"    pm.response.to.have.status(204);\r",
-							"});"
-						],
-						"type": "text/javascript"
-					}
-				}
-			],
-			"request": {
-				"method": "DELETE",
-				"header": [],
-				"url": {
-					"raw": "{{host}}/api/categories",
-					"host": [
-						"{{host}}"
-					],
-					"path": [
-						"api",
-						"categories"
-					]
-				}
-			},
-			"response": []
-		},
-		{
-			"name": "Get non-existent category by id",
-			"event": [
-				{
-					"listen": "test",
-					"script": {
-						"id": "9f41b226-d93c-4263-8e55-4f1cbc8639d0",
-						"exec": [
-							"pm.test(\"Correct status code\", function() {\r",
-							"\tpm.response.to.have.status(404);\r",
-							"});"
-						],
-						"type": "text/javascript"
-					}
-				}
-			],
-			"request": {
-				"method": "GET",
-				"header": [],
-				"url": {
-					"raw": "{{host}}/api/categories/0doesnotexist",
-					"host": [
-						"{{host}}"
-					],
-					"path": [
-						"api",
-						"categories",
-						"0doesnotexist"
-					]
-				}
-			},
-			"response": []
-		},
-		{
-			"name": "Patch non-existent category",
-			"event": [
-				{
-					"listen": "test",
-					"script": {
-						"id": "3ef7ee41-a3f1-402f-aa9a-cc1f3e497e6f",
-						"exec": [
-							"pm.test(\"Correct status code\", function () {\r",
-							"    pm.response.to.have.status(404);\r",
-							"});"
-						],
-						"type": "text/javascript"
-					}
-				}
-			],
-			"request": {
-				"method": "PATCH",
-				"header": [],
-				"body": {
-					"mode": "raw",
-					"raw": "{\"name\" : \"Cat friendly\"}",
-					"options": {
-						"raw": {
-							"language": "json"
+					"name": "Post a third category",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "5f13fb56-9cb9-4221-9465-f609c53b5d44",
+								"exec": [
+									"var jsonData = pm.response.json();\r",
+									"var categoryId = jsonData._id;\r",
+									"pm.environment.set(\"category_id3\", categoryId);\r",
+									"\r",
+									"pm.test(\"Correct status code\", function () {\r",
+									"    pm.response.to.have.status(201);\r",
+									"});\r",
+									"\r",
+									"pm.test(\"Correct category response\", function () {\r",
+									"    pm.expect(jsonData.name).to.eql(\"Vegan friendly\");\r",
+									"});"
+								],
+								"type": "text/javascript"
+							}
 						}
-					}
-				},
-				"url": {
-					"raw": "{{host}}/api/categories/0doesnotexist",
-					"host": [
-						"{{host}}"
 					],
-					"path": [
-						"api",
-						"categories",
-						"0doesnotexist"
-					]
-				}
-			},
-			"response": []
-		},
-		{
-			"name": "Delete non-existent category by id",
-			"event": [
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\"name\": \"Vegan friendly\"}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{host}}/api/categories",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"api",
+								"categories"
+							]
+						}
+					},
+					"response": []
+				},
 				{
-					"listen": "test",
-					"script": {
-						"id": "b0c75473-e9e6-4a71-bf19-34b641f5d1aa",
-						"exec": [
-							"pm.test(\"Correct status code\", function() {\r",
-							"\tpm.response.to.have.status(404);\r",
-							"});"
+					"name": "Get all categories",
+					"event": [
+						{
+							"listen": "prerequest",
+							"script": {
+								"id": "54482762-f9ec-4b0c-92a5-705a3731cacb",
+								"exec": [
+									""
+								],
+								"type": "text/javascript"
+							}
+						},
+						{
+							"listen": "test",
+							"script": {
+								"id": "80512777-07a3-445b-900d-71d667d4acd1",
+								"exec": [
+									"var jsonBody = pm.response.json();\r",
+									"var category_id = pm.environment.get(\"category_id\");\r",
+									"var category_id2 = pm.environment.get(\"category_id2\");\r",
+									"var category_id3 = pm.environment.get(\"category_id3\");\r",
+									"\r",
+									"pm.test(\"All categories retrieved\", function () {\r",
+									"    pm.response.to.have.body({\r",
+									"    \"categories\": [\r",
+									"        {\r",
+									"            \"_id\": category_id,\r",
+									"            \"name\": \"Dog friendly\",\r",
+									"            \"__v\": 0\r",
+									"        },\r",
+									"        {\r",
+									"            \"_id\": category_id2,\r",
+									"            \"name\": \"Gluten free\",\r",
+									"            \"__v\": 0\r",
+									"        },\r",
+									"        {\r",
+									"            \"_id\": category_id3,\r",
+									"            \"name\": \"Vegan friendly\",\r",
+									"            \"__v\": 0\r",
+									"        }\r",
+									"    ]\r",
+									"});\r",
+									"});\r",
+									"\r",
+									"pm.test(\"Correct status code\", function () {\r",
+									"    pm.response.to.have.status(200);\r",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"type": "text",
+								"value": "application/json"
+							}
 						],
-						"type": "text/javascript"
-					}
+						"url": {
+							"raw": "{{host}}/api/categories",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"api",
+								"categories"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get category by id",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "7e7223ed-1de7-4849-9a3e-f71aff91d43c",
+								"exec": [
+									"var category_id = pm.environment.get(\"category_id\");\r",
+									"\r",
+									"pm.test(\"Correct status code\", function() {\r",
+									"\tpm.response.to.have.status(200);\r",
+									"});\r",
+									"\r",
+									"pm.test(\"Correct category response\", function () {\r",
+									"\tvar jsonData = pm.response.json();\r",
+									"\tpm.expect(jsonData.name).to.eql(\"Dog friendly\");\r",
+									"    pm.expect(jsonData._id).to.eql(category_id);\r",
+									"\t});\r",
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{host}}/api/categories/{{category_id}}",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"api",
+								"categories",
+								"{{category_id}}"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Patch category",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "0cae3968-5b63-4461-90b4-25dc44650e3a",
+								"exec": [
+									"var category_id = pm.environment.get(\"category_id\");\r",
+									"\r",
+									"pm.test(\"Correct status code\", function () {\r",
+									"    pm.response.to.have.status(200);\r",
+									"});\r",
+									"\r",
+									"pm.test(\"Correct category response\", function () {\r",
+									"\tvar jsonData = pm.response.json();\r",
+									"\tpm.expect(jsonData.name).to.eql(\"Cat friendly\");\r",
+									"    pm.expect(jsonData._id).to.eql(category_id);\r",
+									"\t});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "PATCH",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\"name\" : \"Cat friendly\"}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{host}}/api/categories/{{category_id}}",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"api",
+								"categories",
+								"{{category_id}}"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete category by id",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "1c1ed995-2017-44a5-bf49-50fd112612a6",
+								"exec": [
+									"pm.test(\"Correct status code\", function() {\r",
+									"\tpm.response.to.have.status(204);\r",
+									"});\r",
+									"\r",
+									"pm.test(\"Category deleted\", function () {\r",
+									"    pm.response.to.have.body(\"\");\r",
+									"});\r",
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{host}}/api/categories/{{category_id}}",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"api",
+								"categories",
+								"{{category_id}}"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete all categories",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "79809e6d-6761-47f8-9bea-bfeb4178c6c0",
+								"exec": [
+									"pm.test(\"All categories deleted\", function () {\r",
+									"    pm.response.to.have.body(\"\");\r",
+									"});\r",
+									"\r",
+									"pm.test(\"Correct status code\", function () {\r",
+									"    pm.response.to.have.status(204);\r",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{host}}/api/categories",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"api",
+								"categories"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get non-existent category by id",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "9fa37da0-8253-46e8-a734-23c48e067a86",
+								"exec": [
+									"pm.test(\"Correct status code\", function() {\r",
+									"\tpm.response.to.have.status(404);\r",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{host}}/api/categories/0doesnotexist",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"api",
+								"categories",
+								"0doesnotexist"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Patch non-existent category by id",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "a2f8a075-3486-432a-88b4-9d811db9b65a",
+								"exec": [
+									"pm.test(\"Correct status code\", function () {\r",
+									"    pm.response.to.have.status(404);\r",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "PATCH",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\"name\" : \"Cat friendly\"}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{host}}/api/categories/0doesnotexist",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"api",
+								"categories",
+								"0doesnotexist"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete non-existent category by id",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "e860651f-78bc-4e39-a43f-38ff88c3e127",
+								"exec": [
+									"pm.test(\"Correct status code\", function() {\r",
+									"\tpm.response.to.have.status(404);\r",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{host}}/api/categories/0doesnotexist",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"api",
+								"categories",
+								"0doesnotexist"
+							]
+						}
+					},
+					"response": []
 				}
 			],
-			"request": {
-				"method": "DELETE",
-				"header": [],
-				"url": {
-					"raw": "{{host}}/api/categories/0doesnotexist",
-					"host": [
-						"{{host}}"
+			"protocolProfileBehavior": {}
+		},
+		{
+			"name": "UserTests",
+			"item": [
+				{
+					"name": "Post a user",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "4123a52b-2946-4735-9ff1-2235db546a31",
+								"exec": [
+									"var jsonData = pm.response.json();\r",
+									"var userId = jsonData._id;\r",
+									"pm.environment.set(\"user_id\", userId);\r",
+									"\r",
+									"pm.test(\"Correct status code\", function () {\r",
+									"    pm.response.to.have.status(201);\r",
+									"});\r",
+									"\r",
+									"pm.test(\"Correct user response\", function () {\r",
+									"    pm.expect(jsonData.email).to.eql(\"hello@gmail.com\");\r",
+									"    pm.expect(jsonData.password).to.eql(\"123\");\r",
+									"\r",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
 					],
-					"path": [
-						"api",
-						"categories",
-						"0doesnotexist"
-					]
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\"email\" : \"hello@gmail.com\",\r\n\"password\" : \"123\" }\r\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{host}}/api/users",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"api",
+								"users"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Post a second user",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "5cbdb725-7684-42ee-9569-a984bea90d2b",
+								"exec": [
+									"var jsonData = pm.response.json();\r",
+									"var userId = jsonData._id;\r",
+									"pm.environment.set(\"user_id2\", userId);\r",
+									"\r",
+									"pm.test(\"Correct status code\", function () {\r",
+									"    pm.response.to.have.status(201);\r",
+									"});\r",
+									"\r",
+									"pm.test(\"Correct user response\", function () {\r",
+									"    pm.expect(jsonData.email).to.eql(\"hello1@gmail.com\");\r",
+									"    pm.expect(jsonData.password).to.eql(\"1234\");\r",
+									"\r",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\"email\" : \"hello1@gmail.com\",\r\n\"password\" : \"1234\" }\r\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{host}}/api/users",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"api",
+								"users"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Post a third user",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "24280a3f-42fe-4535-9ee6-a3d2590be379",
+								"exec": [
+									"var jsonData = pm.response.json();\r",
+									"var userId = jsonData._id;\r",
+									"pm.environment.set(\"user_id3\", userId);\r",
+									"\r",
+									"pm.test(\"Correct status code\", function () {\r",
+									"    pm.response.to.have.status(201);\r",
+									"});\r",
+									"\r",
+									"pm.test(\"Correct user response\", function () {\r",
+									"    pm.expect(jsonData.email).to.eql(\"hello12@gmail.com\");\r",
+									"    pm.expect(jsonData.password).to.eql(\"12345\");\r",
+									"\r",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\"email\" : \"hello12@gmail.com\",\r\n\"password\" : \"12345\" }\r\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{host}}/api/users",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"api",
+								"users"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get all users",
+					"event": [
+						{
+							"listen": "prerequest",
+							"script": {
+								"id": "8193ed95-d942-4e81-a998-cfa2f2acf2d5",
+								"exec": [
+									""
+								],
+								"type": "text/javascript"
+							}
+						},
+						{
+							"listen": "test",
+							"script": {
+								"id": "ecf2278f-1629-4fde-937d-2a4f3f385308",
+								"exec": [
+									"var jsonBody = pm.response.json();\r",
+									"var user_id = pm.environment.get(\"user_id\");\r",
+									"var user_id2 = pm.environment.get(\"user_id2\");\r",
+									"var user_id3 = pm.environment.get(\"user_id3\");\r",
+									"\r",
+									"pm.test(\"All users retrieved\", function () {\r",
+									"    pm.response.to.have.body({\r",
+									"     \"users\": [\r",
+									"        {\r",
+									"            \"_id\": user_id,\r",
+									"            \"email\": \"hello@gmail.com\",\r",
+									"            \"password\": \"123\",\r",
+									"            \"__v\": 0\r",
+									"        },\r",
+									"        {\r",
+									"            \"_id\": user_id2,\r",
+									"            \"email\": \"hello1@gmail.com\",\r",
+									"            \"password\": \"1234\",\r",
+									"            \"__v\": 0\r",
+									"        },\r",
+									"        {\r",
+									"            \"_id\": user_id3,\r",
+									"            \"email\": \"hello12@gmail.com\",\r",
+									"            \"password\": \"12345\",\r",
+									"            \"__v\": 0\r",
+									"        }\r",
+									"    ]\r",
+									"});\r",
+									"});\r",
+									"\r",
+									"pm.test(\"Correct status code\", function () {\r",
+									"    pm.response.to.have.status(200);\r",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"type": "text",
+								"value": "application/json"
+							}
+						],
+						"url": {
+							"raw": "{{host}}/api/users",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"api",
+								"users"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get user by id",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "395c331c-b52f-41c8-9c38-675c5b319c3f",
+								"exec": [
+									"var user_id = pm.environment.get(\"user_id\");\r",
+									"\r",
+									"pm.test(\"Correct status code\", function() {\r",
+									"\tpm.response.to.have.status(200);\r",
+									"});\r",
+									"\r",
+									"pm.test(\"Correct user response\", function () {\r",
+									"\tvar jsonData = pm.response.json();\r",
+									"\tpm.expect(jsonData.email).to.eql(\"hello@gmail.com\");\r",
+									"    pm.expect(jsonData.password).to.eql(\"123\");\r",
+									"    pm.expect(jsonData._id).to.eql(user_id);\r",
+									"\t});\r",
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{host}}/api/users/{{user_id}}",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"api",
+								"users",
+								"{{user_id}}"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Put a user",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "0e52c73a-b15b-4690-9f9b-8d9f9c216a21",
+								"exec": [
+									"var jsonData = pm.response.json();\r",
+									"var userId = jsonData._id;\r",
+									"pm.environment.set(\"user_id\", userId);\r",
+									"\r",
+									"pm.test(\"Correct status code\", function () {\r",
+									"    pm.response.to.have.status(200);\r",
+									"});\r",
+									"\r",
+									"pm.test(\"Correct user response\", function () {\r",
+									"    pm.expect(jsonData.email).to.eql(\"bye@gmail.com\");\r",
+									"    pm.expect(jsonData.password).to.eql(\"0987\");\r",
+									"\r",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\"email\" : \"bye@gmail.com\",\r\n\"password\" : \"0987\" }\r\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{host}}/api/users/{{user_id}}",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"api",
+								"users",
+								"{{user_id}}"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete user by id",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "3bc8c438-cec6-4e43-8dc4-8c74239ac3d6",
+								"exec": [
+									"pm.test(\"Correct status code\", function() {\r",
+									"\tpm.response.to.have.status(204);\r",
+									"});\r",
+									"\r",
+									"pm.test(\"User deleted\", function () {\r",
+									"    pm.response.to.have.body(\"\");\r",
+									"});\r",
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{host}}/api/users/{{user_id}}",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"api",
+								"users",
+								"{{user_id}}"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete all users",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "30b4e05a-061a-4bf1-9093-c4c9a5114030",
+								"exec": [
+									"pm.test(\"All users deleted\", function () {\r",
+									"    pm.response.to.have.body(\"\");\r",
+									"});\r",
+									"\r",
+									"pm.test(\"Correct status code\", function () {\r",
+									"    pm.response.to.have.status(204);\r",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{host}}/api/users",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"api",
+								"users"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get non-existent user by id",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "90b81d21-b1fd-402f-8112-27f02cd71896",
+								"exec": [
+									"pm.test(\"Correct status code\", function() {\r",
+									"\tpm.response.to.have.status(404);\r",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{host}}/api/users/0doesnotexist",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"api",
+								"users",
+								"0doesnotexist"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete non-existent user by id",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "aa4ef497-f30c-4438-afc6-9aaa21943fc7",
+								"exec": [
+									"pm.test(\"Correct status code\", function() {\r",
+									"\tpm.response.to.have.status(404);\r",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{host}}/api/users/0doesnotexist",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"api",
+								"users",
+								"0doesnotexist"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Put non-existent user by id",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "74a13583-8128-404b-80cd-5d5815c3edc4",
+								"exec": [
+									"pm.test(\"Correct status code\", function () {\r",
+									"    pm.response.to.have.status(404);\r",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\"email\" : \"Cat friendly\",\r\n\"password\" : \"tello\"}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{host}}/api/users/0doesnotexist",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"api",
+								"users",
+								"0doesnotexist"
+							]
+						}
+					},
+					"response": []
 				}
-			},
-			"response": []
+			],
+			"protocolProfileBehavior": {}
 		}
 	],
 	"event": [
 		{
 			"listen": "prerequest",
 			"script": {
-				"id": "a9125d87-3969-4e7f-a17c-adf6a7764e21",
+				"id": "17295eaa-5c38-470a-9d86-c032a67d5cc1",
 				"type": "text/javascript",
 				"exec": [
 					""
@@ -516,7 +1036,7 @@
 		{
 			"listen": "test",
 			"script": {
-				"id": "7c9ba08a-3f59-4df6-aec3-ede6ce267dea",
+				"id": "bdfcb194-508a-4714-b15d-a1b15ce53137",
 				"type": "text/javascript",
 				"exec": [
 					""
