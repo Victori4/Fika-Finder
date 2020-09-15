@@ -6,7 +6,7 @@ var path = require('path');
 var cors = require('cors');
 var history = require('connect-history-api-fallback');
 var categoriesController = require('./controllers/categories');
-var usersController = require('./controllers/users.js');
+var usersController = require('./controllers/users');
 var reviewsController = require('./controllers/reviews');
 var cafesController = require('./controllers/cafes');
 
