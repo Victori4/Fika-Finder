@@ -39,7 +39,7 @@ router.post('/api/users', function(req, res, next) {
 router.delete('/api/users/:id', function(req, res, next) {
     var id = req.params.id;
     User.findOneAndDelete({_id: id}, function(err, user) {
-        if (category == null) {
+        if (user == null) {
             return res.status(404).json({"message": "User not found"});
         }
         if (err) { return next(err); }
