@@ -5,7 +5,7 @@ var morgan = require('morgan');
 var path = require('path');
 var cors = require('cors');
 var history = require('connect-history-api-fallback');
-//var categoriesController = require('./controllers/categories');
+var categoriesController = require('./controllers/categories');
 var usersController = require('./controllers/users');
 //var reviewsController = require('./controllers/reviews');
 //var cafesController = require('./controllers/cafes');
@@ -40,7 +40,7 @@ app.get('/api', function(req, res) {
 });
 
 //Controllers - don't forget to require them at the top
-//app.use(categoriesController);
+app.use(categoriesController);
 //app.use(reviewsController);
 app.use(usersController);
 //app.use(cafesController);
