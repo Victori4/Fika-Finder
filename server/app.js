@@ -8,7 +8,7 @@ var history = require('connect-history-api-fallback');
 var categoriesController = require('./controllers/categories');
 var usersController = require('./controllers/users');
 //var reviewsController = require('./controllers/reviews');
-//var cafesController = require('./controllers/cafes');
+var cafesController = require('./controllers/cafes');
 
 // Variables
 var mongoURI = process.env.MONGODB_URI || 'mongodb://localhost:27017/fikaFinderDevelopmentDB';
@@ -43,7 +43,7 @@ app.get('/api', function(req, res) {
 app.use(categoriesController);
 //app.use(reviewsController);
 app.use(usersController);
-//app.use(cafesController);
+app.use(cafesController);
 
 // Catch all non-error handler for api (i.e., 404 Not Found)
 app.use('/api/*', function (req, res) {

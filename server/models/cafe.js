@@ -11,7 +11,7 @@ var cafeSchema = new Schema({
     contact: { 
         email: { type: String},
         website: {type: String},
-        phoneNumber: {type: Number} 
+        phoneNumber: {type: String} 
     }
 });
 
