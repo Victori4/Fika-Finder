@@ -1,12 +1,12 @@
 {
 	"info": {
-		"_postman_id": "29d56ab8-dfb4-422f-82bf-1fe4fb361bc2",
+		"_postman_id": "00a5616c-1a4b-40b8-b885-960a1b0afdce",
 		"name": "server",
 		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
 	},
 	"item": [
 		{
-			"name": "CategoryTests",
+			"name": "CafeWithCategoryTests",
 			"item": [
 				{
 					"name": "Post a category",
@@ -14,7 +14,7 @@
 						{
 							"listen": "test",
 							"script": {
-								"id": "ed4854ba-d69c-4ddc-a08b-481d6f431c45",
+								"id": "bb040509-83a8-454c-9028-999441e4480b",
 								"exec": [
 									"var jsonData = pm.response.json();\r",
 									"var categoryId = jsonData._id;\r",
@@ -63,7 +63,7 @@
 						{
 							"listen": "test",
 							"script": {
-								"id": "ca87ac9d-7bd3-41d9-8aff-6f231d2acc2c",
+								"id": "3aa8448b-70eb-4082-9c3b-16dde5fb3d2d",
 								"exec": [
 									"var jsonData = pm.response.json();\r",
 									"var categoryId = jsonData._id;\r",
@@ -112,7 +112,588 @@
 						{
 							"listen": "test",
 							"script": {
-								"id": "b6aeedb6-6ded-481b-abda-3708114e2118",
+								"id": "209a5b76-9ead-48d7-97fd-5b5f83792b1f",
+								"exec": [
+									"var jsonData = pm.response.json();\r",
+									"var categoryId = jsonData._id;\r",
+									"pm.environment.set(\"category_id3\", categoryId);\r",
+									"\r",
+									"pm.test(\"Correct status code\", function () {\r",
+									"    pm.response.to.have.status(201);\r",
+									"});\r",
+									"\r",
+									"pm.test(\"Correct category response\", function () {\r",
+									"    pm.expect(jsonData.name).to.eql(\"Vegan friendly\");\r",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\"name\": \"Vegan friendly\"}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{host}}/api/categories",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"api",
+								"categories"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Post a cafe with category",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "1aaf99e8-4a57-4b13-9543-f88479dcd590",
+								"exec": [
+									"var jsonData = pm.response.json();\r",
+									"var cafeId = jsonData._id;\r",
+									"pm.environment.set(\"cafe_id\", cafeId);\r",
+									"var category_id = pm.environment.get(\"category_id\");\r",
+									"\r",
+									"pm.test(\"Correct status code\", function () {\r",
+									"    pm.response.to.have.status(201);\r",
+									"});\r",
+									"\r",
+									"pm.test(\"Correct cafe response\", function () {\r",
+									"    pm.expect(jsonData.name).to.eql(\"cafe1\");\r",
+									"    pm.expect(jsonData.openingHours).to.eql(\"10:20-14:40\");\r",
+									"    pm.expect(jsonData.location).to.eql(\"Avenyn\");\r",
+									"    pm.expect(jsonData.price).to.eql(3);\r",
+									"    pm.expect(jsonData.contact.email).to.eql(\"cafe1@gmail.com\");\r",
+									"    pm.expect(jsonData.contact.website).to.eql(\"cafe1.com\");\r",
+									"    pm.expect(jsonData.contact.phoneNumber).to.eql(\"0000000000\");\r",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{   \"name\" : \"cafe1\",\r\n    \"openingHours\": \"10:20-14:40\",\r\n    \"location\": \"Avenyn\",\r\n    \"price\": 3,\r\n    \"contact\": { \r\n        \"email\" : \"cafe1@gmail.com\",\r\n        \"website\": \"cafe1.com\",\r\n        \"phoneNumber\": \"0000000000\"\r\n    },\r\n    \"categories\": [{\"_id\": \"{{category_id}}\"}]\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{host}}/api/cafes",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"api",
+								"cafes"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Post a second cafe  with category",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "34fe98cd-c15f-4c16-9eb3-9dc2ededd83a",
+								"exec": [
+									"var jsonData = pm.response.json();\r",
+									"var cafeId = jsonData._id;\r",
+									"pm.environment.set(\"cafe_id2\", cafeId);\r",
+									"\r",
+									"pm.test(\"Correct status code\", function () {\r",
+									"    pm.response.to.have.status(201);\r",
+									"});\r",
+									"\r",
+									"pm.test(\"Correct cafe response\", function () {\r",
+									"    pm.expect(jsonData.name).to.eql(\"cafe2\");\r",
+									"    pm.expect(jsonData.openingHours).to.eql(\"12:20-22:30\");\r",
+									"    pm.expect(jsonData.location).to.eql(\"Hjalmar\");\r",
+									"    pm.expect(jsonData.price).to.eql(2);\r",
+									"    pm.expect(jsonData.contact.email).to.eql(\"cafe2@gmail.com\");\r",
+									"    pm.expect(jsonData.contact.website).to.eql(\"cafe2.com\");\r",
+									"    pm.expect(jsonData.contact.phoneNumber).to.eql(\"0055500000\");\r",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{   \"name\" : \"cafe2\",\r\n    \"openingHours\": \"12:20-22:30\",\r\n    \"location\": \"Hjalmar\",\r\n    \"price\": 2,\r\n    \"contact\": { \r\n        \"email\" : \"cafe2@gmail.com\",\r\n        \"website\": \"cafe2.com\",\r\n        \"phoneNumber\": \"0055500000\"\r\n    },\r\n    \"categories\": [{\"_id\": \"{{category_id}}\"}, {\"_id\": \"{{category_id3}}\"}]\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{host}}/api/cafes",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"api",
+								"cafes"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Post a third cafe  with category",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "9a8ec304-7f8c-4c55-8fbc-061d9df7a9c8",
+								"exec": [
+									"var jsonData = pm.response.json();\r",
+									"var cafeId = jsonData._id;\r",
+									"pm.environment.set(\"cafe_id3\", cafeId);\r",
+									"\r",
+									"pm.test(\"Correct status code\", function () {\r",
+									"    pm.response.to.have.status(201);\r",
+									"});\r",
+									"\r",
+									"pm.test(\"Correct cafe response\", function () {\r",
+									"    pm.expect(jsonData.name).to.eql(\"cafe3\");\r",
+									"    pm.expect(jsonData.openingHours).to.eql(\"09:30-23:30\");\r",
+									"    pm.expect(jsonData.location).to.eql(\"Norra Hamngatan\");\r",
+									"    pm.expect(jsonData.price).to.eql(1);\r",
+									"    pm.expect(jsonData.contact.email).to.eql(\"cafe3@gmail.com\");\r",
+									"    pm.expect(jsonData.contact.website).to.eql(\"cafe3.com\");\r",
+									"    pm.expect(jsonData.contact.phoneNumber).to.eql(\"00165465000\");\r",
+									"\r",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{   \"name\" : \"cafe3\",\r\n    \"openingHours\": \"09:30-23:30\",\r\n    \"location\": \"Norra Hamngatan\",\r\n    \"price\": 1,\r\n    \"contact\": { \r\n        \"email\" : \"cafe3@gmail.com\",\r\n        \"website\": \"cafe3.com\",\r\n        \"phoneNumber\": \"00165465000\"\r\n    },\r\n    \"categories\": [{\"_id\": \"{{category_id2}}\"}]\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{host}}/api/cafes",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"api",
+								"cafes"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get all cafes  with category",
+					"event": [
+						{
+							"listen": "prerequest",
+							"script": {
+								"id": "d552c6c5-4ae7-4554-81d3-978b991f9cef",
+								"exec": [
+									""
+								],
+								"type": "text/javascript"
+							}
+						},
+						{
+							"listen": "test",
+							"script": {
+								"id": "84fd2ac1-20f8-44c4-bd38-9a16fafbfe96",
+								"exec": [
+									"var jsonBody = pm.response.json();\r",
+									"var cafe_id = pm.environment.get(\"cafe_id\");\r",
+									"var cafe_id2 = pm.environment.get(\"cafe_id2\");\r",
+									"var cafe_id3 = pm.environment.get(\"cafe_id3\");\r",
+									"var category_id = pm.environment.get(\"category_id\");\r",
+									"var category_id2 = pm.environment.get(\"category_id2\");\r",
+									"var category_id3 = pm.environment.get(\"category_id3\");\r",
+									"\r",
+									"pm.test(\"All cafes retrieved\", function () {\r",
+									"    pm.response.to.have.body({\r",
+									"    \"cafes\": [\r",
+									"        {\r",
+									"            \"contact\": {\r",
+									"                \"email\": \"cafe1@gmail.com\",\r",
+									"                \"website\": \"cafe1.com\",\r",
+									"                \"phoneNumber\": \"0000000000\"\r",
+									"            },\r",
+									"            \"categories\": [\r",
+									"                {\r",
+									"                    \"_id\": category_id,\r",
+									"                    \"name\": \"Dog friendly\",\r",
+									"                    \"__v\": 0\r",
+									"                }\r",
+									"            ],\r",
+									"            \"_id\": cafe_id,\r",
+									"            \"name\": \"cafe1\",\r",
+									"            \"openingHours\": \"10:20-14:40\",\r",
+									"            \"location\": \"Avenyn\",\r",
+									"            \"price\": 3,\r",
+									"            \"__v\": 0\r",
+									"        },\r",
+									"        {\r",
+									"            \"contact\": {\r",
+									"                \"email\": \"cafe2@gmail.com\",\r",
+									"                \"website\": \"cafe2.com\",\r",
+									"                \"phoneNumber\": \"0055500000\"\r",
+									"            },\r",
+									"            \"categories\": [\r",
+									"                {\r",
+									"                    \"_id\": category_id,\r",
+									"                    \"name\": \"Dog friendly\",\r",
+									"                    \"__v\": 0\r",
+									"                },\r",
+									"                {\r",
+									"                    \"_id\": category_id3,\r",
+									"                    \"name\": \"Vegan friendly\",\r",
+									"                    \"__v\": 0\r",
+									"                }\r",
+									"            ],\r",
+									"            \"_id\": cafe_id2,\r",
+									"            \"name\": \"cafe2\",\r",
+									"            \"openingHours\": \"12:20-22:30\",\r",
+									"            \"location\": \"Hjalmar\",\r",
+									"            \"price\": 2,\r",
+									"            \"__v\": 0\r",
+									"        },\r",
+									"        {\r",
+									"            \"contact\": {\r",
+									"                \"email\": \"cafe3@gmail.com\",\r",
+									"                \"website\": \"cafe3.com\",\r",
+									"                \"phoneNumber\": \"00165465000\"\r",
+									"            },\r",
+									"            \"categories\": [\r",
+									"                {\r",
+									"                    \"_id\": category_id2,\r",
+									"                    \"name\": \"Gluten free\",\r",
+									"                    \"__v\": 0\r",
+									"                }\r",
+									"            ],\r",
+									"            \"_id\": cafe_id3,\r",
+									"            \"name\": \"cafe3\",\r",
+									"            \"openingHours\": \"09:30-23:30\",\r",
+									"            \"location\": \"Norra Hamngatan\",\r",
+									"            \"price\": 1,\r",
+									"            \"__v\": 0\r",
+									"        }\r",
+									"    ]\r",
+									"});\r",
+									"});\r",
+									"\r",
+									"pm.test(\"Correct status code\", function () {\r",
+									"    pm.response.to.have.status(200);\r",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"type": "text",
+								"value": "application/json"
+							}
+						],
+						"url": {
+							"raw": "{{host}}/api/cafes",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"api",
+								"cafes"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get cafe by id  with category",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "716d39ac-ae30-424b-807a-6716d67d2fc4",
+								"exec": [
+									"var cafe_id = pm.environment.get(\"cafe_id\");\r",
+									"var category_id = pm.environment.get(\"category_id\");\r",
+									"\r",
+									"pm.test(\"Correct status code\", function() {\r",
+									"\tpm.response.to.have.status(200);\r",
+									"});\r",
+									"\r",
+									"pm.test(\"Correct cafe response\", function () {\r",
+									"    var jsonData = pm.response.json();\r",
+									"    pm.response.to.have.body({\r",
+									"        \"contact\": {\r",
+									"            \"email\": \"cafe1@gmail.com\",\r",
+									"            \"website\": \"cafe1.com\",\r",
+									"            \"phoneNumber\": \"0000000000\"\r",
+									"        },\r",
+									"        \"categories\": [\r",
+									"            {\r",
+									"                \"_id\": category_id,\r",
+									"                \"name\": \"Dog friendly\",\r",
+									"                \"__v\": 0\r",
+									"            }\r",
+									"        ],\r",
+									"        \"_id\": cafe_id,\r",
+									"        \"name\": \"cafe1\",\r",
+									"        \"openingHours\": \"10:20-14:40\",\r",
+									"        \"location\": \"Avenyn\",\r",
+									"        \"price\": 3,\r",
+									"        \"__v\": 0\r",
+									"    });\r",
+									"});\r",
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{host}}/api/cafes/{{cafe_id}}",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"api",
+								"cafes",
+								"{{cafe_id}}"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete all cafes  with category",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "bf3ecf73-c5c9-4cda-b07e-5f7b31dc04f0",
+								"exec": [
+									"pm.test(\"All cafes deleted\", function () {\r",
+									"    pm.response.to.have.body(\"\");\r",
+									"});\r",
+									"\r",
+									"pm.test(\"Correct status code\", function () {\r",
+									"    pm.response.to.have.status(204);\r",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{host}}/api/cafes",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"api",
+								"cafes"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete all categories  with category",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "b4ea155f-8f23-4cdc-8f65-35e7dd76ee9e",
+								"exec": [
+									"pm.test(\"All categories deleted\", function () {\r",
+									"    pm.response.to.have.body(\"\");\r",
+									"});\r",
+									"\r",
+									"pm.test(\"Correct status code\", function () {\r",
+									"    pm.response.to.have.status(204);\r",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{host}}/api/categories",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"api",
+								"categories"
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"protocolProfileBehavior": {}
+		},
+		{
+			"name": "CategoryTests",
+			"item": [
+				{
+					"name": "Post a category",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "50341f91-9c05-473a-93bc-65e2d2acc611",
+								"exec": [
+									"var jsonData = pm.response.json();\r",
+									"var categoryId = jsonData._id;\r",
+									"pm.environment.set(\"category_id\", categoryId);\r",
+									"\r",
+									"pm.test(\"Correct status code\", function () {\r",
+									"    pm.response.to.have.status(201);\r",
+									"});\r",
+									"\r",
+									"pm.test(\"Correct category response\", function () {\r",
+									"    pm.expect(jsonData.name).to.eql(\"Dog friendly\");\r",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\"name\": \"Dog friendly\"}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{host}}/api/categories",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"api",
+								"categories"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Post a second category",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "237a8f48-b179-4ac4-accc-37543fca18e2",
+								"exec": [
+									"var jsonData = pm.response.json();\r",
+									"var categoryId = jsonData._id;\r",
+									"pm.environment.set(\"category_id2\", categoryId);\r",
+									"\r",
+									"pm.test(\"Correct status code\", function () {\r",
+									"    pm.response.to.have.status(201);\r",
+									"});\r",
+									"\r",
+									"pm.test(\"Correct category response\", function () {\r",
+									"    pm.expect(jsonData.name).to.eql(\"Gluten free\");\r",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\"name\": \"Gluten free\"}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{host}}/api/categories",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"api",
+								"categories"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Post a third category",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "53a2d767-4e1f-44dc-a607-3fa85cadc304",
 								"exec": [
 									"var jsonData = pm.response.json();\r",
 									"var categoryId = jsonData._id;\r",
@@ -161,7 +742,7 @@
 						{
 							"listen": "prerequest",
 							"script": {
-								"id": "43c81bf7-633d-4857-a41c-e90f6b0057da",
+								"id": "7f6c6453-3d87-4f43-a68f-d674f82ceac9",
 								"exec": [
 									""
 								],
@@ -171,7 +752,7 @@
 						{
 							"listen": "test",
 							"script": {
-								"id": "6949c410-7b17-48e3-bc82-164497294db9",
+								"id": "f5f979a7-0d5d-4133-aa3b-5a4979f837cb",
 								"exec": [
 									"var jsonBody = pm.response.json();\r",
 									"var category_id = pm.environment.get(\"category_id\");\r",
@@ -236,7 +817,7 @@
 						{
 							"listen": "test",
 							"script": {
-								"id": "68a0c5e3-3d3f-47ea-96a4-387a85fc2cd0",
+								"id": "9ec12cbc-0211-495d-83c3-45306367aff5",
 								"exec": [
 									"var category_id = pm.environment.get(\"category_id\");\r",
 									"\r",
@@ -278,7 +859,7 @@
 						{
 							"listen": "test",
 							"script": {
-								"id": "50e05b8f-47dd-4b11-8d8d-0b4e99beaa43",
+								"id": "382a8ca4-8449-42e1-9b82-198fe8261c57",
 								"exec": [
 									"var category_id = pm.environment.get(\"category_id\");\r",
 									"\r",
@@ -328,7 +909,7 @@
 						{
 							"listen": "test",
 							"script": {
-								"id": "19c8f9b2-d5f4-470b-8fd3-00fe8e31cd7b",
+								"id": "6bc0efcb-24c2-4f43-a4e5-f486a6e252e2",
 								"exec": [
 									"pm.test(\"Correct status code\", function() {\r",
 									"\tpm.response.to.have.status(204);\r",
@@ -366,7 +947,7 @@
 						{
 							"listen": "test",
 							"script": {
-								"id": "73a6c537-7b0c-484f-8889-5dbd35ea1e2b",
+								"id": "c7b737a8-cca7-4691-981d-57c0b996ab1c",
 								"exec": [
 									"pm.test(\"All categories deleted\", function () {\r",
 									"    pm.response.to.have.body(\"\");\r",
@@ -402,7 +983,7 @@
 						{
 							"listen": "test",
 							"script": {
-								"id": "f7d60ece-97a5-4691-8678-e1e666b34039",
+								"id": "92adb44c-33d0-472c-92cb-e5c5ee6e5ef9",
 								"exec": [
 									"pm.test(\"Correct status code\", function() {\r",
 									"\tpm.response.to.have.status(404);\r",
@@ -435,7 +1016,7 @@
 						{
 							"listen": "test",
 							"script": {
-								"id": "809cb7a0-bc88-40b0-9941-2a3858bbb708",
+								"id": "e0c51905-c9d5-497c-bc91-fe3ad9d48150",
 								"exec": [
 									"pm.test(\"Correct status code\", function () {\r",
 									"    pm.response.to.have.status(404);\r",
@@ -477,7 +1058,7 @@
 						{
 							"listen": "test",
 							"script": {
-								"id": "67e1d217-0f88-45fb-9eb0-6d27b1aa27a9",
+								"id": "66f3f31b-858b-4eac-8f16-2eaa786ec7bf",
 								"exec": [
 									"pm.test(\"Correct status code\", function() {\r",
 									"\tpm.response.to.have.status(404);\r",
@@ -516,7 +1097,7 @@
 						{
 							"listen": "test",
 							"script": {
-								"id": "4382d570-56dc-4eec-b7b7-147204e2b5d8",
+								"id": "8f75c462-1d53-4e9b-bb73-400e91cd8b94",
 								"exec": [
 									"var jsonData = pm.response.json();\r",
 									"var userId = jsonData._id;\r",
@@ -567,7 +1148,7 @@
 						{
 							"listen": "test",
 							"script": {
-								"id": "a922c2b9-c143-4bdc-baea-1323d17ce1ab",
+								"id": "7d3829d9-b389-4873-8129-f4d5d7d97c76",
 								"exec": [
 									"var jsonData = pm.response.json();\r",
 									"var userId = jsonData._id;\r",
@@ -618,7 +1199,7 @@
 						{
 							"listen": "test",
 							"script": {
-								"id": "47688b33-114e-4181-a180-73b2c192ccc9",
+								"id": "afe05e7c-4760-48e0-9192-0b7c6050e3cb",
 								"exec": [
 									"var jsonData = pm.response.json();\r",
 									"var userId = jsonData._id;\r",
@@ -669,7 +1250,7 @@
 						{
 							"listen": "prerequest",
 							"script": {
-								"id": "ea1ad63e-1543-48ee-a66b-695c1611c0de",
+								"id": "2c36ada8-7be3-4583-9c87-18d9b038b47e",
 								"exec": [
 									""
 								],
@@ -679,7 +1260,7 @@
 						{
 							"listen": "test",
 							"script": {
-								"id": "0ef99d84-ab29-4d56-8518-ad277d806b13",
+								"id": "ca72415d-398a-42d0-81e0-7b89c9b4545b",
 								"exec": [
 									"var jsonBody = pm.response.json();\r",
 									"var user_id = pm.environment.get(\"user_id\");\r",
@@ -747,7 +1328,7 @@
 						{
 							"listen": "test",
 							"script": {
-								"id": "da15eaa6-e3bc-49ae-9029-891549c7e244",
+								"id": "bb6f4821-ee79-4617-ab50-907ab86d9805",
 								"exec": [
 									"var user_id = pm.environment.get(\"user_id\");\r",
 									"\r",
@@ -790,7 +1371,7 @@
 						{
 							"listen": "test",
 							"script": {
-								"id": "f67e3ca2-342e-43fd-b7fa-435cecfba34e",
+								"id": "5830a03f-e057-43d0-a4bb-04210d81d22b",
 								"exec": [
 									"var jsonData = pm.response.json();\r",
 									"var userId = jsonData._id;\r",
@@ -842,7 +1423,7 @@
 						{
 							"listen": "test",
 							"script": {
-								"id": "d6351b4e-6fc7-4f6c-887e-aa402c360345",
+								"id": "0cd7168c-05bd-45c7-adb8-97e45834b747",
 								"exec": [
 									"pm.test(\"Correct status code\", function() {\r",
 									"\tpm.response.to.have.status(204);\r",
@@ -880,7 +1461,7 @@
 						{
 							"listen": "test",
 							"script": {
-								"id": "958a2a12-c4b8-420d-9e1c-f582a874f505",
+								"id": "2ad87e33-8cb1-4d6c-9c70-4f38f4dff47f",
 								"exec": [
 									"pm.test(\"All users deleted\", function () {\r",
 									"    pm.response.to.have.body(\"\");\r",
@@ -916,7 +1497,7 @@
 						{
 							"listen": "test",
 							"script": {
-								"id": "bd4f90ac-017d-49fd-b86c-d0b58ba9d5d0",
+								"id": "fcc23b93-ee2b-49aa-a7cd-e34a573494d5",
 								"exec": [
 									"pm.test(\"Correct status code\", function() {\r",
 									"\tpm.response.to.have.status(404);\r",
@@ -949,7 +1530,7 @@
 						{
 							"listen": "test",
 							"script": {
-								"id": "e4b0c65c-8776-4f24-a0aa-2837909e755c",
+								"id": "950a6e6b-35c4-4ac4-b7e0-148b7f373f9e",
 								"exec": [
 									"pm.test(\"Correct status code\", function() {\r",
 									"\tpm.response.to.have.status(404);\r",
@@ -982,7 +1563,7 @@
 						{
 							"listen": "test",
 							"script": {
-								"id": "05f6e0b7-3ae5-4df4-9e8e-1e3cd6b225a0",
+								"id": "239a36fc-c86f-4698-986e-050ee6be39d4",
 								"exec": [
 									"pm.test(\"Correct status code\", function () {\r",
 									"    pm.response.to.have.status(404);\r",
@@ -1030,7 +1611,7 @@
 						{
 							"listen": "test",
 							"script": {
-								"id": "b5e8d9e3-18ab-4555-8701-ada2eaa9d9b2",
+								"id": "d54c8581-17a9-4254-b23a-58138e07b1ca",
 								"exec": [
 									"var jsonData = pm.response.json();\r",
 									"var cafeId = jsonData._id;\r",
@@ -1085,7 +1666,7 @@
 						{
 							"listen": "test",
 							"script": {
-								"id": "655826e5-fccb-409c-bb74-6783a39c7953",
+								"id": "61bbbb97-db55-4825-ab28-1cefa18c9732",
 								"exec": [
 									"var jsonData = pm.response.json();\r",
 									"var cafeId = jsonData._id;\r",
@@ -1140,7 +1721,7 @@
 						{
 							"listen": "test",
 							"script": {
-								"id": "dda4ec43-d131-4e9d-87de-231d027e9ea1",
+								"id": "c2c8cf9d-7365-4c41-9e7b-eac625e4b2de",
 								"exec": [
 									"var jsonData = pm.response.json();\r",
 									"var cafeId = jsonData._id;\r",
@@ -1196,7 +1777,7 @@
 						{
 							"listen": "prerequest",
 							"script": {
-								"id": "b383041a-b11e-4cd1-843e-d737fa1d8cbd",
+								"id": "294eb496-808b-4425-92dd-47f63e2a5a17",
 								"exec": [
 									""
 								],
@@ -1206,7 +1787,7 @@
 						{
 							"listen": "test",
 							"script": {
-								"id": "e907271e-8103-48ee-8b2b-d8eb5ef6fd4c",
+								"id": "efaab9ba-3829-479a-b3fd-d53b10bf064b",
 								"exec": [
 									"var jsonBody = pm.response.json();\r",
 									"var cafe_id = pm.environment.get(\"cafe_id\");\r",
@@ -1222,6 +1803,7 @@
 									"                \"website\": \"cafe1.com\",\r",
 									"                \"phoneNumber\": \"0000000000\"\r",
 									"            },\r",
+									"            \"categories\": [],\r",
 									"            \"_id\": cafe_id,\r",
 									"            \"name\": \"cafe1\",\r",
 									"            \"openingHours\": \"10:20-14:40\",\r",
@@ -1235,6 +1817,7 @@
 									"                \"website\": \"cafe2.com\",\r",
 									"                \"phoneNumber\": \"0055500000\"\r",
 									"            },\r",
+									"            \"categories\": [],\r",
 									"            \"_id\": cafe_id2,\r",
 									"            \"name\": \"cafe2\",\r",
 									"            \"openingHours\": \"12:20-22:30\",\r",
@@ -1248,6 +1831,7 @@
 									"                \"website\": \"cafe3.com\",\r",
 									"                \"phoneNumber\": \"00165465000\"\r",
 									"            },\r",
+									"            \"categories\": [],\r",
 									"            \"_id\": cafe_id3,\r",
 									"            \"name\": \"cafe3\",\r",
 									"            \"openingHours\": \"09:30-23:30\",\r",
@@ -1295,7 +1879,7 @@
 						{
 							"listen": "test",
 							"script": {
-								"id": "f10ea7ce-b413-4d1e-bb75-04cf433da819",
+								"id": "a46aed35-f09f-4d17-afc3-6a3cb2a87211",
 								"exec": [
 									"var cafe_id = pm.environment.get(\"cafe_id\");\r",
 									"\r",
@@ -1343,7 +1927,7 @@
 						{
 							"listen": "test",
 							"script": {
-								"id": "0c041997-9453-43fc-ba23-a21499da253b",
+								"id": "505a3325-52c8-4913-94c5-896ed01f46dc",
 								"exec": [
 									"var jsonData = pm.response.json();\r",
 									"var userId = jsonData._id;\r",
@@ -1399,7 +1983,7 @@
 						{
 							"listen": "test",
 							"script": {
-								"id": "e647c1f0-908c-4cd2-9a02-9364c1189275",
+								"id": "725a2a9a-74b4-4a2c-b5a2-d25416d37f14",
 								"exec": [
 									"var cafe_id = pm.environment.get(\"cafe_id\");\r",
 									"\r",
@@ -1449,7 +2033,7 @@
 						{
 							"listen": "test",
 							"script": {
-								"id": "bd78558c-6260-4b5b-80cc-bca00a0ce9bd",
+								"id": "5b9bf7ea-a69f-4164-93e2-f0bd999c04f4",
 								"exec": [
 									"pm.test(\"Correct status code\", function() {\r",
 									"\tpm.response.to.have.status(204);\r",
@@ -1487,7 +2071,7 @@
 						{
 							"listen": "test",
 							"script": {
-								"id": "8a9d0128-b426-45d4-94cc-c94f9e44eefb",
+								"id": "fc9b3947-5aeb-4613-b965-d659ab57c493",
 								"exec": [
 									"pm.test(\"All cafes deleted\", function () {\r",
 									"    pm.response.to.have.body(\"\");\r",
@@ -1523,7 +2107,7 @@
 						{
 							"listen": "test",
 							"script": {
-								"id": "895dfa31-b31b-43fd-8a4d-8c45567b24dc",
+								"id": "f08ea5df-ccd0-4df2-9209-5b0bd470317a",
 								"exec": [
 									"pm.test(\"Correct status code\", function() {\r",
 									"\tpm.response.to.have.status(404);\r",
@@ -1556,7 +2140,7 @@
 						{
 							"listen": "test",
 							"script": {
-								"id": "aa3d4955-8a27-45ea-96d8-245f324f7a49",
+								"id": "5bf24083-1ae7-41c1-b200-f5660761ff97",
 								"exec": [
 									"pm.test(\"Correct status code\", function () {\r",
 									"    pm.response.to.have.status(404);\r",
@@ -1598,7 +2182,7 @@
 						{
 							"listen": "test",
 							"script": {
-								"id": "93c39a4f-3c75-4702-95c3-6a412bc4a7b6",
+								"id": "987278ac-ed18-401f-9cc2-0397f968c7d5",
 								"exec": [
 									"pm.test(\"Correct status code\", function () {\r",
 									"    pm.response.to.have.status(404);\r",
@@ -1640,7 +2224,7 @@
 						{
 							"listen": "test",
 							"script": {
-								"id": "519ecfef-056d-4519-8903-49c4eb278b59",
+								"id": "2602a1f2-e75f-4ea3-aecd-045ec55d0543",
 								"exec": [
 									"pm.test(\"Correct status code\", function() {\r",
 									"\tpm.response.to.have.status(404);\r",
@@ -1675,7 +2259,7 @@
 		{
 			"listen": "prerequest",
 			"script": {
-				"id": "a308a8b8-e099-4c48-af10-d7a9f1c0f00e",
+				"id": "6e067bfb-ace7-4fbf-9cc6-872cf5457a9a",
 				"type": "text/javascript",
 				"exec": [
 					""
@@ -1685,7 +2269,7 @@
 		{
 			"listen": "test",
 			"script": {
-				"id": "1c38dd29-e6ac-4c1a-aed0-e34f77465f26",
+				"id": "08154a59-333b-46a1-bd0b-6cefa93fbacc",
 				"type": "text/javascript",
 				"exec": [
 					""

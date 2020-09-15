@@ -2,9 +2,9 @@ var express = require('express');
 var router = express.Router();
 var Cafe = require('../models/cafe');
 
-//The routes go into the controllers & the logic for the diffrent CRUD functionalities
+//The routes go into the controllers & the logic for the different CRUD functionalities
 router.get('/api/cafes', function(req, res, next) {
-    Cafe.find(function(err, cafes) {
+    Cafe.find().populate('categories').exec(function(err, cafes) {
         if (err) { return next(err); }
         res.json({"cafes": cafes});
     });
@@ -13,7 +13,7 @@ router.get('/api/cafes', function(req, res, next) {
 // Return the cafe with the given ID
 router.get('/api/cafes/:id', function(req, res, next) {
     var id = req.params.id;
-    Cafe.findById(id, function(err, cafe) {
+    Cafe.findById(id).populate('categories').exec(function(err, cafe) {
         if (cafe == null) {
             return res.status(404).json({"message": "Cafe not found"});
         }
@@ -34,7 +34,7 @@ router.post('/api/cafes', function(req, res, next) {
 //Delete cafe with given ID
 router.delete('/api/cafes/:id', function(req, res, next) {
     var id = req.params.id;
-    Cafe.findOneAndDelete({_id: id}, function(err, cafe) {
+    Cafe.findOneAndDelete(id, function(err, cafe) {
         if (cafe == null) {
             return res.status(404).json({"message": "Cafe not found"});
         }
