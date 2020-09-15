@@ -43,6 +43,14 @@ router.delete('/api/cafes/:id', function(req, res, next) {
     });
 });
 
+//Delete all cafes
+router.delete('/api/cafes', function(req, res, next) {
+    Cafe.deleteMany(function(err, cafe) {
+        if (err) { return next(err); }
+        res.status(204).json();
+    });
+});
+
 // Partially update the cafe with the given ID
 router.patch('/api/cafes/:id', function(req, res, next) {
     var id = req.params.id;

@@ -1,6 +1,6 @@
 {
 	"info": {
-		"_postman_id": "47cf47c0-e76c-4484-be3b-db2e67fe6164",
+		"_postman_id": "29d56ab8-dfb4-422f-82bf-1fe4fb361bc2",
 		"name": "server",
 		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
 	},
@@ -14,7 +14,7 @@
 						{
 							"listen": "test",
 							"script": {
-								"id": "c39e668b-fe00-42bb-b9fe-7366c1709f14",
+								"id": "ed4854ba-d69c-4ddc-a08b-481d6f431c45",
 								"exec": [
 									"var jsonData = pm.response.json();\r",
 									"var categoryId = jsonData._id;\r",
@@ -63,7 +63,7 @@
 						{
 							"listen": "test",
 							"script": {
-								"id": "8c4217de-5e14-422f-88e0-fcb9a0158ae6",
+								"id": "ca87ac9d-7bd3-41d9-8aff-6f231d2acc2c",
 								"exec": [
 									"var jsonData = pm.response.json();\r",
 									"var categoryId = jsonData._id;\r",
@@ -112,7 +112,7 @@
 						{
 							"listen": "test",
 							"script": {
-								"id": "5f13fb56-9cb9-4221-9465-f609c53b5d44",
+								"id": "b6aeedb6-6ded-481b-abda-3708114e2118",
 								"exec": [
 									"var jsonData = pm.response.json();\r",
 									"var categoryId = jsonData._id;\r",
@@ -161,7 +161,7 @@
 						{
 							"listen": "prerequest",
 							"script": {
-								"id": "54482762-f9ec-4b0c-92a5-705a3731cacb",
+								"id": "43c81bf7-633d-4857-a41c-e90f6b0057da",
 								"exec": [
 									""
 								],
@@ -171,7 +171,7 @@
 						{
 							"listen": "test",
 							"script": {
-								"id": "80512777-07a3-445b-900d-71d667d4acd1",
+								"id": "6949c410-7b17-48e3-bc82-164497294db9",
 								"exec": [
 									"var jsonBody = pm.response.json();\r",
 									"var category_id = pm.environment.get(\"category_id\");\r",
@@ -236,7 +236,7 @@
 						{
 							"listen": "test",
 							"script": {
-								"id": "7e7223ed-1de7-4849-9a3e-f71aff91d43c",
+								"id": "68a0c5e3-3d3f-47ea-96a4-387a85fc2cd0",
 								"exec": [
 									"var category_id = pm.environment.get(\"category_id\");\r",
 									"\r",
@@ -278,7 +278,7 @@
 						{
 							"listen": "test",
 							"script": {
-								"id": "0cae3968-5b63-4461-90b4-25dc44650e3a",
+								"id": "50e05b8f-47dd-4b11-8d8d-0b4e99beaa43",
 								"exec": [
 									"var category_id = pm.environment.get(\"category_id\");\r",
 									"\r",
@@ -328,7 +328,7 @@
 						{
 							"listen": "test",
 							"script": {
-								"id": "1c1ed995-2017-44a5-bf49-50fd112612a6",
+								"id": "19c8f9b2-d5f4-470b-8fd3-00fe8e31cd7b",
 								"exec": [
 									"pm.test(\"Correct status code\", function() {\r",
 									"\tpm.response.to.have.status(204);\r",
@@ -366,7 +366,7 @@
 						{
 							"listen": "test",
 							"script": {
-								"id": "79809e6d-6761-47f8-9bea-bfeb4178c6c0",
+								"id": "73a6c537-7b0c-484f-8889-5dbd35ea1e2b",
 								"exec": [
 									"pm.test(\"All categories deleted\", function () {\r",
 									"    pm.response.to.have.body(\"\");\r",
@@ -402,7 +402,7 @@
 						{
 							"listen": "test",
 							"script": {
-								"id": "9fa37da0-8253-46e8-a734-23c48e067a86",
+								"id": "f7d60ece-97a5-4691-8678-e1e666b34039",
 								"exec": [
 									"pm.test(\"Correct status code\", function() {\r",
 									"\tpm.response.to.have.status(404);\r",
@@ -435,7 +435,7 @@
 						{
 							"listen": "test",
 							"script": {
-								"id": "a2f8a075-3486-432a-88b4-9d811db9b65a",
+								"id": "809cb7a0-bc88-40b0-9941-2a3858bbb708",
 								"exec": [
 									"pm.test(\"Correct status code\", function () {\r",
 									"    pm.response.to.have.status(404);\r",
@@ -477,7 +477,7 @@
 						{
 							"listen": "test",
 							"script": {
-								"id": "e860651f-78bc-4e39-a43f-38ff88c3e127",
+								"id": "67e1d217-0f88-45fb-9eb0-6d27b1aa27a9",
 								"exec": [
 									"pm.test(\"Correct status code\", function() {\r",
 									"\tpm.response.to.have.status(404);\r",
@@ -516,7 +516,7 @@
 						{
 							"listen": "test",
 							"script": {
-								"id": "4123a52b-2946-4735-9ff1-2235db546a31",
+								"id": "4382d570-56dc-4eec-b7b7-147204e2b5d8",
 								"exec": [
 									"var jsonData = pm.response.json();\r",
 									"var userId = jsonData._id;\r",
@@ -567,7 +567,7 @@
 						{
 							"listen": "test",
 							"script": {
-								"id": "5cbdb725-7684-42ee-9569-a984bea90d2b",
+								"id": "a922c2b9-c143-4bdc-baea-1323d17ce1ab",
 								"exec": [
 									"var jsonData = pm.response.json();\r",
 									"var userId = jsonData._id;\r",
@@ -618,7 +618,7 @@
 						{
 							"listen": "test",
 							"script": {
-								"id": "24280a3f-42fe-4535-9ee6-a3d2590be379",
+								"id": "47688b33-114e-4181-a180-73b2c192ccc9",
 								"exec": [
 									"var jsonData = pm.response.json();\r",
 									"var userId = jsonData._id;\r",
@@ -669,7 +669,7 @@
 						{
 							"listen": "prerequest",
 							"script": {
-								"id": "8193ed95-d942-4e81-a998-cfa2f2acf2d5",
+								"id": "ea1ad63e-1543-48ee-a66b-695c1611c0de",
 								"exec": [
 									""
 								],
@@ -679,7 +679,7 @@
 						{
 							"listen": "test",
 							"script": {
-								"id": "ecf2278f-1629-4fde-937d-2a4f3f385308",
+								"id": "0ef99d84-ab29-4d56-8518-ad277d806b13",
 								"exec": [
 									"var jsonBody = pm.response.json();\r",
 									"var user_id = pm.environment.get(\"user_id\");\r",
@@ -747,7 +747,7 @@
 						{
 							"listen": "test",
 							"script": {
-								"id": "395c331c-b52f-41c8-9c38-675c5b319c3f",
+								"id": "da15eaa6-e3bc-49ae-9029-891549c7e244",
 								"exec": [
 									"var user_id = pm.environment.get(\"user_id\");\r",
 									"\r",
@@ -790,7 +790,7 @@
 						{
 							"listen": "test",
 							"script": {
-								"id": "0e52c73a-b15b-4690-9f9b-8d9f9c216a21",
+								"id": "f67e3ca2-342e-43fd-b7fa-435cecfba34e",
 								"exec": [
 									"var jsonData = pm.response.json();\r",
 									"var userId = jsonData._id;\r",
@@ -842,7 +842,7 @@
 						{
 							"listen": "test",
 							"script": {
-								"id": "3bc8c438-cec6-4e43-8dc4-8c74239ac3d6",
+								"id": "d6351b4e-6fc7-4f6c-887e-aa402c360345",
 								"exec": [
 									"pm.test(\"Correct status code\", function() {\r",
 									"\tpm.response.to.have.status(204);\r",
@@ -880,7 +880,7 @@
 						{
 							"listen": "test",
 							"script": {
-								"id": "30b4e05a-061a-4bf1-9093-c4c9a5114030",
+								"id": "958a2a12-c4b8-420d-9e1c-f582a874f505",
 								"exec": [
 									"pm.test(\"All users deleted\", function () {\r",
 									"    pm.response.to.have.body(\"\");\r",
@@ -916,7 +916,7 @@
 						{
 							"listen": "test",
 							"script": {
-								"id": "90b81d21-b1fd-402f-8112-27f02cd71896",
+								"id": "bd4f90ac-017d-49fd-b86c-d0b58ba9d5d0",
 								"exec": [
 									"pm.test(\"Correct status code\", function() {\r",
 									"\tpm.response.to.have.status(404);\r",
@@ -949,7 +949,7 @@
 						{
 							"listen": "test",
 							"script": {
-								"id": "aa4ef497-f30c-4438-afc6-9aaa21943fc7",
+								"id": "e4b0c65c-8776-4f24-a0aa-2837909e755c",
 								"exec": [
 									"pm.test(\"Correct status code\", function() {\r",
 									"\tpm.response.to.have.status(404);\r",
@@ -982,7 +982,7 @@
 						{
 							"listen": "test",
 							"script": {
-								"id": "74a13583-8128-404b-80cd-5d5815c3edc4",
+								"id": "05f6e0b7-3ae5-4df4-9e8e-1e3cd6b225a0",
 								"exec": [
 									"pm.test(\"Correct status code\", function () {\r",
 									"    pm.response.to.have.status(404);\r",
@@ -1020,13 +1020,662 @@
 				}
 			],
 			"protocolProfileBehavior": {}
+		},
+		{
+			"name": "CafeTests",
+			"item": [
+				{
+					"name": "Post a cafe",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "b5e8d9e3-18ab-4555-8701-ada2eaa9d9b2",
+								"exec": [
+									"var jsonData = pm.response.json();\r",
+									"var cafeId = jsonData._id;\r",
+									"pm.environment.set(\"cafe_id\", cafeId);\r",
+									"\r",
+									"pm.test(\"Correct status code\", function () {\r",
+									"    pm.response.to.have.status(201);\r",
+									"});\r",
+									"\r",
+									"pm.test(\"Correct cafe response\", function () {\r",
+									"    pm.expect(jsonData.name).to.eql(\"cafe1\");\r",
+									"    pm.expect(jsonData.openingHours).to.eql(\"10:20-14:40\");\r",
+									"    pm.expect(jsonData.location).to.eql(\"Avenyn\");\r",
+									"    pm.expect(jsonData.price).to.eql(3);\r",
+									"    pm.expect(jsonData.contact.email).to.eql(\"cafe1@gmail.com\");\r",
+									"    pm.expect(jsonData.contact.website).to.eql(\"cafe1.com\");\r",
+									"    pm.expect(jsonData.contact.phoneNumber).to.eql(\"0000000000\");\r",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{   \"name\" : \"cafe1\",\r\n    \"openingHours\": \"10:20-14:40\",\r\n    \"location\": \"Avenyn\",\r\n    \"price\": 3,\r\n    \"contact\": { \r\n        \"email\" : \"cafe1@gmail.com\",\r\n        \"website\": \"cafe1.com\",\r\n        \"phoneNumber\": \"0000000000\"\r\n    }\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{host}}/api/cafes",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"api",
+								"cafes"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Post a second cafe",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "655826e5-fccb-409c-bb74-6783a39c7953",
+								"exec": [
+									"var jsonData = pm.response.json();\r",
+									"var cafeId = jsonData._id;\r",
+									"pm.environment.set(\"cafe_id2\", cafeId);\r",
+									"\r",
+									"pm.test(\"Correct status code\", function () {\r",
+									"    pm.response.to.have.status(201);\r",
+									"});\r",
+									"\r",
+									"pm.test(\"Correct cafe response\", function () {\r",
+									"    pm.expect(jsonData.name).to.eql(\"cafe2\");\r",
+									"    pm.expect(jsonData.openingHours).to.eql(\"12:20-22:30\");\r",
+									"    pm.expect(jsonData.location).to.eql(\"Hjalmar\");\r",
+									"    pm.expect(jsonData.price).to.eql(2);\r",
+									"    pm.expect(jsonData.contact.email).to.eql(\"cafe2@gmail.com\");\r",
+									"    pm.expect(jsonData.contact.website).to.eql(\"cafe2.com\");\r",
+									"    pm.expect(jsonData.contact.phoneNumber).to.eql(\"0055500000\");\r",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{   \"name\" : \"cafe2\",\r\n    \"openingHours\": \"12:20-22:30\",\r\n    \"location\": \"Hjalmar\",\r\n    \"price\": 2,\r\n    \"contact\": { \r\n        \"email\" : \"cafe2@gmail.com\",\r\n        \"website\": \"cafe2.com\",\r\n        \"phoneNumber\": \"0055500000\"\r\n    }\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{host}}/api/cafes",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"api",
+								"cafes"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Post a third cafe",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "dda4ec43-d131-4e9d-87de-231d027e9ea1",
+								"exec": [
+									"var jsonData = pm.response.json();\r",
+									"var cafeId = jsonData._id;\r",
+									"pm.environment.set(\"cafe_id3\", cafeId);\r",
+									"\r",
+									"pm.test(\"Correct status code\", function () {\r",
+									"    pm.response.to.have.status(201);\r",
+									"});\r",
+									"\r",
+									"pm.test(\"Correct cafe response\", function () {\r",
+									"    pm.expect(jsonData.name).to.eql(\"cafe3\");\r",
+									"    pm.expect(jsonData.openingHours).to.eql(\"09:30-23:30\");\r",
+									"    pm.expect(jsonData.location).to.eql(\"Norra Hamngatan\");\r",
+									"    pm.expect(jsonData.price).to.eql(1);\r",
+									"    pm.expect(jsonData.contact.email).to.eql(\"cafe3@gmail.com\");\r",
+									"    pm.expect(jsonData.contact.website).to.eql(\"cafe3.com\");\r",
+									"    pm.expect(jsonData.contact.phoneNumber).to.eql(\"00165465000\");\r",
+									"\r",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{   \"name\" : \"cafe3\",\r\n    \"openingHours\": \"09:30-23:30\",\r\n    \"location\": \"Norra Hamngatan\",\r\n    \"price\": 1,\r\n    \"contact\": { \r\n        \"email\" : \"cafe3@gmail.com\",\r\n        \"website\": \"cafe3.com\",\r\n        \"phoneNumber\": \"00165465000\"\r\n    }\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{host}}/api/cafes",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"api",
+								"cafes"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get all cafes",
+					"event": [
+						{
+							"listen": "prerequest",
+							"script": {
+								"id": "b383041a-b11e-4cd1-843e-d737fa1d8cbd",
+								"exec": [
+									""
+								],
+								"type": "text/javascript"
+							}
+						},
+						{
+							"listen": "test",
+							"script": {
+								"id": "e907271e-8103-48ee-8b2b-d8eb5ef6fd4c",
+								"exec": [
+									"var jsonBody = pm.response.json();\r",
+									"var cafe_id = pm.environment.get(\"cafe_id\");\r",
+									"var cafe_id2 = pm.environment.get(\"cafe_id2\");\r",
+									"var cafe_id3 = pm.environment.get(\"cafe_id3\");\r",
+									"\r",
+									"pm.test(\"All cafes retrieved\", function () {\r",
+									"    pm.response.to.have.body({\r",
+									"    \"cafes\": [\r",
+									"        {\r",
+									"            \"contact\": {\r",
+									"                \"email\": \"cafe1@gmail.com\",\r",
+									"                \"website\": \"cafe1.com\",\r",
+									"                \"phoneNumber\": \"0000000000\"\r",
+									"            },\r",
+									"            \"_id\": cafe_id,\r",
+									"            \"name\": \"cafe1\",\r",
+									"            \"openingHours\": \"10:20-14:40\",\r",
+									"            \"location\": \"Avenyn\",\r",
+									"            \"price\": 3,\r",
+									"            \"__v\": 0\r",
+									"        },\r",
+									"        {\r",
+									"            \"contact\": {\r",
+									"                \"email\": \"cafe2@gmail.com\",\r",
+									"                \"website\": \"cafe2.com\",\r",
+									"                \"phoneNumber\": \"0055500000\"\r",
+									"            },\r",
+									"            \"_id\": cafe_id2,\r",
+									"            \"name\": \"cafe2\",\r",
+									"            \"openingHours\": \"12:20-22:30\",\r",
+									"            \"location\": \"Hjalmar\",\r",
+									"            \"price\": 2,\r",
+									"            \"__v\": 0\r",
+									"        },\r",
+									"        {\r",
+									"            \"contact\": {\r",
+									"                \"email\": \"cafe3@gmail.com\",\r",
+									"                \"website\": \"cafe3.com\",\r",
+									"                \"phoneNumber\": \"00165465000\"\r",
+									"            },\r",
+									"            \"_id\": cafe_id3,\r",
+									"            \"name\": \"cafe3\",\r",
+									"            \"openingHours\": \"09:30-23:30\",\r",
+									"            \"location\": \"Norra Hamngatan\",\r",
+									"            \"price\": 1,\r",
+									"            \"__v\": 0\r",
+									"        }\r",
+									"    ]\r",
+									"});\r",
+									"});\r",
+									"\r",
+									"pm.test(\"Correct status code\", function () {\r",
+									"    pm.response.to.have.status(200);\r",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"type": "text",
+								"value": "application/json"
+							}
+						],
+						"url": {
+							"raw": "{{host}}/api/cafes",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"api",
+								"cafes"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get cafe by id",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "f10ea7ce-b413-4d1e-bb75-04cf433da819",
+								"exec": [
+									"var cafe_id = pm.environment.get(\"cafe_id\");\r",
+									"\r",
+									"pm.test(\"Correct status code\", function() {\r",
+									"\tpm.response.to.have.status(200);\r",
+									"});\r",
+									"\r",
+									"pm.test(\"Correct cafe response\", function () {\r",
+									"    var jsonData = pm.response.json();\r",
+									"    pm.expect(jsonData.name).to.eql(\"cafe1\");\r",
+									"    pm.expect(jsonData.openingHours).to.eql(\"10:20-14:40\");\r",
+									"    pm.expect(jsonData.location).to.eql(\"Avenyn\");\r",
+									"    pm.expect(jsonData.price).to.eql(3);\r",
+									"    pm.expect(jsonData.contact.email).to.eql(\"cafe1@gmail.com\");\r",
+									"    pm.expect(jsonData.contact.website).to.eql(\"cafe1.com\");\r",
+									"    pm.expect(jsonData.contact.phoneNumber).to.eql(\"0000000000\");\r",
+									"    pm.expect(jsonData._id).to.eql(cafe_id);\r",
+									"\t});\r",
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{host}}/api/cafes/{{cafe_id}}",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"api",
+								"cafes",
+								"{{cafe_id}}"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Put a cafe",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "0c041997-9453-43fc-ba23-a21499da253b",
+								"exec": [
+									"var jsonData = pm.response.json();\r",
+									"var userId = jsonData._id;\r",
+									"pm.environment.set(\"user_id\", userId);\r",
+									"\r",
+									"pm.test(\"Correct status code\", function () {\r",
+									"    pm.response.to.have.status(200);\r",
+									"});\r",
+									"\r",
+									"pm.test(\"Correct user response\", function () {\r",
+									"    pm.expect(jsonData.name).to.eql(\"cafe11\");\r",
+									"    pm.expect(jsonData.openingHours).to.eql(\"11:20-16:40\");\r",
+									"    pm.expect(jsonData.location).to.eql(\"Postgatan\");\r",
+									"    pm.expect(jsonData.price).to.eql(2);\r",
+									"    pm.expect(jsonData.contact.email).to.eql(\"cafe11@gmail.com\");\r",
+									"    pm.expect(jsonData.contact.website).to.eql(\"cafe11.com\");\r",
+									"    pm.expect(jsonData.contact.phoneNumber).to.eql(\"00112343100000\");\r",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{   \"name\" : \"cafe11\",\r\n    \"openingHours\": \"11:20-16:40\",\r\n    \"location\": \"Postgatan\",\r\n    \"price\": 2,\r\n    \"contact\": { \r\n        \"email\" : \"cafe11@gmail.com\",\r\n        \"website\": \"cafe11.com\",\r\n        \"phoneNumber\": \"00112343100000\"\r\n    }\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{host}}/api/cafes/{{cafe_id}}",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"api",
+								"cafes",
+								"{{cafe_id}}"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Patch a cafe",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "e647c1f0-908c-4cd2-9a02-9364c1189275",
+								"exec": [
+									"var cafe_id = pm.environment.get(\"cafe_id\");\r",
+									"\r",
+									"pm.test(\"Correct status code\", function () {\r",
+									"    pm.response.to.have.status(200);\r",
+									"});\r",
+									"\r",
+									"pm.test(\"Correct category response\", function () {\r",
+									"\tvar jsonData = pm.response.json();\r",
+									"\tpm.expect(jsonData.name).to.eql(\"cafe55\");\r",
+									"    pm.expect(jsonData._id).to.eql(cafe_id);\r",
+									"\t});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "PATCH",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\"name\" : \"cafe55\"}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{host}}/api/cafes/{{cafe_id}}",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"api",
+								"cafes",
+								"{{cafe_id}}"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete cafe by id",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "bd78558c-6260-4b5b-80cc-bca00a0ce9bd",
+								"exec": [
+									"pm.test(\"Correct status code\", function() {\r",
+									"\tpm.response.to.have.status(204);\r",
+									"});\r",
+									"\r",
+									"pm.test(\"Cafe deleted\", function () {\r",
+									"    pm.response.to.have.body(\"\");\r",
+									"});\r",
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{host}}/api/cafes/{{cafe_id}}",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"api",
+								"cafes",
+								"{{cafe_id}}"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete all cafes",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "8a9d0128-b426-45d4-94cc-c94f9e44eefb",
+								"exec": [
+									"pm.test(\"All cafes deleted\", function () {\r",
+									"    pm.response.to.have.body(\"\");\r",
+									"});\r",
+									"\r",
+									"pm.test(\"Correct status code\", function () {\r",
+									"    pm.response.to.have.status(204);\r",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{host}}/api/cafes",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"api",
+								"cafes"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get non-existent cafe by id",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "895dfa31-b31b-43fd-8a4d-8c45567b24dc",
+								"exec": [
+									"pm.test(\"Correct status code\", function() {\r",
+									"\tpm.response.to.have.status(404);\r",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{host}}/api/cafes/0doesnotexist",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"api",
+								"cafes",
+								"0doesnotexist"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Put non-existent user cafe id",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "aa3d4955-8a27-45ea-96d8-245f324f7a49",
+								"exec": [
+									"pm.test(\"Correct status code\", function () {\r",
+									"    pm.response.to.have.status(404);\r",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{   \"name\" : \"cafe11\",\r\n    \"openingHours\": \"11:20-16:40\",\r\n    \"location\": \"Postgatan\",\r\n    \"price\": 2,\r\n    \"contact\": { \r\n        \"email\" : \"cafe11@gmail.com\",\r\n        \"website\": \"cafe11.com\",\r\n        \"phoneNumber\": \"00112343100000\"\r\n    }\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{host}}/api/cafes/0doesnotexist",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"api",
+								"cafes",
+								"0doesnotexist"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Patch non-existent cafe by id",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "93c39a4f-3c75-4702-95c3-6a412bc4a7b6",
+								"exec": [
+									"pm.test(\"Correct status code\", function () {\r",
+									"    pm.response.to.have.status(404);\r",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "PATCH",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\"name\" : \"Cat friendly\"}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{host}}/api/cafes/0doesnotexist",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"api",
+								"cafes",
+								"0doesnotexist"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete non-existent cafe by id",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "519ecfef-056d-4519-8903-49c4eb278b59",
+								"exec": [
+									"pm.test(\"Correct status code\", function() {\r",
+									"\tpm.response.to.have.status(404);\r",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{host}}/api/cafes/0doesnotexist",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"api",
+								"cafes",
+								"0doesnotexist"
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"protocolProfileBehavior": {}
 		}
 	],
 	"event": [
 		{
 			"listen": "prerequest",
 			"script": {
-				"id": "17295eaa-5c38-470a-9d86-c032a67d5cc1",
+				"id": "a308a8b8-e099-4c48-af10-d7a9f1c0f00e",
 				"type": "text/javascript",
 				"exec": [
 					""
@@ -1036,7 +1685,7 @@
 		{
 			"listen": "test",
 			"script": {
-				"id": "bdfcb194-508a-4714-b15d-a1b15ce53137",
+				"id": "1c38dd29-e6ac-4c1a-aed0-e34f77465f26",
 				"type": "text/javascript",
 				"exec": [
 					""
