@@ -12,7 +12,8 @@ var cafeSchema = new Schema({
         email: { type: String},
         website: {type: String},
         phoneNumber: {type: String} 
-    }
+    },
+    reviews: [{ type: Schema.Types.ObjectId, ref: 'reviews'}],
 });
 
 module.exports = mongoose.model('cafes', cafeSchema);
