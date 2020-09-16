@@ -5,8 +5,15 @@ var Cafe = require('../models/cafe');
 //The routes go into the controllers & the logic for the different CRUD functionalities
 router.get('/api/cafes', function(req, res, next) {
     Cafe.find().populate('categories').exec(function(err, cafes) {
-        if (err) { return next(err); }
-        res.json({"cafes": cafes});
+       if (err) { return next(err); }
+       var filter = req.query.price;
+       if (filter) {
+           res.json({"cafes" : cafes.filter(function (e) {
+               return filter == e.price;
+           })});
+        } else {
+            res.json({"cafes": cafes});
+        }
     });
 });
 
