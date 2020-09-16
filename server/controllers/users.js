@@ -3,7 +3,7 @@ var router = express.Router();
 var User = require('../models/user');
 
 
-//The routes go into the controllers & the logic for the diffrent CRUD functionalities
+//The routes go into the controllers & the logic for the different CRUD functionalities
 router.get('/api/users', function(req, res, next) {
     User.find(function(err, users) {
         if (err) { return next(err); }
@@ -23,7 +23,6 @@ router.get('/api/users/:id', function(req, res, next) {
         res.json(user);
     });
 });
-
 
 //Create a user
 router.post('/api/users', function(req, res, next) {

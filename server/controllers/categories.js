@@ -2,7 +2,7 @@ var express = require('express');
 var router = express.Router();
 var Category = require('../models/category');
 
-//The routes go into the controllers & the logic for the diffrent CRUD functionalities
+//The routes go into the controllers & the logic for the different CRUD functionalities
 router.get('/api/categories', function(req, res, next) {
     Category.find(function(err, categories) {
         if (err) { return next(err); }
@@ -34,7 +34,7 @@ router.post('/api/categories', function(req, res, next) {
 //Delete category with given ID
 router.delete('/api/categories/:id', function(req, res, next) {
     var id = req.params.id;
-    Category.findOneAndDelete({_id: id}, function(err, category) {
+    Category.findOneAndDelete(id, function(err, category) {
         if (category == null) {
             return res.status(404).json({"message": "Category not found"});
         }
