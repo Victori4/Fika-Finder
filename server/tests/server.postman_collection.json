@@ -1,6 +1,6 @@
 {
 	"info": {
-		"_postman_id": "c1111d4d-1fad-40ae-81cc-7076cdf13c8e",
+		"_postman_id": "79d6c332-3b12-42a2-9ac5-8e475d36c9e7",
 		"name": "server",
 		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
 	},
@@ -14,7 +14,7 @@
 						{
 							"listen": "test",
 							"script": {
-								"id": "eb31fd9f-6708-410b-b800-374c4223ed6b",
+								"id": "6c3be9ca-fe7b-43d0-a540-546e5ccb3cc1",
 								"exec": [
 									"var jsonData = pm.response.json();\r",
 									"var categoryId = jsonData._id;\r",
@@ -63,7 +63,7 @@
 						{
 							"listen": "test",
 							"script": {
-								"id": "d57eccff-9a1a-458d-a5a5-1d5398a8f498",
+								"id": "d8d36e4c-4268-41a1-8607-6de744c8fe4d",
 								"exec": [
 									"var jsonData = pm.response.json();\r",
 									"var categoryId = jsonData._id;\r",
@@ -112,7 +112,7 @@
 						{
 							"listen": "test",
 							"script": {
-								"id": "ed9f2256-19fa-4164-9e84-e5437ead20ba",
+								"id": "3e1e673b-83ad-4862-bc4a-a231e03dec73",
 								"exec": [
 									"var jsonData = pm.response.json();\r",
 									"var categoryId = jsonData._id;\r",
@@ -161,7 +161,7 @@
 						{
 							"listen": "test",
 							"script": {
-								"id": "035596ab-9e15-474e-8cb5-359a475a6433",
+								"id": "f66261d3-32db-49b9-b046-4e5305f35c11",
 								"exec": [
 									"var jsonData = pm.response.json();\r",
 									"var cafeId = jsonData._id;\r",
@@ -217,7 +217,7 @@
 						{
 							"listen": "test",
 							"script": {
-								"id": "144a440f-60bf-4d11-81e7-d373a9e7091d",
+								"id": "3b2e1b7f-4719-45b3-aea7-929388eda74a",
 								"exec": [
 									"var jsonData = pm.response.json();\r",
 									"var cafeId = jsonData._id;\r",
@@ -272,7 +272,7 @@
 						{
 							"listen": "test",
 							"script": {
-								"id": "db65e3dd-bc40-4924-857b-57db746decb9",
+								"id": "e1c55dd1-5dea-46fb-8b69-7f11df1807d4",
 								"exec": [
 									"var jsonData = pm.response.json();\r",
 									"var cafeId = jsonData._id;\r",
@@ -328,7 +328,7 @@
 						{
 							"listen": "prerequest",
 							"script": {
-								"id": "34cbf964-4714-46b1-be9b-a3beb7a3115f",
+								"id": "10a52785-4e3c-487f-bcfa-6de47dec5e76",
 								"exec": [
 									""
 								],
@@ -338,7 +338,7 @@
 						{
 							"listen": "test",
 							"script": {
-								"id": "4363adfe-a8a3-4b4f-9637-b4ffd210c3cd",
+								"id": "28f921cb-e887-4c35-9102-aa8e27e51722",
 								"exec": [
 									"var jsonBody = pm.response.json();\r",
 									"var cafe_id = pm.environment.get(\"cafe_id\");\r",
@@ -364,6 +364,7 @@
 									"                    \"__v\": 0\r",
 									"                }\r",
 									"            ],\r",
+									"            \"reviews\": [],\r",
 									"            \"_id\": cafe_id,\r",
 									"            \"name\": \"cafe1\",\r",
 									"            \"openingHours\": \"10:20-14:40\",\r",
@@ -389,6 +390,7 @@
 									"                    \"__v\": 0\r",
 									"                }\r",
 									"            ],\r",
+									"            \"reviews\": [],\r",
 									"            \"_id\": cafe_id2,\r",
 									"            \"name\": \"cafe2\",\r",
 									"            \"openingHours\": \"12:20-22:30\",\r",
@@ -409,6 +411,7 @@
 									"                    \"__v\": 0\r",
 									"                }\r",
 									"            ],\r",
+									"            \"reviews\": [],\r",
 									"            \"_id\": cafe_id3,\r",
 									"            \"name\": \"cafe3\",\r",
 									"            \"openingHours\": \"09:30-23:30\",\r",
@@ -456,7 +459,7 @@
 						{
 							"listen": "prerequest",
 							"script": {
-								"id": "96d57bf3-6b6d-43d0-a930-d12ebbedb28c",
+								"id": "08296951-2693-42e9-96ad-d6aad456af64",
 								"exec": [
 									""
 								],
@@ -466,7 +469,7 @@
 						{
 							"listen": "test",
 							"script": {
-								"id": "d8748e94-b207-4c41-a443-92ec920f9ef1",
+								"id": "39ced068-3f82-4e96-89de-7a14981118bd",
 								"exec": [
 									"var jsonBody = pm.response.json();\r",
 									"var cafe_id = pm.environment.get(\"cafe_id\");\r",
@@ -488,6 +491,7 @@
 									"                \"__v\": 0\r",
 									"            }\r",
 									"        ],\r",
+									"        \"reviews\": [],\r",
 									"        \"_id\": cafe_id,\r",
 									"        \"name\": \"cafe1\",\r",
 									"        \"openingHours\": \"10:20-14:40\",\r",
@@ -541,7 +545,7 @@
 						{
 							"listen": "test",
 							"script": {
-								"id": "e5db6c5c-6021-4bd6-9302-cf6c7b5b255f",
+								"id": "9d39884d-6d15-45c9-8262-a854dd428cc3",
 								"exec": [
 									"var cafe_id = pm.environment.get(\"cafe_id\");\r",
 									"var category_id = pm.environment.get(\"category_id\");\r",
@@ -565,6 +569,7 @@
 									"                \"__v\": 0\r",
 									"            }\r",
 									"        ],\r",
+									"        \"reviews\": [],\r",
 									"        \"_id\": cafe_id,\r",
 									"        \"name\": \"cafe1\",\r",
 									"        \"openingHours\": \"10:20-14:40\",\r",
@@ -602,7 +607,7 @@
 						{
 							"listen": "test",
 							"script": {
-								"id": "bec63650-ce00-4e58-91d8-bd0385795592",
+								"id": "6ea531ed-536f-439b-b460-3e6f80cf3649",
 								"exec": [
 									"pm.test(\"All cafes deleted\", function () {\r",
 									"    pm.response.to.have.body(\"\");\r",
@@ -638,7 +643,7 @@
 						{
 							"listen": "test",
 							"script": {
-								"id": "b3341297-5b05-4692-9119-15ed5d002811",
+								"id": "895709cf-1687-45b0-beea-e5299eb14ef0",
 								"exec": [
 									"pm.test(\"All categories deleted\", function () {\r",
 									"    pm.response.to.have.body(\"\");\r",
@@ -680,7 +685,7 @@
 						{
 							"listen": "test",
 							"script": {
-								"id": "5186488e-b298-4456-8150-06053df2867e",
+								"id": "f0452b52-91eb-4e75-a747-3b929711f3e6",
 								"exec": [
 									"var jsonData = pm.response.json();\r",
 									"var categoryId = jsonData._id;\r",
@@ -729,7 +734,7 @@
 						{
 							"listen": "test",
 							"script": {
-								"id": "b40ce6a6-85b5-4479-8956-5e0bec462558",
+								"id": "6ffb8e59-1d2a-4ba1-8fb5-47bb4252c4ab",
 								"exec": [
 									"var jsonData = pm.response.json();\r",
 									"var categoryId = jsonData._id;\r",
@@ -778,7 +783,7 @@
 						{
 							"listen": "test",
 							"script": {
-								"id": "9c13510a-8840-46df-a2ed-0547069ccce5",
+								"id": "fb7bba06-16ac-484d-b3a8-55f889f89c12",
 								"exec": [
 									"var jsonData = pm.response.json();\r",
 									"var categoryId = jsonData._id;\r",
@@ -827,7 +832,7 @@
 						{
 							"listen": "prerequest",
 							"script": {
-								"id": "5a4fca19-d90e-4cd3-837b-afea08ac4b03",
+								"id": "27476ac1-293e-444f-8ce9-feed38a4b3f5",
 								"exec": [
 									""
 								],
@@ -837,7 +842,7 @@
 						{
 							"listen": "test",
 							"script": {
-								"id": "1c4e7625-3069-4b34-8683-041e456a6484",
+								"id": "518cc31f-c874-4d68-bdd6-4d6b54ddab32",
 								"exec": [
 									"var jsonBody = pm.response.json();\r",
 									"var category_id = pm.environment.get(\"category_id\");\r",
@@ -902,7 +907,7 @@
 						{
 							"listen": "test",
 							"script": {
-								"id": "2d809bf4-9d09-4ecd-86c6-8bcdc4adf0f3",
+								"id": "94bcb85e-7f57-4b27-b772-bdbffe404134",
 								"exec": [
 									"var category_id = pm.environment.get(\"category_id\");\r",
 									"\r",
@@ -944,7 +949,7 @@
 						{
 							"listen": "test",
 							"script": {
-								"id": "2f3de4d3-b9b7-4158-90f1-4696e35aee51",
+								"id": "5473cb6a-6a2b-43eb-9aeb-54b1afb5f9c5",
 								"exec": [
 									"var category_id = pm.environment.get(\"category_id\");\r",
 									"\r",
@@ -994,7 +999,7 @@
 						{
 							"listen": "test",
 							"script": {
-								"id": "78fa06f9-905e-4d20-ab66-0806a29b276d",
+								"id": "149cb83e-d1da-442c-b439-eb1b47389ec2",
 								"exec": [
 									"pm.test(\"Correct status code\", function() {\r",
 									"\tpm.response.to.have.status(204);\r",
@@ -1032,7 +1037,7 @@
 						{
 							"listen": "test",
 							"script": {
-								"id": "07628bc8-a4b6-4a28-8d8a-b8c8ead7b6b7",
+								"id": "df6a1d29-af02-49b7-87f2-e6712faf33a5",
 								"exec": [
 									"pm.test(\"All categories deleted\", function () {\r",
 									"    pm.response.to.have.body(\"\");\r",
@@ -1068,7 +1073,7 @@
 						{
 							"listen": "test",
 							"script": {
-								"id": "1e1ed3fb-27be-47a7-aabf-5d1711d58759",
+								"id": "fa30399e-1644-4927-9166-c797df45d366",
 								"exec": [
 									"pm.test(\"Correct status code\", function() {\r",
 									"\tpm.response.to.have.status(404);\r",
@@ -1101,7 +1106,7 @@
 						{
 							"listen": "test",
 							"script": {
-								"id": "c9ac1b33-a08a-4e65-a225-0e0259ba03c3",
+								"id": "c2cd77f6-79f4-43bc-9411-6d82b058bc74",
 								"exec": [
 									"pm.test(\"Correct status code\", function () {\r",
 									"    pm.response.to.have.status(404);\r",
@@ -1143,7 +1148,7 @@
 						{
 							"listen": "test",
 							"script": {
-								"id": "23a82c4c-0b10-455d-8a52-cad9fa4568ad",
+								"id": "1993e3ed-dc1b-43da-896e-07fce27fec0e",
 								"exec": [
 									"pm.test(\"Correct status code\", function() {\r",
 									"\tpm.response.to.have.status(404);\r",
@@ -1182,7 +1187,7 @@
 						{
 							"listen": "test",
 							"script": {
-								"id": "f085b57c-fd5f-43fa-93bb-52adeea19d9d",
+								"id": "9fcbd77a-fdfd-4804-a4b4-b3a2989ab203",
 								"exec": [
 									"var jsonData = pm.response.json();\r",
 									"var userId = jsonData._id;\r",
@@ -1233,7 +1238,7 @@
 						{
 							"listen": "test",
 							"script": {
-								"id": "09c0c93b-bfb1-4d9d-a3ff-aae1820595e2",
+								"id": "4def33df-bf62-4409-9687-5ece8e65a69d",
 								"exec": [
 									"var jsonData = pm.response.json();\r",
 									"var userId = jsonData._id;\r",
@@ -1284,7 +1289,7 @@
 						{
 							"listen": "test",
 							"script": {
-								"id": "c02125e1-77fd-4eed-a20e-0b014c7eba45",
+								"id": "846ca632-8056-49f2-b3c9-e7a3a2a72bdc",
 								"exec": [
 									"var jsonData = pm.response.json();\r",
 									"var userId = jsonData._id;\r",
@@ -1335,7 +1340,7 @@
 						{
 							"listen": "prerequest",
 							"script": {
-								"id": "59f2b783-8c56-4160-bd15-3e071af0855a",
+								"id": "5d46edbb-abf8-46a1-ac8e-0a8ca7ac77c0",
 								"exec": [
 									""
 								],
@@ -1345,7 +1350,7 @@
 						{
 							"listen": "test",
 							"script": {
-								"id": "67db69aa-8720-4f6d-b3d2-25d681c86702",
+								"id": "f109e44c-36a7-4cc5-a630-6e5ed5bbbfed",
 								"exec": [
 									"var jsonBody = pm.response.json();\r",
 									"var user_id = pm.environment.get(\"user_id\");\r",
@@ -1413,7 +1418,7 @@
 						{
 							"listen": "test",
 							"script": {
-								"id": "a86e1394-862a-44e6-a678-1bf4ecf22646",
+								"id": "8dec5070-7bed-432b-bdd7-8e0e11f68c81",
 								"exec": [
 									"var user_id = pm.environment.get(\"user_id\");\r",
 									"\r",
@@ -1456,7 +1461,7 @@
 						{
 							"listen": "test",
 							"script": {
-								"id": "3ef6d212-28c0-4cc7-ab45-d454d68913d6",
+								"id": "9c6cecfe-58d3-461c-870f-5bd00b9c4cb1",
 								"exec": [
 									"var jsonData = pm.response.json();\r",
 									"var userId = jsonData._id;\r",
@@ -1508,7 +1513,7 @@
 						{
 							"listen": "test",
 							"script": {
-								"id": "a7b19c32-6da9-44d5-957a-eab61b6535cb",
+								"id": "3351293a-3796-4426-bd4f-2351c98f5cbc",
 								"exec": [
 									"pm.test(\"Correct status code\", function() {\r",
 									"\tpm.response.to.have.status(204);\r",
@@ -1546,7 +1551,7 @@
 						{
 							"listen": "test",
 							"script": {
-								"id": "ecb2e5ca-bc77-40b8-afea-6e26548bc534",
+								"id": "e7cfb71e-3496-4fc3-b37c-4dbe646551ba",
 								"exec": [
 									"pm.test(\"All users deleted\", function () {\r",
 									"    pm.response.to.have.body(\"\");\r",
@@ -1582,7 +1587,7 @@
 						{
 							"listen": "test",
 							"script": {
-								"id": "b95e5d2a-8c23-42d2-86fd-29462232cccc",
+								"id": "202d249e-2c3a-427f-9563-90567431f1a1",
 								"exec": [
 									"pm.test(\"Correct status code\", function() {\r",
 									"\tpm.response.to.have.status(404);\r",
@@ -1615,7 +1620,7 @@
 						{
 							"listen": "test",
 							"script": {
-								"id": "784302f5-ee97-4267-900f-46a95225e45a",
+								"id": "6ddb1610-179d-4cb6-b409-4a1994c4a89f",
 								"exec": [
 									"pm.test(\"Correct status code\", function() {\r",
 									"\tpm.response.to.have.status(404);\r",
@@ -1648,7 +1653,7 @@
 						{
 							"listen": "test",
 							"script": {
-								"id": "6447fba0-b135-42e2-bc65-23cfd172f0a5",
+								"id": "cba9d4cb-36a9-4382-a4c7-50073b45e02b",
 								"exec": [
 									"pm.test(\"Correct status code\", function () {\r",
 									"    pm.response.to.have.status(404);\r",
@@ -1696,7 +1701,7 @@
 						{
 							"listen": "test",
 							"script": {
-								"id": "0315d479-08b8-48cb-9cf8-f34b2814ade6",
+								"id": "567ad041-1828-4d39-9621-e3aa5ac4446a",
 								"exec": [
 									"var jsonData = pm.response.json();\r",
 									"var cafeId = jsonData._id;\r",
@@ -1751,7 +1756,7 @@
 						{
 							"listen": "test",
 							"script": {
-								"id": "bd8da61f-c8bc-45fb-92c3-2499ca4b5e75",
+								"id": "8b6b78e7-fc87-4c60-b73c-c6330d3644dc",
 								"exec": [
 									"var jsonData = pm.response.json();\r",
 									"var cafeId = jsonData._id;\r",
@@ -1806,7 +1811,7 @@
 						{
 							"listen": "test",
 							"script": {
-								"id": "6980b415-f34b-4b4c-bd1c-7e28ae5ed815",
+								"id": "3d65b3bf-e6f1-4809-a3c4-3ddf861b4a50",
 								"exec": [
 									"var jsonData = pm.response.json();\r",
 									"var cafeId = jsonData._id;\r",
@@ -1862,7 +1867,7 @@
 						{
 							"listen": "prerequest",
 							"script": {
-								"id": "e3e0ce3f-aa3c-4547-a87c-87a51630d0b9",
+								"id": "12ea79b2-b510-47de-a45a-31c995781f5b",
 								"exec": [
 									""
 								],
@@ -1872,7 +1877,7 @@
 						{
 							"listen": "test",
 							"script": {
-								"id": "115f7434-5e6e-4f5a-85bf-95f9d7275e9f",
+								"id": "857eb98f-a310-4776-9813-476af83c730c",
 								"exec": [
 									"var jsonBody = pm.response.json();\r",
 									"var cafe_id = pm.environment.get(\"cafe_id\");\r",
@@ -1889,6 +1894,7 @@
 									"                \"phoneNumber\": \"0000000000\"\r",
 									"            },\r",
 									"            \"categories\": [],\r",
+									"            \"reviews\": [],\r",
 									"            \"_id\": cafe_id,\r",
 									"            \"name\": \"cafe1\",\r",
 									"            \"openingHours\": \"10:20-14:40\",\r",
@@ -1903,6 +1909,7 @@
 									"                \"phoneNumber\": \"0055500000\"\r",
 									"            },\r",
 									"            \"categories\": [],\r",
+									"            \"reviews\": [],\r",
 									"            \"_id\": cafe_id2,\r",
 									"            \"name\": \"cafe2\",\r",
 									"            \"openingHours\": \"12:20-22:30\",\r",
@@ -1917,6 +1924,7 @@
 									"                \"phoneNumber\": \"00165465000\"\r",
 									"            },\r",
 									"            \"categories\": [],\r",
+									"            \"reviews\": [],\r",
 									"            \"_id\": cafe_id3,\r",
 									"            \"name\": \"cafe3\",\r",
 									"            \"openingHours\": \"09:30-23:30\",\r",
@@ -1964,7 +1972,7 @@
 						{
 							"listen": "test",
 							"script": {
-								"id": "14b55467-bf12-4ebe-b6c0-39f9fdc13f5c",
+								"id": "83881cad-c2d3-4fcc-9b62-a9e35430f45f",
 								"exec": [
 									"var cafe_id = pm.environment.get(\"cafe_id\");\r",
 									"\r",
@@ -2012,7 +2020,7 @@
 						{
 							"listen": "test",
 							"script": {
-								"id": "6e7215f3-1e00-4481-aa17-18d8617b917e",
+								"id": "6d78c56f-2b17-4a55-ad05-743d18b6d8da",
 								"exec": [
 									"var jsonData = pm.response.json();\r",
 									"var userId = jsonData._id;\r",
@@ -2068,7 +2076,7 @@
 						{
 							"listen": "test",
 							"script": {
-								"id": "725effd8-6de9-4bc6-9bdd-03ab66684de4",
+								"id": "bfda3bab-31c6-466b-9c28-d57154d0e69b",
 								"exec": [
 									"var cafe_id = pm.environment.get(\"cafe_id\");\r",
 									"\r",
@@ -2118,7 +2126,7 @@
 						{
 							"listen": "test",
 							"script": {
-								"id": "708284dd-c9de-4c8f-9d48-6620d6da9435",
+								"id": "eae308fa-8b4a-4595-bdab-96bfc6549730",
 								"exec": [
 									"pm.test(\"Correct status code\", function() {\r",
 									"\tpm.response.to.have.status(204);\r",
@@ -2156,7 +2164,7 @@
 						{
 							"listen": "test",
 							"script": {
-								"id": "70bc43b8-fdfc-4afc-84f5-a734f2c91bb4",
+								"id": "6fae748b-3977-474f-80fd-dd876350a141",
 								"exec": [
 									"pm.test(\"All cafes deleted\", function () {\r",
 									"    pm.response.to.have.body(\"\");\r",
@@ -2192,7 +2200,7 @@
 						{
 							"listen": "test",
 							"script": {
-								"id": "fa60c384-ee00-4c2f-a641-6b6fc707efde",
+								"id": "d0ecb090-710e-4409-85fa-5ae6c4597447",
 								"exec": [
 									"pm.test(\"Correct status code\", function() {\r",
 									"\tpm.response.to.have.status(404);\r",
@@ -2225,7 +2233,7 @@
 						{
 							"listen": "test",
 							"script": {
-								"id": "a40fb664-ca14-4574-ade2-393e11175edc",
+								"id": "6808549b-a2f8-4fea-b7d1-b57230d31545",
 								"exec": [
 									"pm.test(\"Correct status code\", function () {\r",
 									"    pm.response.to.have.status(404);\r",
@@ -2267,7 +2275,7 @@
 						{
 							"listen": "test",
 							"script": {
-								"id": "6a4ec08e-b02e-44b0-89a0-e81e241d324b",
+								"id": "d74770f6-17bf-4631-887e-36dcacfb71a6",
 								"exec": [
 									"pm.test(\"Correct status code\", function () {\r",
 									"    pm.response.to.have.status(404);\r",
@@ -2309,7 +2317,7 @@
 						{
 							"listen": "test",
 							"script": {
-								"id": "5b2b7899-69b0-4c72-a803-f0c48fbe8441",
+								"id": "03aeebb1-761a-42b8-82de-a1f9d07090db",
 								"exec": [
 									"pm.test(\"Correct status code\", function() {\r",
 									"\tpm.response.to.have.status(404);\r",
@@ -2338,13 +2346,656 @@
 				}
 			],
 			"protocolProfileBehavior": {}
+		},
+		{
+			"name": "ReviewTests",
+			"item": [
+				{
+					"name": "Post a user",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "3c044b51-fc83-4d55-b4a6-4920ec52fd7a",
+								"exec": [
+									"var jsonData = pm.response.json();\r",
+									"var userId = jsonData._id;\r",
+									"pm.environment.set(\"user_id\", userId);\r",
+									"\r",
+									"pm.test(\"Correct status code\", function () {\r",
+									"    pm.response.to.have.status(201);\r",
+									"});\r",
+									"\r",
+									"pm.test(\"Correct user response\", function () {\r",
+									"    pm.expect(jsonData.email).to.eql(\"hello@gmail.com\");\r",
+									"    pm.expect(jsonData.password).to.eql(\"123\");\r",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\"email\" : \"hello@gmail.com\",\r\n\"password\" : \"123\" }\r\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{host}}/api/users",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"api",
+								"users"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Post a cafe",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "e82fd052-cc53-48d4-b4f1-aeade6509a6c",
+								"exec": [
+									"var jsonData = pm.response.json();\r",
+									"var cafeId = jsonData._id;\r",
+									"pm.environment.set(\"cafe_id\", cafeId);\r",
+									"\r",
+									"pm.test(\"Correct status code\", function () {\r",
+									"    pm.response.to.have.status(201);\r",
+									"});\r",
+									"\r",
+									"pm.test(\"Correct cafe response\", function () {\r",
+									"    pm.expect(jsonData.name).to.eql(\"cafe1\");\r",
+									"    pm.expect(jsonData.openingHours).to.eql(\"10:20-14:40\");\r",
+									"    pm.expect(jsonData.location).to.eql(\"Avenyn\");\r",
+									"    pm.expect(jsonData.price).to.eql(3);\r",
+									"    pm.expect(jsonData.contact.email).to.eql(\"cafe1@gmail.com\");\r",
+									"    pm.expect(jsonData.contact.website).to.eql(\"cafe1.com\");\r",
+									"    pm.expect(jsonData.contact.phoneNumber).to.eql(\"0000000000\");\r",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{   \"name\" : \"cafe1\",\r\n    \"openingHours\": \"10:20-14:40\",\r\n    \"location\": \"Avenyn\",\r\n    \"price\": 3,\r\n    \"contact\": { \r\n        \"email\" : \"cafe1@gmail.com\",\r\n        \"website\": \"cafe1.com\",\r\n        \"phoneNumber\": \"0000000000\"\r\n    }\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{host}}/api/cafes",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"api",
+								"cafes"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Post a review",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "31bec904-cc30-4920-917e-40c3abf89dd8",
+								"exec": [
+									"var jsonData = pm.response.json();\r",
+									"var cafeId = pm.environment.get(\"cafe_id\");\r",
+									"var userId = pm.environment.get(\"user_id\");\r",
+									"var reviewId = jsonData._id;\r",
+									"pm.environment.set(\"review_id\", reviewId);\r",
+									"var reviewDate = jsonData.date;\r",
+									"pm.environment.set(\"review_date\", reviewDate);\r",
+									"\r",
+									"pm.test(\"Correct status code\", function () {\r",
+									"    pm.response.to.have.status(201);\r",
+									"});\r",
+									"\r",
+									"pm.test(\"Correct review response\", function () {\r",
+									"    pm.expect(jsonData.rating).to.eql(5);\r",
+									"    pm.expect(jsonData.comment).to.eql(\"Best cafe ever!\");\r",
+									"    pm.expect(jsonData.user).to.eql(userId);\r",
+									"    pm.expect(jsonData.cafe).to.eql(cafeId);\r",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{   \"rating\" : 5,\r\n    \"comment\": \"Best cafe ever!\",\r\n    \"user\": \"{{user_id}}\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{host}}/api/cafes/{{cafe_id}}/reviews",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"api",
+								"cafes",
+								"{{cafe_id}}",
+								"reviews"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Post a second review",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "c9d6641c-ac77-4dfe-a2a9-9cf61fb483b4",
+								"exec": [
+									"var jsonData = pm.response.json();\r",
+									"var cafeId = pm.environment.get(\"cafe_id\");\r",
+									"var userId = pm.environment.get(\"user_id\");\r",
+									"var reviewId = jsonData._id;\r",
+									"pm.environment.set(\"review_id2\", reviewId);\r",
+									"var reviewDate = jsonData.date;\r",
+									"pm.environment.set(\"review_date2\", reviewDate);\r",
+									"\r",
+									"pm.test(\"Correct status code\", function () {\r",
+									"    pm.response.to.have.status(201);\r",
+									"});\r",
+									"\r",
+									"pm.test(\"Correct review response\", function () {\r",
+									"    pm.expect(jsonData.rating).to.eql(1);\r",
+									"    pm.expect(jsonData.comment).to.eql(\"Worst cafe ever!\");\r",
+									"    pm.expect(jsonData.user).to.eql(userId);\r",
+									"    pm.expect(jsonData.cafe).to.eql(cafeId);\r",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{   \"rating\" : 1,\r\n    \"comment\": \"Worst cafe ever!\",\r\n    \"user\": \"{{user_id}}\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{host}}/api/cafes/{{cafe_id}}/reviews",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"api",
+								"cafes",
+								"{{cafe_id}}",
+								"reviews"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get all reviews for a cafe",
+					"event": [
+						{
+							"listen": "prerequest",
+							"script": {
+								"id": "861eb256-b3ef-4bab-a6df-963fa8d2cd45",
+								"exec": [
+									""
+								],
+								"type": "text/javascript"
+							}
+						},
+						{
+							"listen": "test",
+							"script": {
+								"id": "4ca0900d-d57b-41c5-9a04-cbba7e5d5423",
+								"exec": [
+									"var jsonBody = pm.response.json();\r",
+									"var userId = pm.environment.get(\"user_id\");\r",
+									"var reviewId = pm.environment.get(\"review_id\");\r",
+									"var reviewId2 = pm.environment.get(\"review_id2\");\r",
+									"var reviewDate = pm.environment.get(\"review_date\");\r",
+									"var reviewDate2 = pm.environment.get(\"review_date2\");\r",
+									"\r",
+									"pm.test(\"All reviews for a cafe retrieved\", function () {\r",
+									"    pm.response.to.have.body({\r",
+									"    \"reviews\": [\r",
+									"        {\r",
+									"            \"_id\": reviewId,\r",
+									"            \"rating\": 5,\r",
+									"            \"comment\": \"Best cafe ever!\",\r",
+									"            \"user\": userId,\r",
+									"            \"date\": reviewDate,\r",
+									"            \"__v\": 0\r",
+									"        },\r",
+									"        {\r",
+									"            \"_id\": reviewId2,\r",
+									"            \"rating\": 1,\r",
+									"            \"comment\": \"Worst cafe ever!\",\r",
+									"            \"user\": userId,\r",
+									"            \"date\": reviewDate2,\r",
+									"            \"__v\": 0\r",
+									"        }\r",
+									"    ]\r",
+									"});\r",
+									"});\r",
+									"\r",
+									"pm.test(\"Correct status code\", function () {\r",
+									"    pm.response.to.have.status(200);\r",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"type": "text",
+								"value": "application/json"
+							}
+						],
+						"url": {
+							"raw": "{{host}}/api/cafes/{{cafe_id}}/reviews",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"api",
+								"cafes",
+								"{{cafe_id}}",
+								"reviews"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get a cafe review",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "3637a967-c78f-45cd-8400-5b2c370d5ee6",
+								"exec": [
+									"var reviewId = pm.environment.get(\"review_id\");\r",
+									"var userId = pm.environment.get(\"user_id\");\r",
+									"\r",
+									"pm.test(\"Correct status code\", function() {\r",
+									"\tpm.response.to.have.status(200);\r",
+									"});\r",
+									"\r",
+									"pm.test(\"Correct review response\", function () {\r",
+									"    var jsonData = pm.response.json();\r",
+									"    pm.expect(jsonData.rating).to.eql(5);\r",
+									"    pm.expect(jsonData.comment).to.eql(\"Best cafe ever!\");\r",
+									"    pm.expect(jsonData.user._id).to.eql(userId);\r",
+									"    pm.expect(jsonData._id).to.eql(reviewId);\r",
+									"\t});\r",
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{host}}/api/cafes/{{cafe_id}}/reviews/{{review_id}}",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"api",
+								"cafes",
+								"{{cafe_id}}",
+								"reviews",
+								"{{review_id}}"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete a review",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "17f7af73-4ccc-4e0d-a381-0577723634ff",
+								"exec": [
+									"pm.test(\"Correct status code\", function() {\r",
+									"\tpm.response.to.have.status(204);\r",
+									"});\r",
+									"\r",
+									"pm.test(\"Cafe deleted\", function () {\r",
+									"    pm.response.to.have.body(\"\");\r",
+									"});\r",
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{host}}/api/cafes/{{cafe_id}}/reviews/{{review_id}}",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"api",
+								"cafes",
+								"{{cafe_id}}",
+								"reviews",
+								"{{review_id}}"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete all cafes",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "c7192dcf-97cb-4f09-b466-2c3579075667",
+								"exec": [
+									"pm.test(\"All cafes deleted\", function () {\r",
+									"    pm.response.to.have.body(\"\");\r",
+									"});\r",
+									"\r",
+									"pm.test(\"Correct status code\", function () {\r",
+									"    pm.response.to.have.status(204);\r",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{host}}/api/cafes",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"api",
+								"cafes"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete all users",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "991af2a3-eb55-4754-ba7d-b516be382e79",
+								"exec": [
+									"pm.test(\"Correct status code\", function() {\r",
+									"\tpm.response.to.have.status(204);\r",
+									"});\r",
+									"\r",
+									"pm.test(\"User deleted\", function () {\r",
+									"    pm.response.to.have.body(\"\");\r",
+									"});\r",
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{host}}/api/users",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"api",
+								"users"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete all reviews",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "1c056ef1-91b0-4087-ac01-0ab63dd2aa2f",
+								"exec": [
+									"pm.test(\"Correct status code\", function() {\r",
+									"\tpm.response.to.have.status(204);\r",
+									"});\r",
+									"\r",
+									"pm.test(\"User deleted\", function () {\r",
+									"    pm.response.to.have.body(\"\");\r",
+									"});\r",
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{host}}/api/reviews",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"api",
+								"reviews"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get non-existent cafe review",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "c51e6efd-395a-4e40-b6f8-c623e75c62cf",
+								"exec": [
+									"pm.test(\"Correct status code\", function() {\r",
+									"\tpm.response.to.have.status(404);\r",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{host}}/api/cafes/{{cafe_id}}/reviews/0doesnotexist",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"api",
+								"cafes",
+								"{{cafe_id}}",
+								"reviews",
+								"0doesnotexist"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get non-existent review for non-existent cafe",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "9c1e5bbf-7103-4850-9336-86345043cafb",
+								"exec": [
+									"pm.test(\"Correct status code\", function() {\r",
+									"\tpm.response.to.have.status(404);\r",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{host}}/api/cafes/0doesnotexist/reviews/0doesnotexist",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"api",
+								"cafes",
+								"0doesnotexist",
+								"reviews",
+								"0doesnotexist"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get reviews for non-existent cafe",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "44637fb1-3f1f-47d3-ba51-84257725d837",
+								"exec": [
+									"pm.test(\"Correct status code\", function() {\r",
+									"\tpm.response.to.have.status(404);\r",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{host}}/api/cafes/0doesnotexist/reviews",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"api",
+								"cafes",
+								"0doesnotexist",
+								"reviews"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete non-existent review",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "8c81c72d-f886-4ec9-b22b-fb7c3e7901b3",
+								"exec": [
+									"pm.test(\"Correct status code\", function() {\r",
+									"\tpm.response.to.have.status(404);\r",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{host}}/api/cafes/{{cafe_id}}/reviews/0doesnotexist",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"api",
+								"cafes",
+								"{{cafe_id}}",
+								"reviews",
+								"0doesnotexist"
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"protocolProfileBehavior": {}
 		}
 	],
 	"event": [
 		{
 			"listen": "prerequest",
 			"script": {
-				"id": "1f31e28b-5fde-4212-9a53-5c3113a39561",
+				"id": "275a0b66-5d6a-4822-8de7-9e6600c909f7",
 				"type": "text/javascript",
 				"exec": [
 					""
@@ -2354,7 +3005,7 @@
 		{
 			"listen": "test",
 			"script": {
-				"id": "340f2582-b32d-4d1e-bd19-f6ed92831687",
+				"id": "806703cf-7a33-4308-a056-ecba2d736f67",
 				"type": "text/javascript",
 				"exec": [
 					""
