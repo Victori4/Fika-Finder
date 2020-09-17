@@ -5,9 +5,9 @@ var Schema = mongoose.Schema;
 var reviewSchema = new Schema({
     rating: { type: Number },
     comment: { type: String },
-    date: { type: Date },
-    cafe: { type: Schema.Types.ObjectId, ref: 'cafe'},
-    user: { type: Schema.Types.ObjectId, ref: 'user'}
+    date: { type: Date, default: Date.now },
+    cafe: { type: Schema.Types.ObjectId, ref: 'cafes'},
+    user: { type: Schema.Types.ObjectId, ref: 'users'}
 });
 
-module.exports = mongoose.model('review', reviewSchema);
+module.exports = mongoose.model('reviews', reviewSchema);
