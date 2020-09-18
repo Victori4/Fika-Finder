@@ -62,6 +62,7 @@ router.patch('/api/categories/:id', function(req, res, next) {
             return next(err); 
         }
         category.name = (req.body.name || category.name);
+        category.description = (req.body.description || category.description);
         category.save();
         res.json(category);
     });

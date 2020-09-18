@@ -1,6 +1,6 @@
 {
 	"info": {
-		"_postman_id": "79d6c332-3b12-42a2-9ac5-8e475d36c9e7",
+		"_postman_id": "c1f976d9-e606-4b5e-ac6c-f8d712fdc7c7",
 		"name": "server",
 		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
 	},
@@ -14,7 +14,7 @@
 						{
 							"listen": "test",
 							"script": {
-								"id": "6c3be9ca-fe7b-43d0-a540-546e5ccb3cc1",
+								"id": "487de963-41dc-4970-8180-6293797d20c1",
 								"exec": [
 									"var jsonData = pm.response.json();\r",
 									"var categoryId = jsonData._id;\r",
@@ -37,7 +37,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\"name\": \"Dog friendly\"}",
+							"raw": "{\"name\": \"Dog friendly\",\r\n\"description\": \"You can bring your pooch with you.\"}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -63,7 +63,7 @@
 						{
 							"listen": "test",
 							"script": {
-								"id": "d8d36e4c-4268-41a1-8607-6de744c8fe4d",
+								"id": "1b30ff3d-b8e1-4208-a501-476cb5c91e70",
 								"exec": [
 									"var jsonData = pm.response.json();\r",
 									"var categoryId = jsonData._id;\r",
@@ -86,7 +86,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\"name\": \"Gluten free\"}",
+							"raw": "{\"name\": \"Gluten free\",\r\n\"description\": \"Makes food suitable for those on a gluten free diet.\"}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -112,7 +112,7 @@
 						{
 							"listen": "test",
 							"script": {
-								"id": "3e1e673b-83ad-4862-bc4a-a231e03dec73",
+								"id": "593fb757-63f4-49a6-bdcd-f43b23929ec5",
 								"exec": [
 									"var jsonData = pm.response.json();\r",
 									"var categoryId = jsonData._id;\r",
@@ -135,7 +135,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\"name\": \"Vegan friendly\"}",
+							"raw": "{\"name\": \"Vegan friendly\",\r\n\"description\": \"Makes food suitable for those on a vegan diet.\"}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -161,7 +161,7 @@
 						{
 							"listen": "test",
 							"script": {
-								"id": "f66261d3-32db-49b9-b046-4e5305f35c11",
+								"id": "bc7a5728-dda8-4c0d-81ce-f819b47ffef2",
 								"exec": [
 									"var jsonData = pm.response.json();\r",
 									"var cafeId = jsonData._id;\r",
@@ -217,7 +217,7 @@
 						{
 							"listen": "test",
 							"script": {
-								"id": "3b2e1b7f-4719-45b3-aea7-929388eda74a",
+								"id": "6effad4e-1031-4e55-82a0-6e9df9eb5289",
 								"exec": [
 									"var jsonData = pm.response.json();\r",
 									"var cafeId = jsonData._id;\r",
@@ -272,7 +272,7 @@
 						{
 							"listen": "test",
 							"script": {
-								"id": "e1c55dd1-5dea-46fb-8b69-7f11df1807d4",
+								"id": "62a14aeb-a9bb-4b44-b7b3-592b3d937f69",
 								"exec": [
 									"var jsonData = pm.response.json();\r",
 									"var cafeId = jsonData._id;\r",
@@ -328,7 +328,7 @@
 						{
 							"listen": "prerequest",
 							"script": {
-								"id": "10a52785-4e3c-487f-bcfa-6de47dec5e76",
+								"id": "fc9fb68c-22e5-4afa-92e2-59d24a713cd1",
 								"exec": [
 									""
 								],
@@ -338,7 +338,7 @@
 						{
 							"listen": "test",
 							"script": {
-								"id": "28f921cb-e887-4c35-9102-aa8e27e51722",
+								"id": "0191ba02-6d45-4bab-88b6-b9dd1463a522",
 								"exec": [
 									"var jsonBody = pm.response.json();\r",
 									"var cafe_id = pm.environment.get(\"cafe_id\");\r",
@@ -361,6 +361,7 @@
 									"                {\r",
 									"                    \"_id\": category_id,\r",
 									"                    \"name\": \"Dog friendly\",\r",
+									"                    \"description\": \"You can bring your pooch with you.\",\r",
 									"                    \"__v\": 0\r",
 									"                }\r",
 									"            ],\r",
@@ -382,11 +383,13 @@
 									"                {\r",
 									"                    \"_id\": category_id,\r",
 									"                    \"name\": \"Dog friendly\",\r",
+									"                    \"description\": \"You can bring your pooch with you.\",\r",
 									"                    \"__v\": 0\r",
 									"                },\r",
 									"                {\r",
 									"                    \"_id\": category_id3,\r",
 									"                    \"name\": \"Vegan friendly\",\r",
+									"                    \"description\": \"Makes food suitable for those on a vegan diet.\",\r",
 									"                    \"__v\": 0\r",
 									"                }\r",
 									"            ],\r",
@@ -408,6 +411,7 @@
 									"                {\r",
 									"                    \"_id\": category_id2,\r",
 									"                    \"name\": \"Gluten free\",\r",
+									"                    \"description\": \"Makes food suitable for those on a gluten free diet.\",\r",
 									"                    \"__v\": 0\r",
 									"                }\r",
 									"            ],\r",
@@ -459,7 +463,7 @@
 						{
 							"listen": "prerequest",
 							"script": {
-								"id": "08296951-2693-42e9-96ad-d6aad456af64",
+								"id": "9900f38f-36c9-408a-8e27-2a5aa3545826",
 								"exec": [
 									""
 								],
@@ -469,7 +473,7 @@
 						{
 							"listen": "test",
 							"script": {
-								"id": "39ced068-3f82-4e96-89de-7a14981118bd",
+								"id": "ab1a3b78-6dc4-48e0-99ec-9417c4195ffd",
 								"exec": [
 									"var jsonBody = pm.response.json();\r",
 									"var cafe_id = pm.environment.get(\"cafe_id\");\r",
@@ -488,6 +492,7 @@
 									"            {\r",
 									"                \"_id\": category_id,\r",
 									"                \"name\": \"Dog friendly\",\r",
+									"                \"description\": \"You can bring your pooch with you.\",\r",
 									"                \"__v\": 0\r",
 									"            }\r",
 									"        ],\r",
@@ -545,7 +550,7 @@
 						{
 							"listen": "test",
 							"script": {
-								"id": "9d39884d-6d15-45c9-8262-a854dd428cc3",
+								"id": "4483fb12-4c11-461b-a358-716d2e602048",
 								"exec": [
 									"var cafe_id = pm.environment.get(\"cafe_id\");\r",
 									"var category_id = pm.environment.get(\"category_id\");\r",
@@ -566,6 +571,7 @@
 									"            {\r",
 									"                \"_id\": category_id,\r",
 									"                \"name\": \"Dog friendly\",\r",
+									"                \"description\": \"You can bring your pooch with you.\",\r",
 									"                \"__v\": 0\r",
 									"            }\r",
 									"        ],\r",
@@ -607,7 +613,7 @@
 						{
 							"listen": "test",
 							"script": {
-								"id": "6ea531ed-536f-439b-b460-3e6f80cf3649",
+								"id": "fb152201-c0a9-4d11-80ac-ff63b6966505",
 								"exec": [
 									"pm.test(\"All cafes deleted\", function () {\r",
 									"    pm.response.to.have.body(\"\");\r",
@@ -643,7 +649,7 @@
 						{
 							"listen": "test",
 							"script": {
-								"id": "895709cf-1687-45b0-beea-e5299eb14ef0",
+								"id": "e33aa922-dd6a-4632-bb08-18bc51a554cf",
 								"exec": [
 									"pm.test(\"All categories deleted\", function () {\r",
 									"    pm.response.to.have.body(\"\");\r",
@@ -685,7 +691,7 @@
 						{
 							"listen": "test",
 							"script": {
-								"id": "f0452b52-91eb-4e75-a747-3b929711f3e6",
+								"id": "4c737582-7c43-4601-8c40-03a5a89c7171",
 								"exec": [
 									"var jsonData = pm.response.json();\r",
 									"var categoryId = jsonData._id;\r",
@@ -708,7 +714,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\"name\": \"Dog friendly\"}",
+							"raw": "{\"name\": \"Dog friendly\",\r\n\"description\": \"You can bring your pooch with you.\"}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -734,7 +740,7 @@
 						{
 							"listen": "test",
 							"script": {
-								"id": "6ffb8e59-1d2a-4ba1-8fb5-47bb4252c4ab",
+								"id": "e8563c39-ee43-482c-8cf4-22371e58c8f1",
 								"exec": [
 									"var jsonData = pm.response.json();\r",
 									"var categoryId = jsonData._id;\r",
@@ -757,7 +763,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\"name\": \"Gluten free\"}",
+							"raw": "{\"name\": \"Gluten free\",\r\n\"description\": \"Makes food suitable for those on a gluten free diet.\"}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -783,7 +789,7 @@
 						{
 							"listen": "test",
 							"script": {
-								"id": "fb7bba06-16ac-484d-b3a8-55f889f89c12",
+								"id": "7613125a-2186-4f36-b1ad-c5bf548a83a1",
 								"exec": [
 									"var jsonData = pm.response.json();\r",
 									"var categoryId = jsonData._id;\r",
@@ -806,7 +812,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\"name\": \"Vegan friendly\"}",
+							"raw": "{\"name\": \"Vegan friendly\",\r\n\"description\": \"Makes food suitable for those on a vegan diet.\"}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -832,7 +838,7 @@
 						{
 							"listen": "prerequest",
 							"script": {
-								"id": "27476ac1-293e-444f-8ce9-feed38a4b3f5",
+								"id": "b14a29ce-33f8-45b4-a7b1-6fd44a976e72",
 								"exec": [
 									""
 								],
@@ -842,7 +848,7 @@
 						{
 							"listen": "test",
 							"script": {
-								"id": "518cc31f-c874-4d68-bdd6-4d6b54ddab32",
+								"id": "5d118c8a-0760-4d0a-9cfd-5b9ac1a346ea",
 								"exec": [
 									"var jsonBody = pm.response.json();\r",
 									"var category_id = pm.environment.get(\"category_id\");\r",
@@ -855,16 +861,19 @@
 									"        {\r",
 									"            \"_id\": category_id,\r",
 									"            \"name\": \"Dog friendly\",\r",
+									"            \"description\": \"You can bring your pooch with you.\",\r",
 									"            \"__v\": 0\r",
 									"        },\r",
 									"        {\r",
 									"            \"_id\": category_id2,\r",
 									"            \"name\": \"Gluten free\",\r",
+									"            \"description\": \"Makes food suitable for those on a gluten free diet.\",\r",
 									"            \"__v\": 0\r",
 									"        },\r",
 									"        {\r",
 									"            \"_id\": category_id3,\r",
 									"            \"name\": \"Vegan friendly\",\r",
+									"            \"description\": \"Makes food suitable for those on a vegan diet.\",\r",
 									"            \"__v\": 0\r",
 									"        }\r",
 									"    ]\r",
@@ -907,7 +916,7 @@
 						{
 							"listen": "test",
 							"script": {
-								"id": "94bcb85e-7f57-4b27-b772-bdbffe404134",
+								"id": "bd2b9524-004e-42f3-ac3f-df3fd5994f29",
 								"exec": [
 									"var category_id = pm.environment.get(\"category_id\");\r",
 									"\r",
@@ -949,7 +958,7 @@
 						{
 							"listen": "test",
 							"script": {
-								"id": "5473cb6a-6a2b-43eb-9aeb-54b1afb5f9c5",
+								"id": "fe6cefd1-7bdf-4139-97b8-369f67ad3f11",
 								"exec": [
 									"var category_id = pm.environment.get(\"category_id\");\r",
 									"\r",
@@ -999,7 +1008,7 @@
 						{
 							"listen": "test",
 							"script": {
-								"id": "149cb83e-d1da-442c-b439-eb1b47389ec2",
+								"id": "5748b177-b12c-41ec-80ad-ca3493542db7",
 								"exec": [
 									"pm.test(\"Correct status code\", function() {\r",
 									"\tpm.response.to.have.status(204);\r",
@@ -1037,7 +1046,7 @@
 						{
 							"listen": "test",
 							"script": {
-								"id": "df6a1d29-af02-49b7-87f2-e6712faf33a5",
+								"id": "5cda761f-46d0-4dd0-b5ca-4b45a04143a6",
 								"exec": [
 									"pm.test(\"All categories deleted\", function () {\r",
 									"    pm.response.to.have.body(\"\");\r",
@@ -1073,7 +1082,7 @@
 						{
 							"listen": "test",
 							"script": {
-								"id": "fa30399e-1644-4927-9166-c797df45d366",
+								"id": "9e60cc5b-c93d-4502-97d0-3c7c258341b2",
 								"exec": [
 									"pm.test(\"Correct status code\", function() {\r",
 									"\tpm.response.to.have.status(404);\r",
@@ -1106,7 +1115,7 @@
 						{
 							"listen": "test",
 							"script": {
-								"id": "c2cd77f6-79f4-43bc-9411-6d82b058bc74",
+								"id": "86fd57da-6c01-47ab-82ee-98c67b62310f",
 								"exec": [
 									"pm.test(\"Correct status code\", function () {\r",
 									"    pm.response.to.have.status(404);\r",
@@ -1148,7 +1157,7 @@
 						{
 							"listen": "test",
 							"script": {
-								"id": "1993e3ed-dc1b-43da-896e-07fce27fec0e",
+								"id": "46f0de50-375b-41b9-931d-d3dbd46bb88b",
 								"exec": [
 									"pm.test(\"Correct status code\", function() {\r",
 									"\tpm.response.to.have.status(404);\r",
@@ -1187,7 +1196,7 @@
 						{
 							"listen": "test",
 							"script": {
-								"id": "9fcbd77a-fdfd-4804-a4b4-b3a2989ab203",
+								"id": "724193b1-0a84-4004-aa2d-dfafa5716c0a",
 								"exec": [
 									"var jsonData = pm.response.json();\r",
 									"var userId = jsonData._id;\r",
@@ -1238,7 +1247,7 @@
 						{
 							"listen": "test",
 							"script": {
-								"id": "4def33df-bf62-4409-9687-5ece8e65a69d",
+								"id": "5e1caabc-8f90-4010-9f4a-e2bd8f40f8b4",
 								"exec": [
 									"var jsonData = pm.response.json();\r",
 									"var userId = jsonData._id;\r",
@@ -1289,7 +1298,7 @@
 						{
 							"listen": "test",
 							"script": {
-								"id": "846ca632-8056-49f2-b3c9-e7a3a2a72bdc",
+								"id": "51ee4538-c207-4198-b0ad-e18778b53f71",
 								"exec": [
 									"var jsonData = pm.response.json();\r",
 									"var userId = jsonData._id;\r",
@@ -1340,7 +1349,7 @@
 						{
 							"listen": "prerequest",
 							"script": {
-								"id": "5d46edbb-abf8-46a1-ac8e-0a8ca7ac77c0",
+								"id": "d7f9562f-e41c-49a1-b949-8deacc7a3d7c",
 								"exec": [
 									""
 								],
@@ -1350,7 +1359,7 @@
 						{
 							"listen": "test",
 							"script": {
-								"id": "f109e44c-36a7-4cc5-a630-6e5ed5bbbfed",
+								"id": "9c42ea56-4ddf-4fac-b3ec-92b63dbcc5c2",
 								"exec": [
 									"var jsonBody = pm.response.json();\r",
 									"var user_id = pm.environment.get(\"user_id\");\r",
@@ -1418,7 +1427,7 @@
 						{
 							"listen": "test",
 							"script": {
-								"id": "8dec5070-7bed-432b-bdd7-8e0e11f68c81",
+								"id": "1c7e05d3-2ba4-4739-baf7-e3e9616551f3",
 								"exec": [
 									"var user_id = pm.environment.get(\"user_id\");\r",
 									"\r",
@@ -1461,7 +1470,7 @@
 						{
 							"listen": "test",
 							"script": {
-								"id": "9c6cecfe-58d3-461c-870f-5bd00b9c4cb1",
+								"id": "8231be21-d78b-417e-8fe9-9dfdf70ddd0c",
 								"exec": [
 									"var jsonData = pm.response.json();\r",
 									"var userId = jsonData._id;\r",
@@ -1513,7 +1522,7 @@
 						{
 							"listen": "test",
 							"script": {
-								"id": "3351293a-3796-4426-bd4f-2351c98f5cbc",
+								"id": "160a72e0-a357-45cc-b58f-39252455c465",
 								"exec": [
 									"pm.test(\"Correct status code\", function() {\r",
 									"\tpm.response.to.have.status(204);\r",
@@ -1551,7 +1560,7 @@
 						{
 							"listen": "test",
 							"script": {
-								"id": "e7cfb71e-3496-4fc3-b37c-4dbe646551ba",
+								"id": "0d25b2d0-3cc1-4843-9a82-cb592c748303",
 								"exec": [
 									"pm.test(\"All users deleted\", function () {\r",
 									"    pm.response.to.have.body(\"\");\r",
@@ -1587,7 +1596,7 @@
 						{
 							"listen": "test",
 							"script": {
-								"id": "202d249e-2c3a-427f-9563-90567431f1a1",
+								"id": "32c7d8ed-cf7c-47e4-a0a3-d475c13bb855",
 								"exec": [
 									"pm.test(\"Correct status code\", function() {\r",
 									"\tpm.response.to.have.status(404);\r",
@@ -1620,7 +1629,7 @@
 						{
 							"listen": "test",
 							"script": {
-								"id": "6ddb1610-179d-4cb6-b409-4a1994c4a89f",
+								"id": "0054c986-d352-483e-ad1d-14c1e39ca771",
 								"exec": [
 									"pm.test(\"Correct status code\", function() {\r",
 									"\tpm.response.to.have.status(404);\r",
@@ -1653,7 +1662,7 @@
 						{
 							"listen": "test",
 							"script": {
-								"id": "cba9d4cb-36a9-4382-a4c7-50073b45e02b",
+								"id": "e5116613-e3bb-4040-af5e-8b8e4095acce",
 								"exec": [
 									"pm.test(\"Correct status code\", function () {\r",
 									"    pm.response.to.have.status(404);\r",
@@ -1701,7 +1710,7 @@
 						{
 							"listen": "test",
 							"script": {
-								"id": "567ad041-1828-4d39-9621-e3aa5ac4446a",
+								"id": "29b07156-2ccf-46b0-80af-fe5f973cc9f3",
 								"exec": [
 									"var jsonData = pm.response.json();\r",
 									"var cafeId = jsonData._id;\r",
@@ -1756,7 +1765,7 @@
 						{
 							"listen": "test",
 							"script": {
-								"id": "8b6b78e7-fc87-4c60-b73c-c6330d3644dc",
+								"id": "6450acc2-de71-4e28-aa7e-eba8583107e3",
 								"exec": [
 									"var jsonData = pm.response.json();\r",
 									"var cafeId = jsonData._id;\r",
@@ -1811,7 +1820,7 @@
 						{
 							"listen": "test",
 							"script": {
-								"id": "3d65b3bf-e6f1-4809-a3c4-3ddf861b4a50",
+								"id": "a04ab037-244b-4394-a489-de5b39411426",
 								"exec": [
 									"var jsonData = pm.response.json();\r",
 									"var cafeId = jsonData._id;\r",
@@ -1867,7 +1876,7 @@
 						{
 							"listen": "prerequest",
 							"script": {
-								"id": "12ea79b2-b510-47de-a45a-31c995781f5b",
+								"id": "6ce6049d-bda8-4e0b-95de-fb278ddfb9c5",
 								"exec": [
 									""
 								],
@@ -1877,7 +1886,7 @@
 						{
 							"listen": "test",
 							"script": {
-								"id": "857eb98f-a310-4776-9813-476af83c730c",
+								"id": "a234661b-5c0f-4e17-a1c3-a6cab3c41730",
 								"exec": [
 									"var jsonBody = pm.response.json();\r",
 									"var cafe_id = pm.environment.get(\"cafe_id\");\r",
@@ -1972,7 +1981,7 @@
 						{
 							"listen": "test",
 							"script": {
-								"id": "83881cad-c2d3-4fcc-9b62-a9e35430f45f",
+								"id": "27fce07b-bb4b-428e-b532-c22d90ab3994",
 								"exec": [
 									"var cafe_id = pm.environment.get(\"cafe_id\");\r",
 									"\r",
@@ -2020,7 +2029,7 @@
 						{
 							"listen": "test",
 							"script": {
-								"id": "6d78c56f-2b17-4a55-ad05-743d18b6d8da",
+								"id": "79a1e821-5aab-434d-9ea8-9ef97adc66fd",
 								"exec": [
 									"var jsonData = pm.response.json();\r",
 									"var userId = jsonData._id;\r",
@@ -2076,7 +2085,7 @@
 						{
 							"listen": "test",
 							"script": {
-								"id": "bfda3bab-31c6-466b-9c28-d57154d0e69b",
+								"id": "1dace056-d4a1-4e1b-8181-14da2bbd4478",
 								"exec": [
 									"var cafe_id = pm.environment.get(\"cafe_id\");\r",
 									"\r",
@@ -2126,7 +2135,7 @@
 						{
 							"listen": "test",
 							"script": {
-								"id": "eae308fa-8b4a-4595-bdab-96bfc6549730",
+								"id": "f16f0ade-4d0b-4e8e-ba9a-8ef6467ea330",
 								"exec": [
 									"pm.test(\"Correct status code\", function() {\r",
 									"\tpm.response.to.have.status(204);\r",
@@ -2164,7 +2173,7 @@
 						{
 							"listen": "test",
 							"script": {
-								"id": "6fae748b-3977-474f-80fd-dd876350a141",
+								"id": "d8cdb58d-15fa-4f8a-b076-c5e4e8cf3ac0",
 								"exec": [
 									"pm.test(\"All cafes deleted\", function () {\r",
 									"    pm.response.to.have.body(\"\");\r",
@@ -2200,7 +2209,7 @@
 						{
 							"listen": "test",
 							"script": {
-								"id": "d0ecb090-710e-4409-85fa-5ae6c4597447",
+								"id": "e81e49dd-2559-4d49-8ca8-7e6aea924c1b",
 								"exec": [
 									"pm.test(\"Correct status code\", function() {\r",
 									"\tpm.response.to.have.status(404);\r",
@@ -2233,7 +2242,7 @@
 						{
 							"listen": "test",
 							"script": {
-								"id": "6808549b-a2f8-4fea-b7d1-b57230d31545",
+								"id": "668d058e-6d80-445c-a418-a56206594d72",
 								"exec": [
 									"pm.test(\"Correct status code\", function () {\r",
 									"    pm.response.to.have.status(404);\r",
@@ -2275,7 +2284,7 @@
 						{
 							"listen": "test",
 							"script": {
-								"id": "d74770f6-17bf-4631-887e-36dcacfb71a6",
+								"id": "e8308f26-3eec-4d26-9c4c-b7b53cdecde0",
 								"exec": [
 									"pm.test(\"Correct status code\", function () {\r",
 									"    pm.response.to.have.status(404);\r",
@@ -2317,7 +2326,7 @@
 						{
 							"listen": "test",
 							"script": {
-								"id": "03aeebb1-761a-42b8-82de-a1f9d07090db",
+								"id": "21988d9f-836b-48a4-86b8-cc20020f130f",
 								"exec": [
 									"pm.test(\"Correct status code\", function() {\r",
 									"\tpm.response.to.have.status(404);\r",
@@ -2356,7 +2365,7 @@
 						{
 							"listen": "test",
 							"script": {
-								"id": "3c044b51-fc83-4d55-b4a6-4920ec52fd7a",
+								"id": "3641b597-8e49-402b-9bfb-6fda8fd49ace",
 								"exec": [
 									"var jsonData = pm.response.json();\r",
 									"var userId = jsonData._id;\r",
@@ -2406,7 +2415,7 @@
 						{
 							"listen": "test",
 							"script": {
-								"id": "e82fd052-cc53-48d4-b4f1-aeade6509a6c",
+								"id": "b5c2c072-b23e-4e46-8362-8b097bc960a7",
 								"exec": [
 									"var jsonData = pm.response.json();\r",
 									"var cafeId = jsonData._id;\r",
@@ -2461,7 +2470,7 @@
 						{
 							"listen": "test",
 							"script": {
-								"id": "31bec904-cc30-4920-917e-40c3abf89dd8",
+								"id": "76c0bdb7-6f23-4be8-9487-13a13f0b9dc0",
 								"exec": [
 									"var jsonData = pm.response.json();\r",
 									"var cafeId = pm.environment.get(\"cafe_id\");\r",
@@ -2519,7 +2528,7 @@
 						{
 							"listen": "test",
 							"script": {
-								"id": "c9d6641c-ac77-4dfe-a2a9-9cf61fb483b4",
+								"id": "f47c53a2-0267-4d54-a003-28db911a5dc2",
 								"exec": [
 									"var jsonData = pm.response.json();\r",
 									"var cafeId = pm.environment.get(\"cafe_id\");\r",
@@ -2577,7 +2586,7 @@
 						{
 							"listen": "prerequest",
 							"script": {
-								"id": "861eb256-b3ef-4bab-a6df-963fa8d2cd45",
+								"id": "afd73c74-fb74-47ad-aa50-bf16019b8176",
 								"exec": [
 									""
 								],
@@ -2587,7 +2596,7 @@
 						{
 							"listen": "test",
 							"script": {
-								"id": "4ca0900d-d57b-41c5-9a04-cbba7e5d5423",
+								"id": "2654f0de-ab92-46eb-bca2-f3ff78315273",
 								"exec": [
 									"var jsonBody = pm.response.json();\r",
 									"var userId = pm.environment.get(\"user_id\");\r",
@@ -2657,7 +2666,7 @@
 						{
 							"listen": "test",
 							"script": {
-								"id": "3637a967-c78f-45cd-8400-5b2c370d5ee6",
+								"id": "7826e957-8911-4290-b530-917e15afd96e",
 								"exec": [
 									"var reviewId = pm.environment.get(\"review_id\");\r",
 									"var userId = pm.environment.get(\"user_id\");\r",
@@ -2704,7 +2713,7 @@
 						{
 							"listen": "test",
 							"script": {
-								"id": "17f7af73-4ccc-4e0d-a381-0577723634ff",
+								"id": "701ccdfe-18a1-4e74-b1ec-4ab423836c56",
 								"exec": [
 									"pm.test(\"Correct status code\", function() {\r",
 									"\tpm.response.to.have.status(204);\r",
@@ -2744,7 +2753,7 @@
 						{
 							"listen": "test",
 							"script": {
-								"id": "c7192dcf-97cb-4f09-b466-2c3579075667",
+								"id": "93d09718-e2f1-45e5-a659-6356fb25d719",
 								"exec": [
 									"pm.test(\"All cafes deleted\", function () {\r",
 									"    pm.response.to.have.body(\"\");\r",
@@ -2780,7 +2789,7 @@
 						{
 							"listen": "test",
 							"script": {
-								"id": "991af2a3-eb55-4754-ba7d-b516be382e79",
+								"id": "b42a32af-e763-4517-a58a-d4bc43987d60",
 								"exec": [
 									"pm.test(\"Correct status code\", function() {\r",
 									"\tpm.response.to.have.status(204);\r",
@@ -2817,7 +2826,7 @@
 						{
 							"listen": "test",
 							"script": {
-								"id": "1c056ef1-91b0-4087-ac01-0ab63dd2aa2f",
+								"id": "b2341398-b289-4072-8901-3d1aa7f6affe",
 								"exec": [
 									"pm.test(\"Correct status code\", function() {\r",
 									"\tpm.response.to.have.status(204);\r",
@@ -2854,7 +2863,7 @@
 						{
 							"listen": "test",
 							"script": {
-								"id": "c51e6efd-395a-4e40-b6f8-c623e75c62cf",
+								"id": "9aec8918-eeec-4fd0-8e58-b98cdc13d43c",
 								"exec": [
 									"pm.test(\"Correct status code\", function() {\r",
 									"\tpm.response.to.have.status(404);\r",
@@ -2889,7 +2898,7 @@
 						{
 							"listen": "test",
 							"script": {
-								"id": "9c1e5bbf-7103-4850-9336-86345043cafb",
+								"id": "dadaf919-af3c-45a4-9635-39f1f35f474b",
 								"exec": [
 									"pm.test(\"Correct status code\", function() {\r",
 									"\tpm.response.to.have.status(404);\r",
@@ -2924,7 +2933,7 @@
 						{
 							"listen": "test",
 							"script": {
-								"id": "44637fb1-3f1f-47d3-ba51-84257725d837",
+								"id": "983d739e-f189-48a1-bf55-cbaddc5772c9",
 								"exec": [
 									"pm.test(\"Correct status code\", function() {\r",
 									"\tpm.response.to.have.status(404);\r",
@@ -2958,7 +2967,7 @@
 						{
 							"listen": "test",
 							"script": {
-								"id": "8c81c72d-f886-4ec9-b22b-fb7c3e7901b3",
+								"id": "c0cd1229-d133-4209-b289-128d6d91c3d3",
 								"exec": [
 									"pm.test(\"Correct status code\", function() {\r",
 									"\tpm.response.to.have.status(404);\r",
@@ -2995,7 +3004,7 @@
 		{
 			"listen": "prerequest",
 			"script": {
-				"id": "275a0b66-5d6a-4822-8de7-9e6600c909f7",
+				"id": "2c442646-54b8-453d-bf02-bdbbd4603428",
 				"type": "text/javascript",
 				"exec": [
 					""
@@ -3005,7 +3014,7 @@
 		{
 			"listen": "test",
 			"script": {
-				"id": "806703cf-7a33-4308-a056-ecba2d736f67",
+				"id": "f4203f55-a6ea-4d08-ad51-7c557fbbd8da",
 				"type": "text/javascript",
 				"exec": [
 					""
