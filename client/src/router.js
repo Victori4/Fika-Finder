@@ -3,6 +3,7 @@ import Router from 'vue-router'
 import Home from './views/Home.vue'
 import Cafes from './views/Cafes.vue'
 import Cafe from './views/Cafe.vue'
+import CafeForm from './views/CafeForm.vue'
 
 Vue.use(Router)
 
@@ -24,6 +25,11 @@ export default new Router({
       path: '/cafes/:id',
       name: 'cafe',
       component: Cafe
+    },
+    {
+      path: '/cafeform',
+      name: 'cafeform',
+      component: CafeForm
     }
   ]
 })
