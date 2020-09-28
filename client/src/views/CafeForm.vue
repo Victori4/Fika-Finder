@@ -49,6 +49,8 @@ import { Api } from '@/Api'
 
 export default {
   name: 'cafeform',
+  // mount get /categories
+  // template: v-for through categories key=_id display name for user
   data() {
     return {
       name: '',
