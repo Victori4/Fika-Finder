@@ -26,9 +26,9 @@
       </p>
 
       <p>
-          <label for="categories">Categories:</label>
-    <select v-model="categories">
-        <option v-for="category in categories.categories"
+        <label for="categories">Categories:</label>
+        <select id="categories" v-model="categories">
+         <option v-for="category in categoryOptions"
         :key="category._id" :value="category._id">{{ category.name }}</option>
       </select>
       </p>
@@ -64,8 +64,8 @@ export default {
     // Load the real cafes from the server
     Api.get('/categories')
       .then(response => {
-        // console.log(response.data)
-        this.categories = response.data
+        console.log(response.data.categories)
+        this.categoryOptions = response.data.categories
       })
       .catch(error => {
         this.message = error.message
@@ -87,6 +87,7 @@ export default {
       location: '',
       price: null, // ?
       categories: [],
+      categoryOptions: [],
       contact: {
         email: '',
         website: '',
