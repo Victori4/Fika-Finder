@@ -3,6 +3,8 @@
     <div id="nav">
       <router-link to="/">Home</router-link>
       <router-link to="/cafes">Cafes</router-link>
+      <router-link to="/categories">Categories</router-link>
+
     </div>
     <!-- Render the content of the current page view -->
     <router-view/>

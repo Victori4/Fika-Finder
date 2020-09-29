@@ -24,6 +24,12 @@
           <option>5</option>
         </select>
       </p>
+
+      <p>
+        <label for="categories">Categories:</label>
+        <b-form-select value-field="_id" :options="categories" text-field="name"></b-form-select>
+      </p>
+
        <p>
         <label for="phoneNumber">Phone number:</label>
         <input id="phoneNumber" v-model="contact.phoneNumber" placeholder="phoneNumber">
@@ -50,7 +56,27 @@ import { Api } from '@/Api'
 export default {
   name: 'cafeform',
   // mount get /categories
+  mounted() {
+    console.log('PAGE is loaded')
+    // Load the real cafes from the server
+    Api.get('/categories')
+      .then(response => {
+        // console.log(response.data)
+        this.categories = response.data
+      })
+      .catch(error => {
+        this.message = error.message
+        console.error(error)
+        this.categories = []
+        // TODO: display error message
+      })
+      .then(() => {
+        //   This code is always executed at the end. After success or failure.
+      })
+  },
+
   // template: v-for through categories key=_id display name for user
+
   data() {
     return {
       name: '',

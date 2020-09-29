@@ -69,6 +69,10 @@ router.patch('/api/cafes/:id', function(req, res, next) {
             return next(err); 
         }
         cafe.name = (req.body.name || cafe.name);
+        cafe.openingHours = (req.body.openingHours || cafe.openingHours);
+        cafe.location = (req.body.location  || cafe.location);
+        cafe.price = (req.body.price  || cafe.price);
+        cafe.contact = (req.body.contact  || cafe.contact);
         cafe.save();
         res.json(cafe);
     });
