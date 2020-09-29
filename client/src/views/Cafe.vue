@@ -3,11 +3,12 @@
     <h1>{{ cafe.name }}</h1>
     <b-button :href="'/updatecafe/' + cafe._id">Update cafe</b-button>
     <b-button :href="'/addareview/' + cafe._id">Add a review</b-button>
-    <p> {{ cafe._id }}</p>
+    <p>{{ cafe._id }}</p>
     <h2>Reviews</h2>
     <ul>
       <li v-for="review in reviews" v-bind:key="review._id">
             Rating: {{ review.rating }}, Comment: {{ review.comment }}
+            <b-button variant="danger" v-on:click="deleteReview">Delete</b-button>
           </li>
     </ul>
 </div>
@@ -18,7 +19,6 @@ import { Api } from '@/Api'
 
 export default {
   name: 'cafe',
-
   mounted() {
     console.log('PAGE is loaded')
     // Load the real cafes from the server
@@ -58,6 +58,18 @@ export default {
       reviews: [],
       message: '',
       text: ''
+    }
+  },
+  methods: {
+    deleteReview() {
+      Api.delete('/cafes/' + this.$route.params.id + '/reviews') // Get the review ID somehow
+        .then(response => {
+          this.message = response.data
+          // Remove review from reviews array on line 58
+        })
+        .catch(error => {
+          console.error(error)
+        })
     }
   }
 }
