@@ -5,6 +5,7 @@ import Cafes from './views/Cafes.vue'
 import Cafe from './views/Cafe.vue'
 import AddACafe from './views/AddaCafe.vue'
 import Categories from './views/Categories.vue'
+import UpdateCafe from './views/UpdateCafe.vue'
 
 Vue.use(Router)
 
@@ -31,6 +32,11 @@ export default new Router({
       path: '/addacafe',
       name: 'addacafe',
       component: AddACafe
+    },
+    {
+      path: '/updatecafe/:id',
+      name: 'updatecafe',
+      component: UpdateCafe
     },
     {
       path: '/categories',

@@ -1,7 +1,8 @@
 <template>
 <div>
-    <h1>Cafe page {{ $route.params.id }}</h1>
-    <p> {{ cafe.name }}</p>
+    <h1>{{ cafe.name }}</h1>
+    <b-button :href="'/updatecafe/' + cafe._id">Update cafe</b-button>
+    <p> {{ cafe._id }}</p>
 </div>
 </template>
 
