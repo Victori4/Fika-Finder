@@ -72,6 +72,7 @@ router.patch('/api/cafes/:id', function(req, res, next) {
         cafe.openingHours = (req.body.openingHours || cafe.openingHours);
         cafe.location = (req.body.location  || cafe.location);
         cafe.price = (req.body.price  || cafe.price);
+        cafe.categories = (req.body.categories  || cafe.categories);
         cafe.contact = (req.body.contact  || cafe.contact);
         cafe.save();
         res.json(cafe);
@@ -90,6 +91,7 @@ router.put('/api/cafes/:id', function(req, res, next) {
         cafe.openingHours = req.body.openingHours;
         cafe.location = req.body.location;
         cafe.price = req.body.price;
+        cafe.categories = req.body.categories;
         cafe.contact = req.body.contact;
         cafe.save();
         res.json(cafe);

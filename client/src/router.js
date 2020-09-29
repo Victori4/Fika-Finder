@@ -3,7 +3,7 @@ import Router from 'vue-router'
 import Home from './views/Home.vue'
 import Cafes from './views/Cafes.vue'
 import Cafe from './views/Cafe.vue'
-import CafeForm from './views/CafeForm.vue'
+import AddACafe from './views/AddaCafe.vue'
 import Categories from './views/Categories.vue'
 
 Vue.use(Router)
@@ -28,9 +28,9 @@ export default new Router({
       component: Cafe
     },
     {
-      path: '/cafeform',
-      name: 'cafeform',
-      component: CafeForm
+      path: '/addacafe',
+      name: 'addacafe',
+      component: AddACafe
     },
     {
       path: '/categories',

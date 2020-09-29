@@ -1,6 +1,6 @@
 <template>
     <div>
-      <b-button href="/cafeform">Add new cafe</b-button>
+      <b-button href="/addacafe">Add new cafe</b-button>
       <ul>
           <li v-for="cafe in cafes" v-bind:key="cafe._id">
             <a :href="'/cafes/' + cafe._id">{{ cafe.name }}</a>

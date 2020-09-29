@@ -1,22 +1,21 @@
 <template>
 <div>
-    <h1>Cafe Form</h1>
-    <form @submit.prevent="createCafe">
+    <form @submit.prevent="$emit('submitted-cafe', cafe)">
       <p>
         <label for="name">Name:</label>
-        <input id="name" v-model="name" placeholder="name">
+        <input id="name" v-model="cafe.name" placeholder="name">
       </p>
       <p>
         <label for="openingHours">Opening hours:</label>
-        <input id="openingHours" v-model="openingHours" placeholder="openingHours">
+        <input id="openingHours" v-model="cafe.openingHours" placeholder="openingHours">
       </p>
       <p>
         <label for="location">Location:</label>
-        <input id="location" v-model="location" placeholder="location">
+        <input id="location" v-model="cafe.location" placeholder="location">
       </p>
       <p>
         <label for="price">Price:</label>
-        <select id="price" v-model.number="price">
+        <select id="price" v-model.number="cafe.price">
           <option>1</option>
           <option>2</option>
           <option>3</option>
@@ -27,7 +26,7 @@
 
       <p>
         <label for="categories">Categories:</label>
-        <select id="categories" v-model="categories">
+        <select id="categories" v-model="cafe.categories">
          <option v-for="category in categoryOptions"
         :key="category._id" :value="category._id">{{ category.name }}</option>
       </select>
@@ -35,15 +34,15 @@
 
        <p>
         <label for="phoneNumber">Phone number:</label>
-        <input id="phoneNumber" v-model="contact.phoneNumber" placeholder="phoneNumber">
+        <input id="phoneNumber" v-model="cafe.contact.phoneNumber" placeholder="phoneNumber">
       </p>
       <p>
         <label for="website">Website:</label>
-        <input id="website" v-model="contact.website" placeholder="website">
+        <input id="website" v-model="cafe.contact.website" placeholder="website">
       </p>
       <p>
         <label for="email">Email:</label>
-        <input id="email" v-model="contact.email" placeholder="email">
+        <input id="email" v-model="cafe.contact.email" placeholder="email">
       </p>
 
       <p>
@@ -54,13 +53,15 @@
 </template>
 
 <script>
+
 import { Api } from '@/Api'
 
 export default {
   name: 'cafeform',
-  // mount get /categories
+  props: ['cafe'],
+
   mounted() {
-    console.log('PAGE is loaded')
+    console.log('FORM is loaded')
     // Load the real cafes from the server
     Api.get('/categories')
       .then(response => {
@@ -78,8 +79,6 @@ export default {
       })
   },
 
-  // template: v-for through categories key=_id display name for user
-
   data() {
     return {
       name: '',
@@ -93,35 +92,6 @@ export default {
         website: '',
         phoneNumber: ''
       }
-    }
-  },
-  methods: {
-    createCafe() {
-      const cafe = {
-        name: this.name,
-        openingHours: this.openingHours,
-        location: this.location,
-        price: this.price, // ?
-        categories: this.categories,
-        contact: {
-          email: this.contact.email,
-          website: this.contact.website,
-          phoneNumber: this.contact.phoneNumber
-        }
-      }
-      Api.post('/cafes', cafe)
-        .then(response => {
-          console.log(response.data)
-        })
-        .catch(error => {
-          this.message = error.message
-          console.error(error)
-          this.cafes = []
-        // TODO: display error message
-        })
-        .then(() => {
-        //   This code is always executed at the end. After success or failure.
-        })
     }
   }
 }
