@@ -26,8 +26,11 @@
       </p>
 
       <p>
-        <label for="categories">Categories:</label>
-        <b-form-select value-field="_id" :options="categories" text-field="name"></b-form-select>
+          <label for="categories">Categories:</label>
+    <select v-model="categories">
+        <option v-for="category in categories.categories"
+        :key="category._id" :value="category._id">{{ category.name }}</option>
+      </select>
       </p>
 
        <p>
