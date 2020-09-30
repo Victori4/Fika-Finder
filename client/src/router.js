@@ -7,6 +7,7 @@ import AddACafe from './views/AddaCafe.vue'
 import Categories from './views/Categories.vue'
 import UpdateCafe from './views/UpdateCafe.vue'
 import AddReview from './views/AddaReview.vue'
+import Login from './views/Login.vue'
 
 Vue.use(Router)
 
@@ -48,6 +49,11 @@ export default new Router({
       path: '/categories',
       name: 'categories',
       component: Categories
+    },
+    {
+      path: '/login',
+      name: 'login',
+      component: Login
     }
   ]
 })
