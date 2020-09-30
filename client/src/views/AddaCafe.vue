@@ -50,6 +50,14 @@ export default {
       Api.post('/cafes', cafe)
         .then(response => {
           console.log(response.data)
+          this.cafe.name = ''
+          this.cafe.openingHours = ''
+          this.cafe.location = ''
+          this.cafe.price = null
+          this.cafe.categories = []
+          this.cafe.contact.email = ''
+          this.cafe.contact.website = ''
+          this.cafe.contact.phoneNumber = ''
         })
         .catch(error => {
           this.message = error.message
