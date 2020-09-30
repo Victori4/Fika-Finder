@@ -1,6 +1,6 @@
 {
 	"info": {
-		"_postman_id": "c1f976d9-e606-4b5e-ac6c-f8d712fdc7c7",
+		"_postman_id": "a10196c9-f4b0-4a01-ae8d-4420c23e25fd",
 		"name": "server",
 		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
 	},
@@ -14,7 +14,7 @@
 						{
 							"listen": "test",
 							"script": {
-								"id": "487de963-41dc-4970-8180-6293797d20c1",
+								"id": "bd9ccb54-0778-4bb5-91b6-6b6f75129233",
 								"exec": [
 									"var jsonData = pm.response.json();\r",
 									"var categoryId = jsonData._id;\r",
@@ -63,7 +63,7 @@
 						{
 							"listen": "test",
 							"script": {
-								"id": "1b30ff3d-b8e1-4208-a501-476cb5c91e70",
+								"id": "c531addd-fae3-42d7-a48f-789aab6997e9",
 								"exec": [
 									"var jsonData = pm.response.json();\r",
 									"var categoryId = jsonData._id;\r",
@@ -112,7 +112,7 @@
 						{
 							"listen": "test",
 							"script": {
-								"id": "593fb757-63f4-49a6-bdcd-f43b23929ec5",
+								"id": "63efcafa-4453-46db-bae9-a40f19675a9a",
 								"exec": [
 									"var jsonData = pm.response.json();\r",
 									"var categoryId = jsonData._id;\r",
@@ -161,7 +161,7 @@
 						{
 							"listen": "test",
 							"script": {
-								"id": "bc7a5728-dda8-4c0d-81ce-f819b47ffef2",
+								"id": "ba5e3f8d-b7d5-4ca7-9e04-de57fcefda3f",
 								"exec": [
 									"var jsonData = pm.response.json();\r",
 									"var cafeId = jsonData._id;\r",
@@ -217,7 +217,7 @@
 						{
 							"listen": "test",
 							"script": {
-								"id": "6effad4e-1031-4e55-82a0-6e9df9eb5289",
+								"id": "6213bfcc-ea92-435d-85e2-b8edbc4a4eba",
 								"exec": [
 									"var jsonData = pm.response.json();\r",
 									"var cafeId = jsonData._id;\r",
@@ -272,7 +272,7 @@
 						{
 							"listen": "test",
 							"script": {
-								"id": "62a14aeb-a9bb-4b44-b7b3-592b3d937f69",
+								"id": "fb9e5694-4fec-430b-959c-e125007ed073",
 								"exec": [
 									"var jsonData = pm.response.json();\r",
 									"var cafeId = jsonData._id;\r",
@@ -328,7 +328,7 @@
 						{
 							"listen": "prerequest",
 							"script": {
-								"id": "fc9fb68c-22e5-4afa-92e2-59d24a713cd1",
+								"id": "048544c2-f5ba-4346-99f0-e543619845de",
 								"exec": [
 									""
 								],
@@ -338,7 +338,7 @@
 						{
 							"listen": "test",
 							"script": {
-								"id": "0191ba02-6d45-4bab-88b6-b9dd1463a522",
+								"id": "72043ac4-a882-41aa-ac0c-ced3b9404eac",
 								"exec": [
 									"var jsonBody = pm.response.json();\r",
 									"var cafe_id = pm.environment.get(\"cafe_id\");\r",
@@ -463,7 +463,7 @@
 						{
 							"listen": "prerequest",
 							"script": {
-								"id": "9900f38f-36c9-408a-8e27-2a5aa3545826",
+								"id": "1a78e45c-6648-4dee-b999-0132a00d2d7d",
 								"exec": [
 									""
 								],
@@ -473,7 +473,7 @@
 						{
 							"listen": "test",
 							"script": {
-								"id": "ab1a3b78-6dc4-48e0-99ec-9417c4195ffd",
+								"id": "712238bd-ad2b-43a8-9713-1895d9dc685d",
 								"exec": [
 									"var jsonBody = pm.response.json();\r",
 									"var cafe_id = pm.environment.get(\"cafe_id\");\r",
@@ -550,7 +550,7 @@
 						{
 							"listen": "test",
 							"script": {
-								"id": "4483fb12-4c11-461b-a358-716d2e602048",
+								"id": "f4d52f79-5414-40f3-aff4-c581f237f26b",
 								"exec": [
 									"var cafe_id = pm.environment.get(\"cafe_id\");\r",
 									"var category_id = pm.environment.get(\"category_id\");\r",
@@ -613,7 +613,7 @@
 						{
 							"listen": "test",
 							"script": {
-								"id": "fb152201-c0a9-4d11-80ac-ff63b6966505",
+								"id": "6ce6df65-7dea-4a9d-88e8-cdbebd48032e",
 								"exec": [
 									"pm.test(\"All cafes deleted\", function () {\r",
 									"    pm.response.to.have.body(\"\");\r",
@@ -649,7 +649,7 @@
 						{
 							"listen": "test",
 							"script": {
-								"id": "e33aa922-dd6a-4632-bb08-18bc51a554cf",
+								"id": "53530122-aea4-47e1-a331-cb565ee3eb57",
 								"exec": [
 									"pm.test(\"All categories deleted\", function () {\r",
 									"    pm.response.to.have.body(\"\");\r",
@@ -691,7 +691,7 @@
 						{
 							"listen": "test",
 							"script": {
-								"id": "4c737582-7c43-4601-8c40-03a5a89c7171",
+								"id": "5bb840c4-c0e3-448b-992f-0ce04d2ffaf2",
 								"exec": [
 									"var jsonData = pm.response.json();\r",
 									"var categoryId = jsonData._id;\r",
@@ -740,7 +740,7 @@
 						{
 							"listen": "test",
 							"script": {
-								"id": "e8563c39-ee43-482c-8cf4-22371e58c8f1",
+								"id": "f76e5466-2cce-4145-b2c1-da4a7350ba58",
 								"exec": [
 									"var jsonData = pm.response.json();\r",
 									"var categoryId = jsonData._id;\r",
@@ -789,7 +789,7 @@
 						{
 							"listen": "test",
 							"script": {
-								"id": "7613125a-2186-4f36-b1ad-c5bf548a83a1",
+								"id": "285455d5-5b6c-4961-ae33-0bfa199241d7",
 								"exec": [
 									"var jsonData = pm.response.json();\r",
 									"var categoryId = jsonData._id;\r",
@@ -838,7 +838,7 @@
 						{
 							"listen": "prerequest",
 							"script": {
-								"id": "b14a29ce-33f8-45b4-a7b1-6fd44a976e72",
+								"id": "c82da6eb-77e9-4b30-80aa-d3423aa72968",
 								"exec": [
 									""
 								],
@@ -848,7 +848,7 @@
 						{
 							"listen": "test",
 							"script": {
-								"id": "5d118c8a-0760-4d0a-9cfd-5b9ac1a346ea",
+								"id": "09ddb421-8396-4037-860c-35734df6aace",
 								"exec": [
 									"var jsonBody = pm.response.json();\r",
 									"var category_id = pm.environment.get(\"category_id\");\r",
@@ -916,7 +916,7 @@
 						{
 							"listen": "test",
 							"script": {
-								"id": "bd2b9524-004e-42f3-ac3f-df3fd5994f29",
+								"id": "3d7ccb26-d837-418b-886c-5d5e379efbb2",
 								"exec": [
 									"var category_id = pm.environment.get(\"category_id\");\r",
 									"\r",
@@ -958,7 +958,7 @@
 						{
 							"listen": "test",
 							"script": {
-								"id": "fe6cefd1-7bdf-4139-97b8-369f67ad3f11",
+								"id": "0c53bf10-8f6c-4ff4-b975-ba27788a5e40",
 								"exec": [
 									"var category_id = pm.environment.get(\"category_id\");\r",
 									"\r",
@@ -1008,7 +1008,7 @@
 						{
 							"listen": "test",
 							"script": {
-								"id": "5748b177-b12c-41ec-80ad-ca3493542db7",
+								"id": "d8eac3ee-a28d-4655-98ec-d82ffbd2c061",
 								"exec": [
 									"pm.test(\"Correct status code\", function() {\r",
 									"\tpm.response.to.have.status(204);\r",
@@ -1046,7 +1046,7 @@
 						{
 							"listen": "test",
 							"script": {
-								"id": "5cda761f-46d0-4dd0-b5ca-4b45a04143a6",
+								"id": "a33d3ef4-8bf2-416c-9354-061c59f7f5a8",
 								"exec": [
 									"pm.test(\"All categories deleted\", function () {\r",
 									"    pm.response.to.have.body(\"\");\r",
@@ -1082,7 +1082,7 @@
 						{
 							"listen": "test",
 							"script": {
-								"id": "9e60cc5b-c93d-4502-97d0-3c7c258341b2",
+								"id": "0c5eef7f-dc17-41ee-9d74-2b4ecfa31c05",
 								"exec": [
 									"pm.test(\"Correct status code\", function() {\r",
 									"\tpm.response.to.have.status(404);\r",
@@ -1115,7 +1115,7 @@
 						{
 							"listen": "test",
 							"script": {
-								"id": "86fd57da-6c01-47ab-82ee-98c67b62310f",
+								"id": "53de28b7-0324-4fe5-985f-0da5324db90b",
 								"exec": [
 									"pm.test(\"Correct status code\", function () {\r",
 									"    pm.response.to.have.status(404);\r",
@@ -1157,7 +1157,7 @@
 						{
 							"listen": "test",
 							"script": {
-								"id": "46f0de50-375b-41b9-931d-d3dbd46bb88b",
+								"id": "2e77bbf6-f575-482f-9f38-0417aa82e2e7",
 								"exec": [
 									"pm.test(\"Correct status code\", function() {\r",
 									"\tpm.response.to.have.status(404);\r",
@@ -1196,7 +1196,7 @@
 						{
 							"listen": "test",
 							"script": {
-								"id": "724193b1-0a84-4004-aa2d-dfafa5716c0a",
+								"id": "08c141f2-9188-4c8b-80ca-4a53f6b2e79d",
 								"exec": [
 									"var jsonData = pm.response.json();\r",
 									"var userId = jsonData._id;\r",
@@ -1247,7 +1247,7 @@
 						{
 							"listen": "test",
 							"script": {
-								"id": "5e1caabc-8f90-4010-9f4a-e2bd8f40f8b4",
+								"id": "4edf7482-8128-41f3-b673-3a650ca18cd6",
 								"exec": [
 									"var jsonData = pm.response.json();\r",
 									"var userId = jsonData._id;\r",
@@ -1298,7 +1298,7 @@
 						{
 							"listen": "test",
 							"script": {
-								"id": "51ee4538-c207-4198-b0ad-e18778b53f71",
+								"id": "58dbdf7e-d18c-4d88-8de9-3bc0bc99d57f",
 								"exec": [
 									"var jsonData = pm.response.json();\r",
 									"var userId = jsonData._id;\r",
@@ -1349,7 +1349,7 @@
 						{
 							"listen": "prerequest",
 							"script": {
-								"id": "d7f9562f-e41c-49a1-b949-8deacc7a3d7c",
+								"id": "c268f963-08f7-4c52-8221-5a7b38570199",
 								"exec": [
 									""
 								],
@@ -1359,7 +1359,7 @@
 						{
 							"listen": "test",
 							"script": {
-								"id": "9c42ea56-4ddf-4fac-b3ec-92b63dbcc5c2",
+								"id": "35ee2d08-b21c-4faf-a351-64a248045ff5",
 								"exec": [
 									"var jsonBody = pm.response.json();\r",
 									"var user_id = pm.environment.get(\"user_id\");\r",
@@ -1427,7 +1427,7 @@
 						{
 							"listen": "test",
 							"script": {
-								"id": "1c7e05d3-2ba4-4739-baf7-e3e9616551f3",
+								"id": "20bf00ef-e5bf-42d0-92d9-c9116671c5fc",
 								"exec": [
 									"var user_id = pm.environment.get(\"user_id\");\r",
 									"\r",
@@ -1470,7 +1470,7 @@
 						{
 							"listen": "test",
 							"script": {
-								"id": "8231be21-d78b-417e-8fe9-9dfdf70ddd0c",
+								"id": "2bd80df8-b84a-449c-bf85-e996657847d8",
 								"exec": [
 									"var jsonData = pm.response.json();\r",
 									"var userId = jsonData._id;\r",
@@ -1522,7 +1522,7 @@
 						{
 							"listen": "test",
 							"script": {
-								"id": "160a72e0-a357-45cc-b58f-39252455c465",
+								"id": "33b6896f-4aaa-48ae-85b0-7581f320d565",
 								"exec": [
 									"pm.test(\"Correct status code\", function() {\r",
 									"\tpm.response.to.have.status(204);\r",
@@ -1560,7 +1560,7 @@
 						{
 							"listen": "test",
 							"script": {
-								"id": "0d25b2d0-3cc1-4843-9a82-cb592c748303",
+								"id": "d8e06597-9b27-40ab-b725-4844f7b02400",
 								"exec": [
 									"pm.test(\"All users deleted\", function () {\r",
 									"    pm.response.to.have.body(\"\");\r",
@@ -1596,7 +1596,7 @@
 						{
 							"listen": "test",
 							"script": {
-								"id": "32c7d8ed-cf7c-47e4-a0a3-d475c13bb855",
+								"id": "cf3e7ef3-b5bc-4588-985e-f2ff67cfc049",
 								"exec": [
 									"pm.test(\"Correct status code\", function() {\r",
 									"\tpm.response.to.have.status(404);\r",
@@ -1629,7 +1629,7 @@
 						{
 							"listen": "test",
 							"script": {
-								"id": "0054c986-d352-483e-ad1d-14c1e39ca771",
+								"id": "d77368dc-c053-4d0b-8be0-cf3f3563e379",
 								"exec": [
 									"pm.test(\"Correct status code\", function() {\r",
 									"\tpm.response.to.have.status(404);\r",
@@ -1662,7 +1662,7 @@
 						{
 							"listen": "test",
 							"script": {
-								"id": "e5116613-e3bb-4040-af5e-8b8e4095acce",
+								"id": "d6443385-4038-4fb1-8e52-ce8c917efabb",
 								"exec": [
 									"pm.test(\"Correct status code\", function () {\r",
 									"    pm.response.to.have.status(404);\r",
@@ -1710,7 +1710,7 @@
 						{
 							"listen": "test",
 							"script": {
-								"id": "29b07156-2ccf-46b0-80af-fe5f973cc9f3",
+								"id": "335aff8b-2e5e-4c3f-9a62-71822977c92f",
 								"exec": [
 									"var jsonData = pm.response.json();\r",
 									"var cafeId = jsonData._id;\r",
@@ -1765,7 +1765,7 @@
 						{
 							"listen": "test",
 							"script": {
-								"id": "6450acc2-de71-4e28-aa7e-eba8583107e3",
+								"id": "741593b5-1a24-4bf5-84d7-94d4d9dc58a5",
 								"exec": [
 									"var jsonData = pm.response.json();\r",
 									"var cafeId = jsonData._id;\r",
@@ -1820,7 +1820,7 @@
 						{
 							"listen": "test",
 							"script": {
-								"id": "a04ab037-244b-4394-a489-de5b39411426",
+								"id": "5747b507-7666-4f13-ab68-216004c9e2d9",
 								"exec": [
 									"var jsonData = pm.response.json();\r",
 									"var cafeId = jsonData._id;\r",
@@ -1876,7 +1876,7 @@
 						{
 							"listen": "prerequest",
 							"script": {
-								"id": "6ce6049d-bda8-4e0b-95de-fb278ddfb9c5",
+								"id": "2b3237a5-7e16-493f-ad1a-e32e98a6d0ad",
 								"exec": [
 									""
 								],
@@ -1886,7 +1886,7 @@
 						{
 							"listen": "test",
 							"script": {
-								"id": "a234661b-5c0f-4e17-a1c3-a6cab3c41730",
+								"id": "247a0b1a-7219-42e1-8544-01d842493851",
 								"exec": [
 									"var jsonBody = pm.response.json();\r",
 									"var cafe_id = pm.environment.get(\"cafe_id\");\r",
@@ -1981,7 +1981,7 @@
 						{
 							"listen": "test",
 							"script": {
-								"id": "27fce07b-bb4b-428e-b532-c22d90ab3994",
+								"id": "49d2cb1e-acf8-406f-961e-26b831c16f82",
 								"exec": [
 									"var cafe_id = pm.environment.get(\"cafe_id\");\r",
 									"\r",
@@ -2029,7 +2029,7 @@
 						{
 							"listen": "test",
 							"script": {
-								"id": "79a1e821-5aab-434d-9ea8-9ef97adc66fd",
+								"id": "db130109-b177-4d47-8100-95506b2c7f6c",
 								"exec": [
 									"var jsonData = pm.response.json();\r",
 									"var userId = jsonData._id;\r",
@@ -2085,7 +2085,7 @@
 						{
 							"listen": "test",
 							"script": {
-								"id": "1dace056-d4a1-4e1b-8181-14da2bbd4478",
+								"id": "a7e0f280-c8f1-4e19-b5fe-3b6747568ba7",
 								"exec": [
 									"var cafe_id = pm.environment.get(\"cafe_id\");\r",
 									"\r",
@@ -2135,7 +2135,7 @@
 						{
 							"listen": "test",
 							"script": {
-								"id": "f16f0ade-4d0b-4e8e-ba9a-8ef6467ea330",
+								"id": "32640512-61d3-4cb9-bb70-ff40c525f5da",
 								"exec": [
 									"pm.test(\"Correct status code\", function() {\r",
 									"\tpm.response.to.have.status(204);\r",
@@ -2173,7 +2173,7 @@
 						{
 							"listen": "test",
 							"script": {
-								"id": "d8cdb58d-15fa-4f8a-b076-c5e4e8cf3ac0",
+								"id": "2c8ddbf4-1e28-4516-a5d0-eb703d1befe0",
 								"exec": [
 									"pm.test(\"All cafes deleted\", function () {\r",
 									"    pm.response.to.have.body(\"\");\r",
@@ -2209,7 +2209,7 @@
 						{
 							"listen": "test",
 							"script": {
-								"id": "e81e49dd-2559-4d49-8ca8-7e6aea924c1b",
+								"id": "010bcba5-9e11-4512-950f-b5924c02e312",
 								"exec": [
 									"pm.test(\"Correct status code\", function() {\r",
 									"\tpm.response.to.have.status(404);\r",
@@ -2242,7 +2242,7 @@
 						{
 							"listen": "test",
 							"script": {
-								"id": "668d058e-6d80-445c-a418-a56206594d72",
+								"id": "b952d1d5-00be-4962-b77b-73e0501676cb",
 								"exec": [
 									"pm.test(\"Correct status code\", function () {\r",
 									"    pm.response.to.have.status(404);\r",
@@ -2284,7 +2284,7 @@
 						{
 							"listen": "test",
 							"script": {
-								"id": "e8308f26-3eec-4d26-9c4c-b7b53cdecde0",
+								"id": "fbedf2e7-681f-4bbb-9960-1a533d525f1b",
 								"exec": [
 									"pm.test(\"Correct status code\", function () {\r",
 									"    pm.response.to.have.status(404);\r",
@@ -2326,7 +2326,7 @@
 						{
 							"listen": "test",
 							"script": {
-								"id": "21988d9f-836b-48a4-86b8-cc20020f130f",
+								"id": "7b8c694e-b055-4e2d-abc1-056d26ffff55",
 								"exec": [
 									"pm.test(\"Correct status code\", function() {\r",
 									"\tpm.response.to.have.status(404);\r",
@@ -2365,7 +2365,7 @@
 						{
 							"listen": "test",
 							"script": {
-								"id": "3641b597-8e49-402b-9bfb-6fda8fd49ace",
+								"id": "086e5db7-bf9c-47d9-b7e4-edff6c6cbc0b",
 								"exec": [
 									"var jsonData = pm.response.json();\r",
 									"var userId = jsonData._id;\r",
@@ -2415,7 +2415,7 @@
 						{
 							"listen": "test",
 							"script": {
-								"id": "b5c2c072-b23e-4e46-8362-8b097bc960a7",
+								"id": "c4e2d795-f6e9-4a24-9fb1-4fedfacc9f5b",
 								"exec": [
 									"var jsonData = pm.response.json();\r",
 									"var cafeId = jsonData._id;\r",
@@ -2470,7 +2470,7 @@
 						{
 							"listen": "test",
 							"script": {
-								"id": "76c0bdb7-6f23-4be8-9487-13a13f0b9dc0",
+								"id": "f4569ca6-8b49-46aa-ad91-d818d5ddf5e9",
 								"exec": [
 									"var jsonData = pm.response.json();\r",
 									"var cafeId = pm.environment.get(\"cafe_id\");\r",
@@ -2528,7 +2528,7 @@
 						{
 							"listen": "test",
 							"script": {
-								"id": "f47c53a2-0267-4d54-a003-28db911a5dc2",
+								"id": "1a6a8860-07d5-4d66-ad23-53abfc0db5c4",
 								"exec": [
 									"var jsonData = pm.response.json();\r",
 									"var cafeId = pm.environment.get(\"cafe_id\");\r",
@@ -2540,13 +2540,6 @@
 									"\r",
 									"pm.test(\"Correct status code\", function () {\r",
 									"    pm.response.to.have.status(201);\r",
-									"});\r",
-									"\r",
-									"pm.test(\"Correct review response\", function () {\r",
-									"    pm.expect(jsonData.rating).to.eql(1);\r",
-									"    pm.expect(jsonData.comment).to.eql(\"Worst cafe ever!\");\r",
-									"    pm.expect(jsonData.user).to.eql(userId);\r",
-									"    pm.expect(jsonData.cafe).to.eql(cafeId);\r",
 									"});"
 								],
 								"type": "text/javascript"
@@ -2586,7 +2579,7 @@
 						{
 							"listen": "prerequest",
 							"script": {
-								"id": "afd73c74-fb74-47ad-aa50-bf16019b8176",
+								"id": "cbcdba42-e2fd-42b3-a59d-01481b29b27e",
 								"exec": [
 									""
 								],
@@ -2596,7 +2589,7 @@
 						{
 							"listen": "test",
 							"script": {
-								"id": "2654f0de-ab92-46eb-bca2-f3ff78315273",
+								"id": "c560ca21-f789-4952-a7ba-6bd9f0047ec9",
 								"exec": [
 									"var jsonBody = pm.response.json();\r",
 									"var userId = pm.environment.get(\"user_id\");\r",
@@ -2666,7 +2659,7 @@
 						{
 							"listen": "test",
 							"script": {
-								"id": "7826e957-8911-4290-b530-917e15afd96e",
+								"id": "2edcaeeb-f4b6-43dc-a86b-a368f61ed1f0",
 								"exec": [
 									"var reviewId = pm.environment.get(\"review_id\");\r",
 									"var userId = pm.environment.get(\"user_id\");\r",
@@ -2713,7 +2706,7 @@
 						{
 							"listen": "test",
 							"script": {
-								"id": "701ccdfe-18a1-4e74-b1ec-4ab423836c56",
+								"id": "46afd0df-559c-4522-8ab7-f68727817e42",
 								"exec": [
 									"pm.test(\"Correct status code\", function() {\r",
 									"\tpm.response.to.have.status(204);\r",
@@ -2753,7 +2746,7 @@
 						{
 							"listen": "test",
 							"script": {
-								"id": "93d09718-e2f1-45e5-a659-6356fb25d719",
+								"id": "437b30e0-ac01-4ec6-8c88-58fa09cfc841",
 								"exec": [
 									"pm.test(\"All cafes deleted\", function () {\r",
 									"    pm.response.to.have.body(\"\");\r",
@@ -2789,7 +2782,7 @@
 						{
 							"listen": "test",
 							"script": {
-								"id": "b42a32af-e763-4517-a58a-d4bc43987d60",
+								"id": "c97583ad-9ef0-4cb2-981e-d10ad896c18b",
 								"exec": [
 									"pm.test(\"Correct status code\", function() {\r",
 									"\tpm.response.to.have.status(204);\r",
@@ -2826,7 +2819,7 @@
 						{
 							"listen": "test",
 							"script": {
-								"id": "b2341398-b289-4072-8901-3d1aa7f6affe",
+								"id": "2605947d-4838-44e3-8659-74d696630c30",
 								"exec": [
 									"pm.test(\"Correct status code\", function() {\r",
 									"\tpm.response.to.have.status(204);\r",
@@ -2863,7 +2856,7 @@
 						{
 							"listen": "test",
 							"script": {
-								"id": "9aec8918-eeec-4fd0-8e58-b98cdc13d43c",
+								"id": "fac7872e-aad7-4205-848f-3ce888874730",
 								"exec": [
 									"pm.test(\"Correct status code\", function() {\r",
 									"\tpm.response.to.have.status(404);\r",
@@ -2898,7 +2891,7 @@
 						{
 							"listen": "test",
 							"script": {
-								"id": "dadaf919-af3c-45a4-9635-39f1f35f474b",
+								"id": "02d903a4-e8ec-44d6-b434-d6ef2c1d7752",
 								"exec": [
 									"pm.test(\"Correct status code\", function() {\r",
 									"\tpm.response.to.have.status(404);\r",
@@ -2933,7 +2926,7 @@
 						{
 							"listen": "test",
 							"script": {
-								"id": "983d739e-f189-48a1-bf55-cbaddc5772c9",
+								"id": "567e0ab5-cd0e-4257-8fef-68e569a16acb",
 								"exec": [
 									"pm.test(\"Correct status code\", function() {\r",
 									"\tpm.response.to.have.status(404);\r",
@@ -2967,7 +2960,7 @@
 						{
 							"listen": "test",
 							"script": {
-								"id": "c0cd1229-d133-4209-b289-128d6d91c3d3",
+								"id": "2c0ade53-38a2-4fd2-b895-3043e323d63d",
 								"exec": [
 									"pm.test(\"Correct status code\", function() {\r",
 									"\tpm.response.to.have.status(404);\r",
@@ -3004,7 +2997,7 @@
 		{
 			"listen": "prerequest",
 			"script": {
-				"id": "2c442646-54b8-453d-bf02-bdbbd4603428",
+				"id": "5c57afdc-c4ef-4aa9-bb68-01907ef4404f",
 				"type": "text/javascript",
 				"exec": [
 					""
@@ -3014,7 +3007,7 @@
 		{
 			"listen": "test",
 			"script": {
-				"id": "f4203f55-a6ea-4d08-ad51-7c557fbbd8da",
+				"id": "6974a2fa-88a6-4ff0-b85f-39c29628f75b",
 				"type": "text/javascript",
 				"exec": [
 					""
