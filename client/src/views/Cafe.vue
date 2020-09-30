@@ -5,20 +5,18 @@
     <b-button :href="'/addareview/' + cafe._id">Add a review</b-button>
     <p>{{ cafe._id }}</p>
     <h2>Reviews</h2>
-    <ul>
-      <li v-for="review in reviews" v-bind:key="review._id">
-            Rating: {{ review.rating }}, Comment: {{ review.comment }}
-            <b-button variant="danger" v-on:click="deleteReview">Delete</b-button>
-          </li>
-    </ul>
+    <div v-for="review in reviews" v-bind:key="review._id">
+      <reviewItem :review="review" v-on:delete-review="deleteReview"></reviewItem></div>
 </div>
 </template>
 
 <script>
 import { Api } from '@/Api'
+import reviewItem from '@/components/Review.vue'
 
 export default {
   name: 'cafe',
+  components: { reviewItem },
   mounted() {
     console.log('PAGE is loaded')
     // Load the real cafes from the server
@@ -61,11 +59,12 @@ export default {
     }
   },
   methods: {
-    deleteReview() {
-      Api.delete('/cafes/' + this.$route.params.id + '/reviews') // Get the review ID somehow
+    deleteReview(id) {
+      Api.delete('/cafes/' + this.$route.params.id + `/reviews/${id}`)
         .then(response => {
           this.message = response.data
-          // Remove review from reviews array on line 58
+          const index = this.reviews.findIndex(review => review._id === id)
+          this.reviews.splice(index, 1)
         })
         .catch(error => {
           console.error(error)

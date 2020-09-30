@@ -1,18 +1,18 @@
 <template>
 <div>
     <h1>Add A Cafe</h1>
-    <CafeForm v-on:submitted-cafe="createCafe" :cafe="cafe"/>
+    <cafeForm v-on:submitted-cafe="createCafe" :cafe="cafe"/>
 </div>
 </template>
 
 <script>
 
 import { Api } from '@/Api'
-import CafeForm from '@/components/CafeForm.vue'
+import cafeForm from '@/components/CafeForm.vue'
 
 export default {
   name: 'addacafe',
-  components: { CafeForm },
+  components: { cafeForm },
   // mount get /categories
   // template: v-for through categories key=_id display name for user
 
