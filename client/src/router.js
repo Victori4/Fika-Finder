@@ -8,6 +8,7 @@ import Categories from './views/Categories.vue'
 import UpdateCafe from './views/UpdateCafe.vue'
 import AddReview from './views/AddaReview.vue'
 import Login from './views/Login.vue'
+import UpdatePassword from './views/UpdatePassword.vue'
 
 Vue.use(Router)
 
@@ -54,6 +55,11 @@ export default new Router({
       path: '/login',
       name: 'login',
       component: Login
+    },
+    {
+      path: '/updatepassword/:id',
+      name: 'updatepassword',
+      component: UpdatePassword
     }
   ]
 })

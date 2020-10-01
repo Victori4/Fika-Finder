@@ -1,6 +1,6 @@
 {
 	"info": {
-		"_postman_id": "a10196c9-f4b0-4a01-ae8d-4420c23e25fd",
+		"_postman_id": "45df1b79-134b-49d3-8f63-f276a4052d95",
 		"name": "server",
 		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
 	},
@@ -14,7 +14,7 @@
 						{
 							"listen": "test",
 							"script": {
-								"id": "bd9ccb54-0778-4bb5-91b6-6b6f75129233",
+								"id": "7ee35b08-af84-4487-b178-41147f4ab121",
 								"exec": [
 									"var jsonData = pm.response.json();\r",
 									"var categoryId = jsonData._id;\r",
@@ -63,7 +63,7 @@
 						{
 							"listen": "test",
 							"script": {
-								"id": "c531addd-fae3-42d7-a48f-789aab6997e9",
+								"id": "226a4f24-724b-4e4a-93b3-fda3dc5f510c",
 								"exec": [
 									"var jsonData = pm.response.json();\r",
 									"var categoryId = jsonData._id;\r",
@@ -112,7 +112,7 @@
 						{
 							"listen": "test",
 							"script": {
-								"id": "63efcafa-4453-46db-bae9-a40f19675a9a",
+								"id": "ba72396d-9d49-405c-a43f-d26687ad580d",
 								"exec": [
 									"var jsonData = pm.response.json();\r",
 									"var categoryId = jsonData._id;\r",
@@ -161,7 +161,7 @@
 						{
 							"listen": "test",
 							"script": {
-								"id": "ba5e3f8d-b7d5-4ca7-9e04-de57fcefda3f",
+								"id": "d10112fe-c078-4dce-97ca-592503c89c62",
 								"exec": [
 									"var jsonData = pm.response.json();\r",
 									"var cafeId = jsonData._id;\r",
@@ -217,7 +217,7 @@
 						{
 							"listen": "test",
 							"script": {
-								"id": "6213bfcc-ea92-435d-85e2-b8edbc4a4eba",
+								"id": "eb1653a0-b877-40d2-9286-3537a5b8aa92",
 								"exec": [
 									"var jsonData = pm.response.json();\r",
 									"var cafeId = jsonData._id;\r",
@@ -272,7 +272,7 @@
 						{
 							"listen": "test",
 							"script": {
-								"id": "fb9e5694-4fec-430b-959c-e125007ed073",
+								"id": "87aa23f2-d239-4b19-ad1f-b66a575a06b1",
 								"exec": [
 									"var jsonData = pm.response.json();\r",
 									"var cafeId = jsonData._id;\r",
@@ -328,7 +328,7 @@
 						{
 							"listen": "prerequest",
 							"script": {
-								"id": "048544c2-f5ba-4346-99f0-e543619845de",
+								"id": "71832856-bcac-4382-b77c-42ba87750931",
 								"exec": [
 									""
 								],
@@ -338,7 +338,7 @@
 						{
 							"listen": "test",
 							"script": {
-								"id": "72043ac4-a882-41aa-ac0c-ced3b9404eac",
+								"id": "7e15b528-095d-46ef-bf90-0aea087f2f2d",
 								"exec": [
 									"var jsonBody = pm.response.json();\r",
 									"var cafe_id = pm.environment.get(\"cafe_id\");\r",
@@ -463,7 +463,7 @@
 						{
 							"listen": "prerequest",
 							"script": {
-								"id": "1a78e45c-6648-4dee-b999-0132a00d2d7d",
+								"id": "e6561981-c716-406b-b2b1-af97fb2d98a8",
 								"exec": [
 									""
 								],
@@ -473,7 +473,7 @@
 						{
 							"listen": "test",
 							"script": {
-								"id": "712238bd-ad2b-43a8-9713-1895d9dc685d",
+								"id": "78654611-7bc6-4c1d-a653-64778b03663d",
 								"exec": [
 									"var jsonBody = pm.response.json();\r",
 									"var cafe_id = pm.environment.get(\"cafe_id\");\r",
@@ -550,7 +550,7 @@
 						{
 							"listen": "test",
 							"script": {
-								"id": "f4d52f79-5414-40f3-aff4-c581f237f26b",
+								"id": "783da385-2dcc-453b-b8d8-2fcc1aa13a9e",
 								"exec": [
 									"var cafe_id = pm.environment.get(\"cafe_id\");\r",
 									"var category_id = pm.environment.get(\"category_id\");\r",
@@ -613,7 +613,7 @@
 						{
 							"listen": "test",
 							"script": {
-								"id": "6ce6df65-7dea-4a9d-88e8-cdbebd48032e",
+								"id": "6c700e14-b8cb-4ba9-9ee5-b7d8fceeab5d",
 								"exec": [
 									"pm.test(\"All cafes deleted\", function () {\r",
 									"    pm.response.to.have.body(\"\");\r",
@@ -649,7 +649,7 @@
 						{
 							"listen": "test",
 							"script": {
-								"id": "53530122-aea4-47e1-a331-cb565ee3eb57",
+								"id": "5c868383-bc78-48ed-8c5b-4e1732de7a6c",
 								"exec": [
 									"pm.test(\"All categories deleted\", function () {\r",
 									"    pm.response.to.have.body(\"\");\r",
@@ -691,7 +691,7 @@
 						{
 							"listen": "test",
 							"script": {
-								"id": "5bb840c4-c0e3-448b-992f-0ce04d2ffaf2",
+								"id": "6671f074-1822-4b37-9ede-18911424f107",
 								"exec": [
 									"var jsonData = pm.response.json();\r",
 									"var categoryId = jsonData._id;\r",
@@ -740,7 +740,7 @@
 						{
 							"listen": "test",
 							"script": {
-								"id": "f76e5466-2cce-4145-b2c1-da4a7350ba58",
+								"id": "04df12aa-ee57-4889-8346-481302635a1f",
 								"exec": [
 									"var jsonData = pm.response.json();\r",
 									"var categoryId = jsonData._id;\r",
@@ -789,7 +789,7 @@
 						{
 							"listen": "test",
 							"script": {
-								"id": "285455d5-5b6c-4961-ae33-0bfa199241d7",
+								"id": "03f3bdfa-aba3-4ead-9eb7-cdb11f26b6b7",
 								"exec": [
 									"var jsonData = pm.response.json();\r",
 									"var categoryId = jsonData._id;\r",
@@ -838,7 +838,7 @@
 						{
 							"listen": "prerequest",
 							"script": {
-								"id": "c82da6eb-77e9-4b30-80aa-d3423aa72968",
+								"id": "c3bdb9e8-694b-4872-8854-2cd51da03422",
 								"exec": [
 									""
 								],
@@ -848,7 +848,7 @@
 						{
 							"listen": "test",
 							"script": {
-								"id": "09ddb421-8396-4037-860c-35734df6aace",
+								"id": "3cff8bfb-f7ae-46f0-ae89-780a2549f340",
 								"exec": [
 									"var jsonBody = pm.response.json();\r",
 									"var category_id = pm.environment.get(\"category_id\");\r",
@@ -916,7 +916,7 @@
 						{
 							"listen": "test",
 							"script": {
-								"id": "3d7ccb26-d837-418b-886c-5d5e379efbb2",
+								"id": "701e6728-fd3f-415e-8103-78c47e60cc1c",
 								"exec": [
 									"var category_id = pm.environment.get(\"category_id\");\r",
 									"\r",
@@ -958,7 +958,7 @@
 						{
 							"listen": "test",
 							"script": {
-								"id": "0c53bf10-8f6c-4ff4-b975-ba27788a5e40",
+								"id": "ec4f5eef-20a1-47a5-becd-203a98ca92d1",
 								"exec": [
 									"var category_id = pm.environment.get(\"category_id\");\r",
 									"\r",
@@ -1008,7 +1008,7 @@
 						{
 							"listen": "test",
 							"script": {
-								"id": "d8eac3ee-a28d-4655-98ec-d82ffbd2c061",
+								"id": "6301d912-e64c-4c2d-8b91-ae64d80cec2f",
 								"exec": [
 									"pm.test(\"Correct status code\", function() {\r",
 									"\tpm.response.to.have.status(204);\r",
@@ -1046,7 +1046,7 @@
 						{
 							"listen": "test",
 							"script": {
-								"id": "a33d3ef4-8bf2-416c-9354-061c59f7f5a8",
+								"id": "a0a27f48-e75f-4cba-9398-a320240f9b15",
 								"exec": [
 									"pm.test(\"All categories deleted\", function () {\r",
 									"    pm.response.to.have.body(\"\");\r",
@@ -1082,7 +1082,7 @@
 						{
 							"listen": "test",
 							"script": {
-								"id": "0c5eef7f-dc17-41ee-9d74-2b4ecfa31c05",
+								"id": "da6088ca-038f-4729-891f-84efe470dfc5",
 								"exec": [
 									"pm.test(\"Correct status code\", function() {\r",
 									"\tpm.response.to.have.status(404);\r",
@@ -1115,7 +1115,7 @@
 						{
 							"listen": "test",
 							"script": {
-								"id": "53de28b7-0324-4fe5-985f-0da5324db90b",
+								"id": "dd5ac562-ea99-4bd8-934b-b01a0f43c1f5",
 								"exec": [
 									"pm.test(\"Correct status code\", function () {\r",
 									"    pm.response.to.have.status(404);\r",
@@ -1157,7 +1157,7 @@
 						{
 							"listen": "test",
 							"script": {
-								"id": "2e77bbf6-f575-482f-9f38-0417aa82e2e7",
+								"id": "d81eedd1-a34e-4e1f-8237-b09662f130e0",
 								"exec": [
 									"pm.test(\"Correct status code\", function() {\r",
 									"\tpm.response.to.have.status(404);\r",
@@ -1196,7 +1196,7 @@
 						{
 							"listen": "test",
 							"script": {
-								"id": "08c141f2-9188-4c8b-80ca-4a53f6b2e79d",
+								"id": "f8a06d44-7ac7-4263-b1fc-0932c00c0b36",
 								"exec": [
 									"var jsonData = pm.response.json();\r",
 									"var userId = jsonData._id;\r",
@@ -1247,7 +1247,7 @@
 						{
 							"listen": "test",
 							"script": {
-								"id": "4edf7482-8128-41f3-b673-3a650ca18cd6",
+								"id": "77c3e9a1-baf4-4f2e-b45e-0be5907c4bbd",
 								"exec": [
 									"var jsonData = pm.response.json();\r",
 									"var userId = jsonData._id;\r",
@@ -1298,7 +1298,7 @@
 						{
 							"listen": "test",
 							"script": {
-								"id": "58dbdf7e-d18c-4d88-8de9-3bc0bc99d57f",
+								"id": "db538b91-c8a0-41c3-b762-da053963f34b",
 								"exec": [
 									"var jsonData = pm.response.json();\r",
 									"var userId = jsonData._id;\r",
@@ -1349,7 +1349,7 @@
 						{
 							"listen": "prerequest",
 							"script": {
-								"id": "c268f963-08f7-4c52-8221-5a7b38570199",
+								"id": "42a00776-69db-40d0-84b5-bf55f82bd715",
 								"exec": [
 									""
 								],
@@ -1359,7 +1359,7 @@
 						{
 							"listen": "test",
 							"script": {
-								"id": "35ee2d08-b21c-4faf-a351-64a248045ff5",
+								"id": "705cc8ce-938e-4e23-a773-b38842e93975",
 								"exec": [
 									"var jsonBody = pm.response.json();\r",
 									"var user_id = pm.environment.get(\"user_id\");\r",
@@ -1427,7 +1427,7 @@
 						{
 							"listen": "test",
 							"script": {
-								"id": "20bf00ef-e5bf-42d0-92d9-c9116671c5fc",
+								"id": "3a1fcfa5-d427-4ac2-ae7b-8de0326010d1",
 								"exec": [
 									"var user_id = pm.environment.get(\"user_id\");\r",
 									"\r",
@@ -1470,7 +1470,7 @@
 						{
 							"listen": "test",
 							"script": {
-								"id": "2bd80df8-b84a-449c-bf85-e996657847d8",
+								"id": "0ac4c8d1-cc0d-450f-a5ea-066f9ddecdf0",
 								"exec": [
 									"var jsonData = pm.response.json();\r",
 									"var userId = jsonData._id;\r",
@@ -1517,12 +1517,63 @@
 					"response": []
 				},
 				{
+					"name": "Patch a user",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "984902d4-4bc3-4f83-b376-23e240f7bb7d",
+								"exec": [
+									"var jsonData = pm.response.json();\r",
+									"var userId = jsonData._id;\r",
+									"pm.environment.set(\"user_id\", userId);\r",
+									"\r",
+									"pm.test(\"Correct status code\", function () {\r",
+									"    pm.response.to.have.status(200);\r",
+									"});\r",
+									"\r",
+									"pm.test(\"Correct user response\", function () {\r",
+									"    pm.expect(jsonData.password).to.eql(\"09876\");\r",
+									"\r",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "PATCH",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\"password\" : \"09876\" }\r\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{host}}/api/users/{{user_id}}",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"api",
+								"users",
+								"{{user_id}}"
+							]
+						}
+					},
+					"response": []
+				},
+				{
 					"name": "Delete user by id",
 					"event": [
 						{
 							"listen": "test",
 							"script": {
-								"id": "33b6896f-4aaa-48ae-85b0-7581f320d565",
+								"id": "9951b2e1-1a54-4e5f-b6ee-01bd7af51fb7",
 								"exec": [
 									"pm.test(\"Correct status code\", function() {\r",
 									"\tpm.response.to.have.status(204);\r",
@@ -1560,7 +1611,7 @@
 						{
 							"listen": "test",
 							"script": {
-								"id": "d8e06597-9b27-40ab-b725-4844f7b02400",
+								"id": "748bbef4-a65e-4995-b442-3b9cd45ff11f",
 								"exec": [
 									"pm.test(\"All users deleted\", function () {\r",
 									"    pm.response.to.have.body(\"\");\r",
@@ -1596,7 +1647,7 @@
 						{
 							"listen": "test",
 							"script": {
-								"id": "cf3e7ef3-b5bc-4588-985e-f2ff67cfc049",
+								"id": "93e3d167-51cb-4d48-a43c-d3495be0aecf",
 								"exec": [
 									"pm.test(\"Correct status code\", function() {\r",
 									"\tpm.response.to.have.status(404);\r",
@@ -1629,7 +1680,7 @@
 						{
 							"listen": "test",
 							"script": {
-								"id": "d77368dc-c053-4d0b-8be0-cf3f3563e379",
+								"id": "99230df5-699f-4553-b00a-b8774d1153e1",
 								"exec": [
 									"pm.test(\"Correct status code\", function() {\r",
 									"\tpm.response.to.have.status(404);\r",
@@ -1662,7 +1713,7 @@
 						{
 							"listen": "test",
 							"script": {
-								"id": "d6443385-4038-4fb1-8e52-ce8c917efabb",
+								"id": "087bcff8-1df2-4687-9fd2-e8c6ef40391f",
 								"exec": [
 									"pm.test(\"Correct status code\", function () {\r",
 									"    pm.response.to.have.status(404);\r",
@@ -1697,6 +1748,48 @@
 						}
 					},
 					"response": []
+				},
+				{
+					"name": "Patch non-existent user by id",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "8d117264-47c6-4c87-a29d-e82300e37e4d",
+								"exec": [
+									"pm.test(\"Correct status code\", function () {\r",
+									"    pm.response.to.have.status(404);\r",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "PATCH",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\"password\" : \"tello\"}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{host}}/api/users/0doesnotexist",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"api",
+								"users",
+								"0doesnotexist"
+							]
+						}
+					},
+					"response": []
 				}
 			],
 			"protocolProfileBehavior": {}
@@ -1710,7 +1803,7 @@
 						{
 							"listen": "test",
 							"script": {
-								"id": "335aff8b-2e5e-4c3f-9a62-71822977c92f",
+								"id": "29e925aa-979e-429f-a8b9-23f8158cc229",
 								"exec": [
 									"var jsonData = pm.response.json();\r",
 									"var cafeId = jsonData._id;\r",
@@ -1765,7 +1858,7 @@
 						{
 							"listen": "test",
 							"script": {
-								"id": "741593b5-1a24-4bf5-84d7-94d4d9dc58a5",
+								"id": "b6039006-20e2-4834-b0d1-29ee6070c14a",
 								"exec": [
 									"var jsonData = pm.response.json();\r",
 									"var cafeId = jsonData._id;\r",
@@ -1820,7 +1913,7 @@
 						{
 							"listen": "test",
 							"script": {
-								"id": "5747b507-7666-4f13-ab68-216004c9e2d9",
+								"id": "0c5ec41c-e005-4685-acad-5c2150eb5f0b",
 								"exec": [
 									"var jsonData = pm.response.json();\r",
 									"var cafeId = jsonData._id;\r",
@@ -1876,7 +1969,7 @@
 						{
 							"listen": "prerequest",
 							"script": {
-								"id": "2b3237a5-7e16-493f-ad1a-e32e98a6d0ad",
+								"id": "6a5c47af-7d0a-4e05-83ca-62972eccfdfb",
 								"exec": [
 									""
 								],
@@ -1886,7 +1979,7 @@
 						{
 							"listen": "test",
 							"script": {
-								"id": "247a0b1a-7219-42e1-8544-01d842493851",
+								"id": "c9d13f6d-5575-430b-8632-4f4fa758c560",
 								"exec": [
 									"var jsonBody = pm.response.json();\r",
 									"var cafe_id = pm.environment.get(\"cafe_id\");\r",
@@ -1981,7 +2074,7 @@
 						{
 							"listen": "test",
 							"script": {
-								"id": "49d2cb1e-acf8-406f-961e-26b831c16f82",
+								"id": "cd1bcbd5-cc28-49d5-a875-d47c5e02c052",
 								"exec": [
 									"var cafe_id = pm.environment.get(\"cafe_id\");\r",
 									"\r",
@@ -2029,7 +2122,7 @@
 						{
 							"listen": "test",
 							"script": {
-								"id": "db130109-b177-4d47-8100-95506b2c7f6c",
+								"id": "3b4ea5cf-06e6-4e87-81ee-a20460bf2d30",
 								"exec": [
 									"var jsonData = pm.response.json();\r",
 									"var userId = jsonData._id;\r",
@@ -2085,7 +2178,7 @@
 						{
 							"listen": "test",
 							"script": {
-								"id": "a7e0f280-c8f1-4e19-b5fe-3b6747568ba7",
+								"id": "8ec514c9-91aa-4365-be43-5a601dee712b",
 								"exec": [
 									"var cafe_id = pm.environment.get(\"cafe_id\");\r",
 									"\r",
@@ -2135,7 +2228,7 @@
 						{
 							"listen": "test",
 							"script": {
-								"id": "32640512-61d3-4cb9-bb70-ff40c525f5da",
+								"id": "35dd7c0f-a364-4c42-bc45-c2b74828504f",
 								"exec": [
 									"pm.test(\"Correct status code\", function() {\r",
 									"\tpm.response.to.have.status(204);\r",
@@ -2173,7 +2266,7 @@
 						{
 							"listen": "test",
 							"script": {
-								"id": "2c8ddbf4-1e28-4516-a5d0-eb703d1befe0",
+								"id": "3e4aa9c7-f109-4068-a283-5e95649e43ca",
 								"exec": [
 									"pm.test(\"All cafes deleted\", function () {\r",
 									"    pm.response.to.have.body(\"\");\r",
@@ -2209,7 +2302,7 @@
 						{
 							"listen": "test",
 							"script": {
-								"id": "010bcba5-9e11-4512-950f-b5924c02e312",
+								"id": "e3a5045c-4f43-47c0-be16-caf23e85d8f5",
 								"exec": [
 									"pm.test(\"Correct status code\", function() {\r",
 									"\tpm.response.to.have.status(404);\r",
@@ -2242,7 +2335,7 @@
 						{
 							"listen": "test",
 							"script": {
-								"id": "b952d1d5-00be-4962-b77b-73e0501676cb",
+								"id": "3b7b4c21-4000-42a6-a99d-529b0d8bb6eb",
 								"exec": [
 									"pm.test(\"Correct status code\", function () {\r",
 									"    pm.response.to.have.status(404);\r",
@@ -2284,7 +2377,7 @@
 						{
 							"listen": "test",
 							"script": {
-								"id": "fbedf2e7-681f-4bbb-9960-1a533d525f1b",
+								"id": "5121f0e1-f56c-4591-b826-4bcdfa730993",
 								"exec": [
 									"pm.test(\"Correct status code\", function () {\r",
 									"    pm.response.to.have.status(404);\r",
@@ -2326,7 +2419,7 @@
 						{
 							"listen": "test",
 							"script": {
-								"id": "7b8c694e-b055-4e2d-abc1-056d26ffff55",
+								"id": "ed020cb2-d069-41bf-b4de-91f6dc15701f",
 								"exec": [
 									"pm.test(\"Correct status code\", function() {\r",
 									"\tpm.response.to.have.status(404);\r",
@@ -2365,7 +2458,7 @@
 						{
 							"listen": "test",
 							"script": {
-								"id": "086e5db7-bf9c-47d9-b7e4-edff6c6cbc0b",
+								"id": "50ad1e07-6a48-4648-b91a-22ed432684bb",
 								"exec": [
 									"var jsonData = pm.response.json();\r",
 									"var userId = jsonData._id;\r",
@@ -2415,7 +2508,7 @@
 						{
 							"listen": "test",
 							"script": {
-								"id": "c4e2d795-f6e9-4a24-9fb1-4fedfacc9f5b",
+								"id": "2250a849-edea-4f42-a926-87e0958407a4",
 								"exec": [
 									"var jsonData = pm.response.json();\r",
 									"var cafeId = jsonData._id;\r",
@@ -2470,7 +2563,7 @@
 						{
 							"listen": "test",
 							"script": {
-								"id": "f4569ca6-8b49-46aa-ad91-d818d5ddf5e9",
+								"id": "fd180124-2966-4b80-a10d-a0e5d8f31338",
 								"exec": [
 									"var jsonData = pm.response.json();\r",
 									"var cafeId = pm.environment.get(\"cafe_id\");\r",
@@ -2528,7 +2621,7 @@
 						{
 							"listen": "test",
 							"script": {
-								"id": "1a6a8860-07d5-4d66-ad23-53abfc0db5c4",
+								"id": "22b497aa-8e29-42f7-9544-30524c2196d2",
 								"exec": [
 									"var jsonData = pm.response.json();\r",
 									"var cafeId = pm.environment.get(\"cafe_id\");\r",
@@ -2579,7 +2672,7 @@
 						{
 							"listen": "prerequest",
 							"script": {
-								"id": "cbcdba42-e2fd-42b3-a59d-01481b29b27e",
+								"id": "c937ed8a-6053-448f-a99a-9115e608f05f",
 								"exec": [
 									""
 								],
@@ -2589,7 +2682,7 @@
 						{
 							"listen": "test",
 							"script": {
-								"id": "c560ca21-f789-4952-a7ba-6bd9f0047ec9",
+								"id": "e8d3a4ca-7b5f-49de-b72a-2d0ceba6ea0b",
 								"exec": [
 									"var jsonBody = pm.response.json();\r",
 									"var userId = pm.environment.get(\"user_id\");\r",
@@ -2659,7 +2752,7 @@
 						{
 							"listen": "test",
 							"script": {
-								"id": "2edcaeeb-f4b6-43dc-a86b-a368f61ed1f0",
+								"id": "3d541084-2073-47aa-a977-e556075d1c68",
 								"exec": [
 									"var reviewId = pm.environment.get(\"review_id\");\r",
 									"var userId = pm.environment.get(\"user_id\");\r",
@@ -2706,7 +2799,7 @@
 						{
 							"listen": "test",
 							"script": {
-								"id": "46afd0df-559c-4522-8ab7-f68727817e42",
+								"id": "43b93ead-c2a8-4e32-a9f9-16a4f6f0dd96",
 								"exec": [
 									"pm.test(\"Correct status code\", function() {\r",
 									"\tpm.response.to.have.status(204);\r",
@@ -2746,7 +2839,7 @@
 						{
 							"listen": "test",
 							"script": {
-								"id": "437b30e0-ac01-4ec6-8c88-58fa09cfc841",
+								"id": "54307192-5a08-446e-aed3-6dc127c0a2e5",
 								"exec": [
 									"pm.test(\"All cafes deleted\", function () {\r",
 									"    pm.response.to.have.body(\"\");\r",
@@ -2782,7 +2875,7 @@
 						{
 							"listen": "test",
 							"script": {
-								"id": "c97583ad-9ef0-4cb2-981e-d10ad896c18b",
+								"id": "b61a068b-c2b3-478f-a1b5-5f42dd991a2b",
 								"exec": [
 									"pm.test(\"Correct status code\", function() {\r",
 									"\tpm.response.to.have.status(204);\r",
@@ -2819,7 +2912,7 @@
 						{
 							"listen": "test",
 							"script": {
-								"id": "2605947d-4838-44e3-8659-74d696630c30",
+								"id": "bd628840-a9db-4d56-bd9a-9155f68eaded",
 								"exec": [
 									"pm.test(\"Correct status code\", function() {\r",
 									"\tpm.response.to.have.status(204);\r",
@@ -2856,7 +2949,7 @@
 						{
 							"listen": "test",
 							"script": {
-								"id": "fac7872e-aad7-4205-848f-3ce888874730",
+								"id": "88c685bd-14a6-4fc6-9d19-301188090dec",
 								"exec": [
 									"pm.test(\"Correct status code\", function() {\r",
 									"\tpm.response.to.have.status(404);\r",
@@ -2891,7 +2984,7 @@
 						{
 							"listen": "test",
 							"script": {
-								"id": "02d903a4-e8ec-44d6-b434-d6ef2c1d7752",
+								"id": "1d6e34e9-7b9d-487b-a07d-a46ea7c81630",
 								"exec": [
 									"pm.test(\"Correct status code\", function() {\r",
 									"\tpm.response.to.have.status(404);\r",
@@ -2926,7 +3019,7 @@
 						{
 							"listen": "test",
 							"script": {
-								"id": "567e0ab5-cd0e-4257-8fef-68e569a16acb",
+								"id": "1fa1b649-cc53-45a7-a033-24addad1f887",
 								"exec": [
 									"pm.test(\"Correct status code\", function() {\r",
 									"\tpm.response.to.have.status(404);\r",
@@ -2960,7 +3053,7 @@
 						{
 							"listen": "test",
 							"script": {
-								"id": "2c0ade53-38a2-4fd2-b895-3043e323d63d",
+								"id": "76e0fcf6-9ea5-4be0-b948-b88c65233544",
 								"exec": [
 									"pm.test(\"Correct status code\", function() {\r",
 									"\tpm.response.to.have.status(404);\r",
@@ -2997,7 +3090,7 @@
 		{
 			"listen": "prerequest",
 			"script": {
-				"id": "5c57afdc-c4ef-4aa9-bb68-01907ef4404f",
+				"id": "7cdc4179-d0e5-47cd-b295-c90624d35d48",
 				"type": "text/javascript",
 				"exec": [
 					""
@@ -3007,7 +3100,7 @@
 		{
 			"listen": "test",
 			"script": {
-				"id": "6974a2fa-88a6-4ff0-b85f-39c29628f75b",
+				"id": "a7325c4d-2d02-4742-9e04-a7587800b48e",
 				"type": "text/javascript",
 				"exec": [
 					""

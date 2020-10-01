@@ -1,5 +1,5 @@
 <template>
-     <div>
+  <div>
     <h1>Please log in</h1>
     <form @submit.prevent="login">
      <p>
@@ -14,7 +14,7 @@
         <input type="submit" value="Login" />
       </p>
     </form>
-</div>
+  </div>
 </template>
 
 <script>
@@ -32,9 +32,14 @@ export default {
     login() {
       Api.get('/users')
         .then(response => {
-          console.log(response.data)
-          this.email = ''
-          this.password = ''
+          for (var i = 0; i < response.data.users.length; i++) {
+            if (response.data.users[i].email === this.email &&
+            response.data.users[i].password === this.password) {
+              this.$router.push({ path: '/updatepassword/' + response.data.users[i]._id }) // add the id
+              this.email = ''
+              this.password = ''
+            }
+          }
         })
         .catch(error => {
           this.message = error.message
