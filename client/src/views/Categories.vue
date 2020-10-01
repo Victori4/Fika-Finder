@@ -1,6 +1,7 @@
 <template>
     <div>
-      <b-button v-on:click="deleteCategories" >Delete all categories</b-button>
+      <b-button href="/addacategory">Add a category</b-button>
+      <b-button v-on:click="deleteCategories" variant="danger" >Delete all categories</b-button>
       <ul>
           <li v-for="category in categories" v-bind:key="category._id">
             {{ category.name }}

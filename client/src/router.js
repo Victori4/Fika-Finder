@@ -9,6 +9,9 @@ import UpdateCafe from './views/UpdateCafe.vue'
 import AddReview from './views/AddaReview.vue'
 import Login from './views/Login.vue'
 import UpdatePassword from './views/UpdatePassword.vue'
+import AddUser from './views/AddaUser.vue'
+import AddCategory from './views/AddaCategory.vue'
+import UserPage from './views/UserPage.vue'
 
 Vue.use(Router)
 
@@ -60,6 +63,21 @@ export default new Router({
       path: '/updatepassword/:id',
       name: 'updatepassword',
       component: UpdatePassword
+    },
+    {
+      path: '/addauser',
+      name: 'addauser',
+      component: AddUser
+    },
+    {
+      path: '/addacategory',
+      name: 'addacategory',
+      component: AddCategory
+    },
+    {
+      path: '/userpage/:id',
+      name: 'userpage',
+      component: UserPage
     }
   ]
 })

@@ -1,7 +1,11 @@
 <template>
   <div>
-    <h1>Please log in</h1>
-    <form @submit.prevent="login">
+    <h1>Please enter the appropriate information</h1>
+    <form @submit.prevent="register">
+      <p>
+        <label for="username">Username:</label>
+        <input id="username" v-model="username" placeholder="username">
+      </p>
      <p>
         <label for="email">Email:</label>
         <input id="email" v-model="email" placeholder="email">
@@ -11,43 +15,43 @@
         <input id="password" type="password" v-model="password" placeholder="password">
       </p>
       <p>
-        <input type="submit" value="Login" />
+        <input type="submit" value="Register" />
       </p>
     </form>
-    <b-button href="/addauser">Register</b-button>
-
   </div>
 </template>
 
 <script>
+
 import { Api } from '@/Api'
 
 export default {
-  name: 'login',
+  name: 'addauser',
   data() {
     return {
+      username: '',
       email: '',
       password: ''
     }
   },
   methods: {
-    login() {
-      Api.get('/users')
+    register() {
+      const user = {
+        username: this.username,
+        email: this.email,
+        password: this.password
+      }
+      Api.post('/users', user)
         .then(response => {
-          for (var i = 0; i < response.data.users.length; i++) {
-            if (response.data.users[i].email === this.email &&
-            response.data.users[i].password === this.password) {
-              this.$router.push({ path: '/userpage/' + response.data.users[i]._id }) // add the id
-              this.email = ''
-              this.password = ''
-            }
-          }
+          console.log(response.data)
+          this.username = ''
+          this.email = ''
+          this.password = ''
         })
         .catch(error => {
           this.message = error.message
           console.error(error)
-          this.email = ''
-          this.password = ''
+          this.users = []
         // TODO: display error message
         })
         .then(() => {

@@ -3,6 +3,10 @@
     <h1>Add A Review</h1>
     <form @submit.prevent="createReview">
       <p>
+        <label for="author">Your name:</label>
+        <input id="author" v-model="author" placeholder="author">
+      </p>
+      <p>
         <label for="rating">Rating:</label>
         <select id="rating" v-model.number="rating">
           <option>1</option>
@@ -31,6 +35,7 @@ export default {
   name: 'addreview',
   data() {
     return {
+      author: '',
       rating: null,
       comment: '',
       cafe: ''
@@ -39,14 +44,15 @@ export default {
   methods: {
     createReview() {
       const review = {
+        author: this.author,
         rating: this.rating,
         comment: this.comment,
-        cafe: this.$route.params.id,
-        user: this.user
+        cafe: this.$route.params.id
       }
       Api.post('/cafes/' + this.$route.params.id + '/reviews', review)
         .then(response => {
           console.log(response.data)
+          this.author = ''
           this.rating = null
           this.comment = ''
           this.cafe = ''
@@ -54,7 +60,7 @@ export default {
         .catch(error => {
           this.message = error.message
           console.error(error)
-          this.cafes = []
+          this.cafes = {}
         // TODO: display error message
         })
         .then(() => {

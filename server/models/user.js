@@ -4,6 +4,7 @@ var Schema = mongoose.Schema;
 
 //Elaborate on this schema
 var userSchema = new Schema({
+    username: { type: String},
     email: { type: String },
     password: { type: String }
 });

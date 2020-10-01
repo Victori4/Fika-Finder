@@ -1,6 +1,6 @@
 {
 	"info": {
-		"_postman_id": "45df1b79-134b-49d3-8f63-f276a4052d95",
+		"_postman_id": "1ef296ed-330d-4d48-8504-f3dbe0ae376f",
 		"name": "server",
 		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
 	},
@@ -14,7 +14,7 @@
 						{
 							"listen": "test",
 							"script": {
-								"id": "7ee35b08-af84-4487-b178-41147f4ab121",
+								"id": "9d2b1532-13de-4b4e-95ac-a250bc385fa5",
 								"exec": [
 									"var jsonData = pm.response.json();\r",
 									"var categoryId = jsonData._id;\r",
@@ -63,7 +63,7 @@
 						{
 							"listen": "test",
 							"script": {
-								"id": "226a4f24-724b-4e4a-93b3-fda3dc5f510c",
+								"id": "11c28b7e-af76-4246-a408-b0354ad6bc9d",
 								"exec": [
 									"var jsonData = pm.response.json();\r",
 									"var categoryId = jsonData._id;\r",
@@ -112,7 +112,7 @@
 						{
 							"listen": "test",
 							"script": {
-								"id": "ba72396d-9d49-405c-a43f-d26687ad580d",
+								"id": "0c38ce2a-d044-4475-8fa7-6b8385208d7c",
 								"exec": [
 									"var jsonData = pm.response.json();\r",
 									"var categoryId = jsonData._id;\r",
@@ -161,7 +161,7 @@
 						{
 							"listen": "test",
 							"script": {
-								"id": "d10112fe-c078-4dce-97ca-592503c89c62",
+								"id": "c567b560-3c19-466f-b678-cb6956cbf5df",
 								"exec": [
 									"var jsonData = pm.response.json();\r",
 									"var cafeId = jsonData._id;\r",
@@ -217,7 +217,7 @@
 						{
 							"listen": "test",
 							"script": {
-								"id": "eb1653a0-b877-40d2-9286-3537a5b8aa92",
+								"id": "b4db52f0-8fa8-4226-8156-cacfddca95d9",
 								"exec": [
 									"var jsonData = pm.response.json();\r",
 									"var cafeId = jsonData._id;\r",
@@ -272,7 +272,7 @@
 						{
 							"listen": "test",
 							"script": {
-								"id": "87aa23f2-d239-4b19-ad1f-b66a575a06b1",
+								"id": "3a2f60c7-ec27-40bb-a3a6-bc434bdf9412",
 								"exec": [
 									"var jsonData = pm.response.json();\r",
 									"var cafeId = jsonData._id;\r",
@@ -328,7 +328,7 @@
 						{
 							"listen": "prerequest",
 							"script": {
-								"id": "71832856-bcac-4382-b77c-42ba87750931",
+								"id": "f2c0a261-20c6-4363-b835-0bedf35b083a",
 								"exec": [
 									""
 								],
@@ -338,7 +338,7 @@
 						{
 							"listen": "test",
 							"script": {
-								"id": "7e15b528-095d-46ef-bf90-0aea087f2f2d",
+								"id": "5b9510f5-704d-4c8f-98b6-1b8486e5cfe6",
 								"exec": [
 									"var jsonBody = pm.response.json();\r",
 									"var cafe_id = pm.environment.get(\"cafe_id\");\r",
@@ -463,7 +463,7 @@
 						{
 							"listen": "prerequest",
 							"script": {
-								"id": "e6561981-c716-406b-b2b1-af97fb2d98a8",
+								"id": "f0cf35af-fc93-457a-891f-a912ed637ca5",
 								"exec": [
 									""
 								],
@@ -473,7 +473,7 @@
 						{
 							"listen": "test",
 							"script": {
-								"id": "78654611-7bc6-4c1d-a653-64778b03663d",
+								"id": "30f510d0-8959-4c2c-9e8a-eb27f730f096",
 								"exec": [
 									"var jsonBody = pm.response.json();\r",
 									"var cafe_id = pm.environment.get(\"cafe_id\");\r",
@@ -550,7 +550,7 @@
 						{
 							"listen": "test",
 							"script": {
-								"id": "783da385-2dcc-453b-b8d8-2fcc1aa13a9e",
+								"id": "22b4f7b3-503e-4ce9-88ab-c321b3eac6ed",
 								"exec": [
 									"var cafe_id = pm.environment.get(\"cafe_id\");\r",
 									"var category_id = pm.environment.get(\"category_id\");\r",
@@ -613,7 +613,7 @@
 						{
 							"listen": "test",
 							"script": {
-								"id": "6c700e14-b8cb-4ba9-9ee5-b7d8fceeab5d",
+								"id": "5c738945-4966-4ff3-8f5c-f2ba6a61adf3",
 								"exec": [
 									"pm.test(\"All cafes deleted\", function () {\r",
 									"    pm.response.to.have.body(\"\");\r",
@@ -649,7 +649,7 @@
 						{
 							"listen": "test",
 							"script": {
-								"id": "5c868383-bc78-48ed-8c5b-4e1732de7a6c",
+								"id": "ee4d6c79-d8af-47f6-87cc-289b6a67b7f3",
 								"exec": [
 									"pm.test(\"All categories deleted\", function () {\r",
 									"    pm.response.to.have.body(\"\");\r",
@@ -691,7 +691,7 @@
 						{
 							"listen": "test",
 							"script": {
-								"id": "6671f074-1822-4b37-9ede-18911424f107",
+								"id": "2106947b-9aa5-4905-9680-2214a6744829",
 								"exec": [
 									"var jsonData = pm.response.json();\r",
 									"var categoryId = jsonData._id;\r",
@@ -740,7 +740,7 @@
 						{
 							"listen": "test",
 							"script": {
-								"id": "04df12aa-ee57-4889-8346-481302635a1f",
+								"id": "f1d4d5bd-4c65-44db-877d-67b428bd477b",
 								"exec": [
 									"var jsonData = pm.response.json();\r",
 									"var categoryId = jsonData._id;\r",
@@ -789,7 +789,7 @@
 						{
 							"listen": "test",
 							"script": {
-								"id": "03f3bdfa-aba3-4ead-9eb7-cdb11f26b6b7",
+								"id": "a5331f69-669e-4ebc-b747-26649c6cc6c5",
 								"exec": [
 									"var jsonData = pm.response.json();\r",
 									"var categoryId = jsonData._id;\r",
@@ -838,7 +838,7 @@
 						{
 							"listen": "prerequest",
 							"script": {
-								"id": "c3bdb9e8-694b-4872-8854-2cd51da03422",
+								"id": "d449f272-5450-4d9e-b2d2-2d85ca512b8d",
 								"exec": [
 									""
 								],
@@ -848,7 +848,7 @@
 						{
 							"listen": "test",
 							"script": {
-								"id": "3cff8bfb-f7ae-46f0-ae89-780a2549f340",
+								"id": "d68c3dc8-a47e-420d-b10a-6f0301b89c67",
 								"exec": [
 									"var jsonBody = pm.response.json();\r",
 									"var category_id = pm.environment.get(\"category_id\");\r",
@@ -916,7 +916,7 @@
 						{
 							"listen": "test",
 							"script": {
-								"id": "701e6728-fd3f-415e-8103-78c47e60cc1c",
+								"id": "f293d9ef-b895-499b-acd1-4ddcb9c39bd6",
 								"exec": [
 									"var category_id = pm.environment.get(\"category_id\");\r",
 									"\r",
@@ -958,7 +958,7 @@
 						{
 							"listen": "test",
 							"script": {
-								"id": "ec4f5eef-20a1-47a5-becd-203a98ca92d1",
+								"id": "f081abf2-89c9-49db-8323-2f54cdd21a37",
 								"exec": [
 									"var category_id = pm.environment.get(\"category_id\");\r",
 									"\r",
@@ -1008,7 +1008,7 @@
 						{
 							"listen": "test",
 							"script": {
-								"id": "6301d912-e64c-4c2d-8b91-ae64d80cec2f",
+								"id": "5cec194b-2e45-4755-8b7b-708994d86c18",
 								"exec": [
 									"pm.test(\"Correct status code\", function() {\r",
 									"\tpm.response.to.have.status(204);\r",
@@ -1046,7 +1046,7 @@
 						{
 							"listen": "test",
 							"script": {
-								"id": "a0a27f48-e75f-4cba-9398-a320240f9b15",
+								"id": "59fe85ee-f4cd-4e37-b169-ab4b954e43bd",
 								"exec": [
 									"pm.test(\"All categories deleted\", function () {\r",
 									"    pm.response.to.have.body(\"\");\r",
@@ -1082,7 +1082,7 @@
 						{
 							"listen": "test",
 							"script": {
-								"id": "da6088ca-038f-4729-891f-84efe470dfc5",
+								"id": "0b14ef52-edde-4fab-bfda-f8901ea5faab",
 								"exec": [
 									"pm.test(\"Correct status code\", function() {\r",
 									"\tpm.response.to.have.status(404);\r",
@@ -1115,7 +1115,7 @@
 						{
 							"listen": "test",
 							"script": {
-								"id": "dd5ac562-ea99-4bd8-934b-b01a0f43c1f5",
+								"id": "7f30d701-265d-4b70-a7d3-d23a28294847",
 								"exec": [
 									"pm.test(\"Correct status code\", function () {\r",
 									"    pm.response.to.have.status(404);\r",
@@ -1157,7 +1157,7 @@
 						{
 							"listen": "test",
 							"script": {
-								"id": "d81eedd1-a34e-4e1f-8237-b09662f130e0",
+								"id": "17e80c79-2260-4e1b-b6ef-b1986e2fcc95",
 								"exec": [
 									"pm.test(\"Correct status code\", function() {\r",
 									"\tpm.response.to.have.status(404);\r",
@@ -1196,7 +1196,7 @@
 						{
 							"listen": "test",
 							"script": {
-								"id": "f8a06d44-7ac7-4263-b1fc-0932c00c0b36",
+								"id": "96447887-e3e0-4333-ab8f-319f6e1c0ba0",
 								"exec": [
 									"var jsonData = pm.response.json();\r",
 									"var userId = jsonData._id;\r",
@@ -1207,6 +1207,7 @@
 									"});\r",
 									"\r",
 									"pm.test(\"Correct user response\", function () {\r",
+									"    pm.expect(jsonData.username).to.eql(\"Hello\")\r",
 									"    pm.expect(jsonData.email).to.eql(\"hello@gmail.com\");\r",
 									"    pm.expect(jsonData.password).to.eql(\"123\");\r",
 									"\r",
@@ -1221,7 +1222,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\"email\" : \"hello@gmail.com\",\r\n\"password\" : \"123\" }\r\n",
+							"raw": "{\"username\" : \"Hello\",\r\n\"email\" : \"hello@gmail.com\",\r\n\"password\" : \"123\" }\r\n",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -1247,7 +1248,7 @@
 						{
 							"listen": "test",
 							"script": {
-								"id": "77c3e9a1-baf4-4f2e-b45e-0be5907c4bbd",
+								"id": "a8972320-817f-4ecc-9015-2fada5b762cf",
 								"exec": [
 									"var jsonData = pm.response.json();\r",
 									"var userId = jsonData._id;\r",
@@ -1258,6 +1259,7 @@
 									"});\r",
 									"\r",
 									"pm.test(\"Correct user response\", function () {\r",
+									"    pm.expect(jsonData.username).to.eql(\"Hi\");\r",
 									"    pm.expect(jsonData.email).to.eql(\"hello1@gmail.com\");\r",
 									"    pm.expect(jsonData.password).to.eql(\"1234\");\r",
 									"\r",
@@ -1272,7 +1274,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\"email\" : \"hello1@gmail.com\",\r\n\"password\" : \"1234\" }\r\n",
+							"raw": "{\"username\" : \"Hi\",\r\n\"email\" : \"hello1@gmail.com\",\r\n\"password\" : \"1234\" }\r\n",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -1298,7 +1300,7 @@
 						{
 							"listen": "test",
 							"script": {
-								"id": "db538b91-c8a0-41c3-b762-da053963f34b",
+								"id": "2732714c-ee63-4e36-a69f-a1806878b3df",
 								"exec": [
 									"var jsonData = pm.response.json();\r",
 									"var userId = jsonData._id;\r",
@@ -1309,6 +1311,7 @@
 									"});\r",
 									"\r",
 									"pm.test(\"Correct user response\", function () {\r",
+									"    pm.expect(jsonData.username).to.eql(\"Hello12\");\r",
 									"    pm.expect(jsonData.email).to.eql(\"hello12@gmail.com\");\r",
 									"    pm.expect(jsonData.password).to.eql(\"12345\");\r",
 									"\r",
@@ -1323,7 +1326,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\"email\" : \"hello12@gmail.com\",\r\n\"password\" : \"12345\" }\r\n",
+							"raw": "{\"username\" : \"Hello12\",\r\n\"email\" : \"hello12@gmail.com\",\r\n\"password\" : \"12345\" }\r\n",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -1349,7 +1352,7 @@
 						{
 							"listen": "prerequest",
 							"script": {
-								"id": "42a00776-69db-40d0-84b5-bf55f82bd715",
+								"id": "a8b628d6-2ccf-4cec-9753-4552526d75a1",
 								"exec": [
 									""
 								],
@@ -1359,7 +1362,7 @@
 						{
 							"listen": "test",
 							"script": {
-								"id": "705cc8ce-938e-4e23-a773-b38842e93975",
+								"id": "284181d9-dd6c-41b9-9fe2-b7d2f81a9202",
 								"exec": [
 									"var jsonBody = pm.response.json();\r",
 									"var user_id = pm.environment.get(\"user_id\");\r",
@@ -1371,18 +1374,21 @@
 									"     \"users\": [\r",
 									"        {\r",
 									"            \"_id\": user_id,\r",
+									"            \"username\" : \"Hello\",\r",
 									"            \"email\": \"hello@gmail.com\",\r",
 									"            \"password\": \"123\",\r",
 									"            \"__v\": 0\r",
 									"        },\r",
 									"        {\r",
 									"            \"_id\": user_id2,\r",
+									"            \"username\" : \"Hi\",\r",
 									"            \"email\": \"hello1@gmail.com\",\r",
 									"            \"password\": \"1234\",\r",
 									"            \"__v\": 0\r",
 									"        },\r",
 									"        {\r",
 									"            \"_id\": user_id3,\r",
+									"            \"username\" : \"Hello12\",\r",
 									"            \"email\": \"hello12@gmail.com\",\r",
 									"            \"password\": \"12345\",\r",
 									"            \"__v\": 0\r",
@@ -1427,7 +1433,7 @@
 						{
 							"listen": "test",
 							"script": {
-								"id": "3a1fcfa5-d427-4ac2-ae7b-8de0326010d1",
+								"id": "9ea2fa88-149f-4d96-a0a2-0e31a0aeee95",
 								"exec": [
 									"var user_id = pm.environment.get(\"user_id\");\r",
 									"\r",
@@ -1437,6 +1443,7 @@
 									"\r",
 									"pm.test(\"Correct user response\", function () {\r",
 									"\tvar jsonData = pm.response.json();\r",
+									"    pm.expect(jsonData.username).to.eql(\"Hello\");\r",
 									"\tpm.expect(jsonData.email).to.eql(\"hello@gmail.com\");\r",
 									"    pm.expect(jsonData.password).to.eql(\"123\");\r",
 									"    pm.expect(jsonData._id).to.eql(user_id);\r",
@@ -1470,7 +1477,7 @@
 						{
 							"listen": "test",
 							"script": {
-								"id": "0ac4c8d1-cc0d-450f-a5ea-066f9ddecdf0",
+								"id": "e1aaf48e-0423-4778-b1f9-aec364e7b3df",
 								"exec": [
 									"var jsonData = pm.response.json();\r",
 									"var userId = jsonData._id;\r",
@@ -1481,6 +1488,7 @@
 									"});\r",
 									"\r",
 									"pm.test(\"Correct user response\", function () {\r",
+									"    pm.expect(jsonData.username).to.eql(\"Bye\");\r",
 									"    pm.expect(jsonData.email).to.eql(\"bye@gmail.com\");\r",
 									"    pm.expect(jsonData.password).to.eql(\"0987\");\r",
 									"\r",
@@ -1495,7 +1503,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\"email\" : \"bye@gmail.com\",\r\n\"password\" : \"0987\" }\r\n",
+							"raw": "{\"username\" : \"Bye\",\r\n\"email\" : \"bye@gmail.com\",\r\n\"password\" : \"0987\" }\r\n",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -1522,7 +1530,7 @@
 						{
 							"listen": "test",
 							"script": {
-								"id": "984902d4-4bc3-4f83-b376-23e240f7bb7d",
+								"id": "b64db0c6-398b-4b4b-ba95-1cf0c488eb76",
 								"exec": [
 									"var jsonData = pm.response.json();\r",
 									"var userId = jsonData._id;\r",
@@ -1573,7 +1581,7 @@
 						{
 							"listen": "test",
 							"script": {
-								"id": "9951b2e1-1a54-4e5f-b6ee-01bd7af51fb7",
+								"id": "9951be0f-0ad0-4e98-9c90-f84c6112f8f0",
 								"exec": [
 									"pm.test(\"Correct status code\", function() {\r",
 									"\tpm.response.to.have.status(204);\r",
@@ -1611,7 +1619,7 @@
 						{
 							"listen": "test",
 							"script": {
-								"id": "748bbef4-a65e-4995-b442-3b9cd45ff11f",
+								"id": "088ffe67-20c6-4292-b2a0-4ea8d36298df",
 								"exec": [
 									"pm.test(\"All users deleted\", function () {\r",
 									"    pm.response.to.have.body(\"\");\r",
@@ -1647,7 +1655,7 @@
 						{
 							"listen": "test",
 							"script": {
-								"id": "93e3d167-51cb-4d48-a43c-d3495be0aecf",
+								"id": "a62c5ab1-2358-41cc-807a-34ca085ea406",
 								"exec": [
 									"pm.test(\"Correct status code\", function() {\r",
 									"\tpm.response.to.have.status(404);\r",
@@ -1680,7 +1688,7 @@
 						{
 							"listen": "test",
 							"script": {
-								"id": "99230df5-699f-4553-b00a-b8774d1153e1",
+								"id": "80775e5b-15c6-4c44-9809-4d837cd41b1a",
 								"exec": [
 									"pm.test(\"Correct status code\", function() {\r",
 									"\tpm.response.to.have.status(404);\r",
@@ -1713,7 +1721,7 @@
 						{
 							"listen": "test",
 							"script": {
-								"id": "087bcff8-1df2-4687-9fd2-e8c6ef40391f",
+								"id": "d8721e33-3da5-419c-a384-fcf9ee710094",
 								"exec": [
 									"pm.test(\"Correct status code\", function () {\r",
 									"    pm.response.to.have.status(404);\r",
@@ -1728,7 +1736,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\"email\" : \"Cat friendly\",\r\n\"password\" : \"tello\"}",
+							"raw": "{\"username\" : \"Cat\",\r\n\"email\" : \"Cat friendly\",\r\n\"password\" : \"tello\"}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -1755,7 +1763,7 @@
 						{
 							"listen": "test",
 							"script": {
-								"id": "8d117264-47c6-4c87-a29d-e82300e37e4d",
+								"id": "6d982146-70bc-4399-9453-dd1f424ae3d3",
 								"exec": [
 									"pm.test(\"Correct status code\", function () {\r",
 									"    pm.response.to.have.status(404);\r",
@@ -1803,7 +1811,7 @@
 						{
 							"listen": "test",
 							"script": {
-								"id": "29e925aa-979e-429f-a8b9-23f8158cc229",
+								"id": "b61d4848-79fa-44e3-8a43-8981641ba13e",
 								"exec": [
 									"var jsonData = pm.response.json();\r",
 									"var cafeId = jsonData._id;\r",
@@ -1858,7 +1866,7 @@
 						{
 							"listen": "test",
 							"script": {
-								"id": "b6039006-20e2-4834-b0d1-29ee6070c14a",
+								"id": "bae390f0-2b3b-40df-809f-c1dbbc54ac18",
 								"exec": [
 									"var jsonData = pm.response.json();\r",
 									"var cafeId = jsonData._id;\r",
@@ -1913,7 +1921,7 @@
 						{
 							"listen": "test",
 							"script": {
-								"id": "0c5ec41c-e005-4685-acad-5c2150eb5f0b",
+								"id": "5ab66680-3f78-417a-8f07-06e11460694a",
 								"exec": [
 									"var jsonData = pm.response.json();\r",
 									"var cafeId = jsonData._id;\r",
@@ -1969,7 +1977,7 @@
 						{
 							"listen": "prerequest",
 							"script": {
-								"id": "6a5c47af-7d0a-4e05-83ca-62972eccfdfb",
+								"id": "d1f11168-fb09-41d0-ae4f-caa7a958425d",
 								"exec": [
 									""
 								],
@@ -1979,7 +1987,7 @@
 						{
 							"listen": "test",
 							"script": {
-								"id": "c9d13f6d-5575-430b-8632-4f4fa758c560",
+								"id": "1a55dd56-616e-4492-8835-c8aaef1f8a74",
 								"exec": [
 									"var jsonBody = pm.response.json();\r",
 									"var cafe_id = pm.environment.get(\"cafe_id\");\r",
@@ -2074,7 +2082,7 @@
 						{
 							"listen": "test",
 							"script": {
-								"id": "cd1bcbd5-cc28-49d5-a875-d47c5e02c052",
+								"id": "a3c8c1c4-c3f1-49ad-a6d1-15a504324aac",
 								"exec": [
 									"var cafe_id = pm.environment.get(\"cafe_id\");\r",
 									"\r",
@@ -2122,7 +2130,7 @@
 						{
 							"listen": "test",
 							"script": {
-								"id": "3b4ea5cf-06e6-4e87-81ee-a20460bf2d30",
+								"id": "a5a81eb9-22cb-44cb-91ca-1b1e10e86456",
 								"exec": [
 									"var jsonData = pm.response.json();\r",
 									"var userId = jsonData._id;\r",
@@ -2178,7 +2186,7 @@
 						{
 							"listen": "test",
 							"script": {
-								"id": "8ec514c9-91aa-4365-be43-5a601dee712b",
+								"id": "e8c65657-0ba5-4f0a-948e-2d5b0bd840b1",
 								"exec": [
 									"var cafe_id = pm.environment.get(\"cafe_id\");\r",
 									"\r",
@@ -2228,7 +2236,7 @@
 						{
 							"listen": "test",
 							"script": {
-								"id": "35dd7c0f-a364-4c42-bc45-c2b74828504f",
+								"id": "c450ead2-9c67-49c2-aa27-715cfe010b82",
 								"exec": [
 									"pm.test(\"Correct status code\", function() {\r",
 									"\tpm.response.to.have.status(204);\r",
@@ -2266,7 +2274,7 @@
 						{
 							"listen": "test",
 							"script": {
-								"id": "3e4aa9c7-f109-4068-a283-5e95649e43ca",
+								"id": "3f56704a-6df9-4ed3-ac80-cb0d3a398b13",
 								"exec": [
 									"pm.test(\"All cafes deleted\", function () {\r",
 									"    pm.response.to.have.body(\"\");\r",
@@ -2302,7 +2310,7 @@
 						{
 							"listen": "test",
 							"script": {
-								"id": "e3a5045c-4f43-47c0-be16-caf23e85d8f5",
+								"id": "08f989ec-f347-4e29-b217-172c46871a3b",
 								"exec": [
 									"pm.test(\"Correct status code\", function() {\r",
 									"\tpm.response.to.have.status(404);\r",
@@ -2335,7 +2343,7 @@
 						{
 							"listen": "test",
 							"script": {
-								"id": "3b7b4c21-4000-42a6-a99d-529b0d8bb6eb",
+								"id": "e93d6678-ed8d-4bd7-a818-0654b34e5690",
 								"exec": [
 									"pm.test(\"Correct status code\", function () {\r",
 									"    pm.response.to.have.status(404);\r",
@@ -2377,7 +2385,7 @@
 						{
 							"listen": "test",
 							"script": {
-								"id": "5121f0e1-f56c-4591-b826-4bcdfa730993",
+								"id": "d0dffd58-433b-4026-8464-3cc5f8b9f9d2",
 								"exec": [
 									"pm.test(\"Correct status code\", function () {\r",
 									"    pm.response.to.have.status(404);\r",
@@ -2419,7 +2427,7 @@
 						{
 							"listen": "test",
 							"script": {
-								"id": "ed020cb2-d069-41bf-b4de-91f6dc15701f",
+								"id": "11a88c8e-b5d3-479b-bd7f-54f19e405c1a",
 								"exec": [
 									"pm.test(\"Correct status code\", function() {\r",
 									"\tpm.response.to.have.status(404);\r",
@@ -2453,62 +2461,12 @@
 			"name": "ReviewTests",
 			"item": [
 				{
-					"name": "Post a user",
-					"event": [
-						{
-							"listen": "test",
-							"script": {
-								"id": "50ad1e07-6a48-4648-b91a-22ed432684bb",
-								"exec": [
-									"var jsonData = pm.response.json();\r",
-									"var userId = jsonData._id;\r",
-									"pm.environment.set(\"user_id\", userId);\r",
-									"\r",
-									"pm.test(\"Correct status code\", function () {\r",
-									"    pm.response.to.have.status(201);\r",
-									"});\r",
-									"\r",
-									"pm.test(\"Correct user response\", function () {\r",
-									"    pm.expect(jsonData.email).to.eql(\"hello@gmail.com\");\r",
-									"    pm.expect(jsonData.password).to.eql(\"123\");\r",
-									"});"
-								],
-								"type": "text/javascript"
-							}
-						}
-					],
-					"request": {
-						"method": "POST",
-						"header": [],
-						"body": {
-							"mode": "raw",
-							"raw": "{\"email\" : \"hello@gmail.com\",\r\n\"password\" : \"123\" }\r\n",
-							"options": {
-								"raw": {
-									"language": "json"
-								}
-							}
-						},
-						"url": {
-							"raw": "{{host}}/api/users",
-							"host": [
-								"{{host}}"
-							],
-							"path": [
-								"api",
-								"users"
-							]
-						}
-					},
-					"response": []
-				},
-				{
 					"name": "Post a cafe",
 					"event": [
 						{
 							"listen": "test",
 							"script": {
-								"id": "2250a849-edea-4f42-a926-87e0958407a4",
+								"id": "bbe05d76-9d08-4701-815d-5c326b9ca7c7",
 								"exec": [
 									"var jsonData = pm.response.json();\r",
 									"var cafeId = jsonData._id;\r",
@@ -2563,11 +2521,10 @@
 						{
 							"listen": "test",
 							"script": {
-								"id": "fd180124-2966-4b80-a10d-a0e5d8f31338",
+								"id": "54dc44d6-90b2-478a-9198-b8302f6ef708",
 								"exec": [
 									"var jsonData = pm.response.json();\r",
 									"var cafeId = pm.environment.get(\"cafe_id\");\r",
-									"var userId = pm.environment.get(\"user_id\");\r",
 									"var reviewId = jsonData._id;\r",
 									"pm.environment.set(\"review_id\", reviewId);\r",
 									"var reviewDate = jsonData.date;\r",
@@ -2580,7 +2537,7 @@
 									"pm.test(\"Correct review response\", function () {\r",
 									"    pm.expect(jsonData.rating).to.eql(5);\r",
 									"    pm.expect(jsonData.comment).to.eql(\"Best cafe ever!\");\r",
-									"    pm.expect(jsonData.user).to.eql(userId);\r",
+									"    pm.expect(jsonData.author).to.eql(\"James\");\r",
 									"    pm.expect(jsonData.cafe).to.eql(cafeId);\r",
 									"});"
 								],
@@ -2593,7 +2550,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{   \"rating\" : 5,\r\n    \"comment\": \"Best cafe ever!\",\r\n    \"user\": \"{{user_id}}\"\r\n}",
+							"raw": "{   \"rating\" : 5,\r\n    \"comment\": \"Best cafe ever!\",\r\n    \"author\": \"James\"\r\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -2621,11 +2578,10 @@
 						{
 							"listen": "test",
 							"script": {
-								"id": "22b497aa-8e29-42f7-9544-30524c2196d2",
+								"id": "8f8ba9d8-91d1-4eae-967c-119dd6c44983",
 								"exec": [
 									"var jsonData = pm.response.json();\r",
 									"var cafeId = pm.environment.get(\"cafe_id\");\r",
-									"var userId = pm.environment.get(\"user_id\");\r",
 									"var reviewId = jsonData._id;\r",
 									"pm.environment.set(\"review_id2\", reviewId);\r",
 									"var reviewDate = jsonData.date;\r",
@@ -2644,7 +2600,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{   \"rating\" : 1,\r\n    \"comment\": \"Worst cafe ever!\",\r\n    \"user\": \"{{user_id}}\"\r\n}",
+							"raw": "{   \"rating\" : 1,\r\n    \"comment\": \"Worst cafe ever!\",\r\n    \"author\": \"Matthew\"\r\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -2672,7 +2628,7 @@
 						{
 							"listen": "prerequest",
 							"script": {
-								"id": "c937ed8a-6053-448f-a99a-9115e608f05f",
+								"id": "6fe2e367-f9fc-4b38-ad55-e6bcb9cd0feb",
 								"exec": [
 									""
 								],
@@ -2682,10 +2638,9 @@
 						{
 							"listen": "test",
 							"script": {
-								"id": "e8d3a4ca-7b5f-49de-b72a-2d0ceba6ea0b",
+								"id": "67b76299-0e43-4551-90a1-cace67a6fb14",
 								"exec": [
 									"var jsonBody = pm.response.json();\r",
-									"var userId = pm.environment.get(\"user_id\");\r",
 									"var reviewId = pm.environment.get(\"review_id\");\r",
 									"var reviewId2 = pm.environment.get(\"review_id2\");\r",
 									"var reviewDate = pm.environment.get(\"review_date\");\r",
@@ -2698,7 +2653,7 @@
 									"            \"_id\": reviewId,\r",
 									"            \"rating\": 5,\r",
 									"            \"comment\": \"Best cafe ever!\",\r",
-									"            \"user\": userId,\r",
+									"            \"author\": \"James\",\r",
 									"            \"date\": reviewDate,\r",
 									"            \"__v\": 0\r",
 									"        },\r",
@@ -2706,7 +2661,7 @@
 									"            \"_id\": reviewId2,\r",
 									"            \"rating\": 1,\r",
 									"            \"comment\": \"Worst cafe ever!\",\r",
-									"            \"user\": userId,\r",
+									"            \"author\": \"Matthew\",\r",
 									"            \"date\": reviewDate2,\r",
 									"            \"__v\": 0\r",
 									"        }\r",
@@ -2752,10 +2707,9 @@
 						{
 							"listen": "test",
 							"script": {
-								"id": "3d541084-2073-47aa-a977-e556075d1c68",
+								"id": "1a22b856-f616-4f57-9176-f8b3dc3d47fa",
 								"exec": [
 									"var reviewId = pm.environment.get(\"review_id\");\r",
-									"var userId = pm.environment.get(\"user_id\");\r",
 									"\r",
 									"pm.test(\"Correct status code\", function() {\r",
 									"\tpm.response.to.have.status(200);\r",
@@ -2765,7 +2719,7 @@
 									"    var jsonData = pm.response.json();\r",
 									"    pm.expect(jsonData.rating).to.eql(5);\r",
 									"    pm.expect(jsonData.comment).to.eql(\"Best cafe ever!\");\r",
-									"    pm.expect(jsonData.user._id).to.eql(userId);\r",
+									"    pm.expect(jsonData.author).to.eql(\"James\");\r",
 									"    pm.expect(jsonData._id).to.eql(reviewId);\r",
 									"\t});\r",
 									""
@@ -2799,7 +2753,7 @@
 						{
 							"listen": "test",
 							"script": {
-								"id": "43b93ead-c2a8-4e32-a9f9-16a4f6f0dd96",
+								"id": "e1e0c462-3aff-4f56-b735-ac0129e298bc",
 								"exec": [
 									"pm.test(\"Correct status code\", function() {\r",
 									"\tpm.response.to.have.status(204);\r",
@@ -2839,7 +2793,7 @@
 						{
 							"listen": "test",
 							"script": {
-								"id": "54307192-5a08-446e-aed3-6dc127c0a2e5",
+								"id": "9b0674ee-969a-48d0-a55f-c85db347564b",
 								"exec": [
 									"pm.test(\"All cafes deleted\", function () {\r",
 									"    pm.response.to.have.body(\"\");\r",
@@ -2870,49 +2824,12 @@
 					"response": []
 				},
 				{
-					"name": "Delete all users",
-					"event": [
-						{
-							"listen": "test",
-							"script": {
-								"id": "b61a068b-c2b3-478f-a1b5-5f42dd991a2b",
-								"exec": [
-									"pm.test(\"Correct status code\", function() {\r",
-									"\tpm.response.to.have.status(204);\r",
-									"});\r",
-									"\r",
-									"pm.test(\"User deleted\", function () {\r",
-									"    pm.response.to.have.body(\"\");\r",
-									"});\r",
-									""
-								],
-								"type": "text/javascript"
-							}
-						}
-					],
-					"request": {
-						"method": "DELETE",
-						"header": [],
-						"url": {
-							"raw": "{{host}}/api/users",
-							"host": [
-								"{{host}}"
-							],
-							"path": [
-								"api",
-								"users"
-							]
-						}
-					},
-					"response": []
-				},
-				{
 					"name": "Delete all reviews",
 					"event": [
 						{
 							"listen": "test",
 							"script": {
-								"id": "bd628840-a9db-4d56-bd9a-9155f68eaded",
+								"id": "882c62f6-9173-4e41-8b07-9eeff0747132",
 								"exec": [
 									"pm.test(\"Correct status code\", function() {\r",
 									"\tpm.response.to.have.status(204);\r",
@@ -2949,7 +2866,7 @@
 						{
 							"listen": "test",
 							"script": {
-								"id": "88c685bd-14a6-4fc6-9d19-301188090dec",
+								"id": "457a3dcd-c6be-4357-bb3a-26fa42391706",
 								"exec": [
 									"pm.test(\"Correct status code\", function() {\r",
 									"\tpm.response.to.have.status(404);\r",
@@ -2984,7 +2901,7 @@
 						{
 							"listen": "test",
 							"script": {
-								"id": "1d6e34e9-7b9d-487b-a07d-a46ea7c81630",
+								"id": "df3fc06b-6a60-4f99-82c1-902f640eecdd",
 								"exec": [
 									"pm.test(\"Correct status code\", function() {\r",
 									"\tpm.response.to.have.status(404);\r",
@@ -3019,7 +2936,7 @@
 						{
 							"listen": "test",
 							"script": {
-								"id": "1fa1b649-cc53-45a7-a033-24addad1f887",
+								"id": "81020ef2-58f4-4975-838a-09e24a16d462",
 								"exec": [
 									"pm.test(\"Correct status code\", function() {\r",
 									"\tpm.response.to.have.status(404);\r",
@@ -3053,7 +2970,7 @@
 						{
 							"listen": "test",
 							"script": {
-								"id": "76e0fcf6-9ea5-4be0-b948-b88c65233544",
+								"id": "e4e5c9bb-132f-43ec-8c56-d4ac05d7fb97",
 								"exec": [
 									"pm.test(\"Correct status code\", function() {\r",
 									"\tpm.response.to.have.status(404);\r",
@@ -3090,7 +3007,7 @@
 		{
 			"listen": "prerequest",
 			"script": {
-				"id": "7cdc4179-d0e5-47cd-b295-c90624d35d48",
+				"id": "e193760b-0371-4d24-bbfa-f10563d69bb5",
 				"type": "text/javascript",
 				"exec": [
 					""
@@ -3100,7 +3017,7 @@
 		{
 			"listen": "test",
 			"script": {
-				"id": "a7325c4d-2d02-4742-9e04-a7587800b48e",
+				"id": "91c7ff3b-fa2b-42ea-a7b1-df06685f8219",
 				"type": "text/javascript",
 				"exec": [
 					""
