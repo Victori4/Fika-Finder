@@ -28,7 +28,7 @@ export default {
       .catch(error => {
         this.message = error.message
         console.error(error)
-        this.cafe = []
+        this.cafe = {}
         // TODO: display error message
       })
       .then(() => {
