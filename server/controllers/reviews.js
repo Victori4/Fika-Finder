@@ -45,7 +45,7 @@ router.get('/api/cafes/:cafe_id/reviews/:review_id', function(req, res, next) {
     var review_id = req.params.review_id;
 
     //Should this be Cafe instead of Review & then filter based on the review_id
-    Review.findById(review_id).populate('cafe').populate('user').exec(function(err, review) {
+    Review.findById(review_id).populate('cafe').exec(function(err, review) {
         if (review == null) {
             return res.status(404).json({"message": "Review not found"});
         }

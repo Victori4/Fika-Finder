@@ -1,6 +1,6 @@
 <template>
   <div>
-    <h1>Welcome, {{ user.email }}!</h1>
+    <h1>Welcome, {{ user.username }}!</h1>
     <b-button :href="'/updatepassword/' + user._id">Update password</b-button>
   </div>
 </template>
@@ -14,6 +14,7 @@ export default {
     return {
       user: {
         id: '',
+        username: '',
         email: '',
         password: ''
       }

@@ -23,12 +23,14 @@ export default {
     Api.get('/users/' + this.$route.params.id)
       .then(response => {
         console.log(response.data)
+        this.username = response.data.username
         this.email = response.data.email
         this.password = response.data.password
       })
       .catch(error => {
         this.message = error.message
         console.error(error)
+        this.username = ''
         this.email = ''
         this.password = ''
         // TODO: display error message
@@ -39,6 +41,7 @@ export default {
   },
   data() {
     return {
+      username: '',
       email: '',
       password: ''
     }
@@ -46,6 +49,7 @@ export default {
   methods: {
     updatePassword() {
       const user = {
+        username: this.username,
         email: this.email,
         password: this.password
       }
@@ -57,6 +61,7 @@ export default {
         .catch(error => {
           this.message = error.message
           console.error(error)
+          this.username = ''
           this.email = ''
           this.password = ''
         // TODO: display error message
