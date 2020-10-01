@@ -47,6 +47,9 @@ export default {
       Api.post('/cafes/' + this.$route.params.id + '/reviews', review)
         .then(response => {
           console.log(response.data)
+          this.rating = null
+          this.comment = ''
+          this.cafe = ''
         })
         .catch(error => {
           this.message = error.message

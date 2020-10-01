@@ -4,6 +4,7 @@
       <router-link to="/">Home</router-link>
       <router-link to="/cafes">Cafes</router-link>
       <router-link to="/categories">Categories</router-link>
+      <router-link to="/login">Login</router-link>
 
     </div>
     <!-- Render the content of the current page view -->

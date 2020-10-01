@@ -7,7 +7,7 @@ var User = require('../models/user');
 router.get('/api/users', function(req, res, next) {
     User.find(function(err, users) {
         if (err) { return next(err); }
-        res.json({"users": users});
+        res.json({'users': users});
     });
 });
 
@@ -17,7 +17,7 @@ router.get('/api/users/:id', function(req, res, next) {
     var id = req.params.id;
     User.findById(id, function(err, user) {
         if (user == null) {
-            return res.status(404).json({"message": "User not found"});
+            return res.status(404).json({'message': 'User not found'});
         }
         if (err) { return next(err); }
         res.json(user);
@@ -39,7 +39,7 @@ router.delete('/api/users/:id', function(req, res, next) {
     var id = req.params.id;
     User.findOneAndDelete({_id: id}, function(err, user) {
         if (user == null) {
-            return res.status(404).json({"message": "User not found"});
+            return res.status(404).json({'message': 'User not found'});
         }
         if (err) { return next(err); }
         res.status(204).json();
@@ -61,11 +61,27 @@ router.put('/api/users/:id', function(req, res, next) {
     var id = req.params.id;
     User.findById(id, function(err, user) {
         if (user == null) {
-            return res.status(404).json({"message": "User not found."});
+            return res.status(404).json({'message': 'User not found.'});
         }
         if (err) { return next(err); }
         user.email = req.body.email;
         user.password = req.body.password;
+        user.save();
+        res.json(user);
+    });
+});
+
+// Partially update the user with the given ID
+router.patch('/api/users/:id', function(req, res, next) {
+    var id = req.params.id;
+    User.findById(id, function(err, user) {
+        if (user == null) {
+            return res.status(404).json({'message': 'User not found'});
+        }
+        if (err) { 
+            return next(err); 
+        }
+        user.password = (req.body.password || user.password);
         user.save();
         res.json(user);
     });
