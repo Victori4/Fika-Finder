@@ -1,11 +1,19 @@
 <template>
     <div>
-      <b-button href="/addacafe">Add new cafe</b-button>
-      <ul>
-          <li v-for="cafe in cafes" v-bind:key="cafe._id">
-            <a :href="'/cafes/' + cafe._id">{{ cafe.name }}</a>
-          </li>
-      </ul>
+      <h1>Cafes</h1>
+      <b-button href="/addacafe" size="sm">Add cafe</b-button>
+      <b-container id="cafelist">
+        <b-row id="cafelistheading">
+          <b-col>Name</b-col>
+          <b-col>Location</b-col>
+          <b-col>Price</b-col>
+        </b-row>
+        <b-row v-for="cafe in cafes" v-bind:key="cafe._id" class="cafelistitem">
+          <b-col><a :href="'/cafes/' + cafe._id">{{ cafe.name }}</a></b-col>
+          <b-col>{{ cafe.location }}</b-col>
+          <b-col>{{ cafe.price }}</b-col>
+        </b-row>
+      </b-container>
     </div>
 </template>
 

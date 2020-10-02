@@ -1,3 +1,17 @@
 #nav a {
-    margin-left: 10px;
+    margin: 0vw 1vw 0vw 1vw;
+}
+
+#cafelist {
+    margin-top: 3vh;
+}
+
+#cafelistheading {
+    margin-bottom: 1.5vh;
+    font-weight: bold;
+    font-size: 1.1rem;
+}
+
+.cafelistitem {
+    margin-bottom: 1vh;
 }

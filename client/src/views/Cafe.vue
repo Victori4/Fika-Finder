@@ -1,10 +1,17 @@
 <template>
 <div>
     <h1>{{ cafe.name }}</h1>
-    <b-button :href="'/updatecafe/' + cafe._id">Update cafe</b-button>
-    <b-button :href="'/addareview/' + cafe._id">Add a review</b-button>
-    <p>{{ cafe._id }}</p>
+    <b-button :href="'/updatecafe/' + cafe._id" size="sm">Update cafe</b-button>
+    <p>Location: {{ cafe.location }}</p>
+    <p>Opening hours: {{ cafe.openingHours }}</p>
+    <p>Price: {{ cafe.price }}</p>
+    <p>Category: {{ cafe.categories.name }}</p>
+    <h2>Contact</h2>
+    <p>Website: {{ cafe.contact.website }}</p>
+    <p>Phone number: {{ cafe.contact.phoneNumber }}</p>
+    <p>Email: {{ cafe.contact.email }}</p>
     <h2>Reviews</h2>
+    <b-button :href="'/addareview/' + cafe._id" size="sm">Add review</b-button>
     <div v-for="review in reviews" v-bind:key="review._id">
       <reviewItem :review="review" v-on:delete-review="deleteReview"></reviewItem></div>
 </div>

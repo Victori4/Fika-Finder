@@ -1,9 +1,6 @@
 <template>
   <div>
     <b-jumbotron header="Fika Finder" lead="Welcome to Fika Finder">
-      <b-button class="btn_message" variant="primary" v-on:click="getMessage()" >Get Message from Server</b-button>
-      <p>Message from the server:<br/>
-      {{ message }}</p>
     </b-jumbotron>
   </div>
 </template>
