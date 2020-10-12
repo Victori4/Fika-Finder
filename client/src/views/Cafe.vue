@@ -5,7 +5,11 @@
     <p>Location: {{ cafe.location }}</p>
     <p>Opening hours: {{ cafe.openingHours }}</p>
     <p>Price: {{ cafe.price }}</p>
-    <p>Category: {{ cafe.categories.name }}</p>
+    <p>Category:</p>
+    <ul>
+      <li v-for="category in cafe.categories" v-bind:key="category._id">{{ category.name }}</li>
+    </ul>
+
     <h2>Contact</h2>
     <p>Website: {{ cafe.contact.website }}</p>
     <p>Phone number: {{ cafe.contact.phoneNumber }}</p>

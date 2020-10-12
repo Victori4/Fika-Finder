@@ -1,54 +1,70 @@
 <template>
-<div>
+<div class="container">
     <form @submit.prevent="$emit('submitted-cafe', cafe)">
-      <p>
-        <label for="name">Name:</label>
-        <input id="name" v-model="cafe.name" placeholder="name">
-      </p>
-      <p>
-        <label for="openingHours">Opening hours:</label>
-        <input id="openingHours" v-model="cafe.openingHours" placeholder="openingHours">
-      </p>
-      <p>
-        <label for="location">Location:</label>
-        <input id="location" v-model="cafe.location" placeholder="location">
-      </p>
-      <p>
-        <label for="price">Price:</label>
-        <select id="price" v-model.number="cafe.price">
+      <div class="form-group row">
+        <label for="name" class="col-4 col-form-label">Name:</label>
+        <div class="col-8">
+        <input id="name" class="form-control" v-model="cafe.name" placeholder="Ex. John's Cafe">
+        </div>
+      </div>
+
+      <div class="form-group row">
+        <label for="openingHours" class="col-4 col-form-label">Opening hours:</label>
+        <div class="col-8">
+        <input id="openingHours" class="form-control" v-model="cafe.openingHours" placeholder="Ex. 9:00-18:00">
+        </div>
+      </div>
+      <div class="form-group row">
+        <label for="location" class="col-4 col-form-label">Location:</label>
+        <div class="col-8">
+        <input id="location" class="form-control" v-model="cafe.location" placeholder="Ex. Gothenburg">
+        </div>
+      </div>
+      <div class="form-group row">
+        <label for="price" class="col-4 col-form-label">Price:</label>
+        <div class="col-8">
+        <select id="price" class="form-control" v-model.number="cafe.price">
           <option>1</option>
           <option>2</option>
           <option>3</option>
           <option>4</option>
           <option>5</option>
         </select>
-      </p>
+        </div>
+      </div>
 
-      <p>
-        <label for="categories">Categories:</label>
-        <select id="categories" v-model="cafe.categories">
+      <div class="form-group row">
+        <label for="categories" class="col-4 col-form-label">Categories:</label>
+        <div class="col-8">
+        <select id="categories" class="form-control" v-model="cafe.categories">
          <option v-for="category in categoryOptions"
         :key="category._id" :value="category._id">{{ category.name }}</option>
       </select>
-      </p>
+        </div>
+      </div>
 
-       <p>
-        <label for="phoneNumber">Phone number:</label>
-        <input id="phoneNumber" v-model="cafe.contact.phoneNumber" placeholder="phoneNumber">
-      </p>
-      <p>
-        <label for="website">Website:</label>
-        <input id="website" v-model="cafe.contact.website" placeholder="website">
-      </p>
-      <p>
-        <label for="email">Email:</label>
-        <input id="email" v-model="cafe.contact.email" placeholder="email">
-      </p>
+       <div class="form-group row">
+        <label for="phoneNumber" class="col-4 col-form-label">Phone number:</label>
+        <div class="col-8">
+        <input id="phoneNumber" class="form-control" v-model="cafe.contact.phoneNumber" placeholder="Ex. 031-674 38 90">
+        </div>
+      </div>
+      <div class="form-group row">
+        <label for="website" class="col-4 col-form-label">Website:</label>
+        <div class="col-8">
+        <input id="website" class="form-control" v-model="cafe.contact.website" placeholder="Ex. www.johnscafe.com">
+        </div>
+      </div>
+      <div class="form-group row">
+        <label for="email" class="col-4 col-form-label">Email:</label>
+        <div class="col-8">
+        <input id="email" class="form-control" v-model="cafe.contact.email" placeholder="Ex. johnscafe@cafe.com">
+        </div>
+      </div>
 
-      <p>
-        <input type="submit" value="Submit" />
-      </p>
+      <input type="submit"  class="btn btn-primary" value="Submit" />
     </form>
+
 </div>
 </template>
 
