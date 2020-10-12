@@ -1,12 +1,18 @@
 <template>
     <div>
-      <b-button href="/addacategory">Add a category</b-button>
-      <b-button v-on:click="deleteCategories" variant="danger" >Delete all categories</b-button>
-      <ul>
-          <li v-for="category in categories" v-bind:key="category._id">
-            {{ category.name }}
-          </li>
-      </ul>
+      <h1>Categories</h1>
+      <b-button href="/addacategory" size="sm" class="button-spacer">Add a category</b-button>
+      <b-button v-on:click="deleteCategories" variant="danger" size="sm" class="button-spacer">Delete all categories</b-button>
+      <b-container id="categorylist">
+        <b-row id="categorylistheading">
+          <b-col cols="4">Name</b-col>
+          <b-col cols="8">Description</b-col>
+        </b-row>
+        <b-row v-for="category in categories" v-bind:key="category._id" class="categorylistitem">
+          <b-col cols="4">{{ category.name }}</b-col>
+          <b-col cols="8">{{ category.description }}</b-col>
+        </b-row>
+      </b-container>
     </div>
 </template>
 

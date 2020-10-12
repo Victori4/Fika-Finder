@@ -2,20 +2,21 @@
     margin: 0vw 1vw 0vw 1vw;
 }
 
-#cafelist {
+#cafelist, #categorylist {
     margin-top: 3vh;
 }
 
-#cafelistheading {
+#cafelistheading, #categorylistheading {
     margin-bottom: 1.5vh;
     font-weight: bold;
     font-size: 1.1rem;
 }
 
-.cafelistitem {
+.cafelistitem, .categorylistitem {
     margin-bottom: 2vh;
 }
 
-
-
-
+.button-spacer {
+    margin-left: 0.5vw;
+    margin-right: 0.5vw;
+}
