@@ -1,6 +1,6 @@
 <template>
 <div>
-    <h1>Put A Cafe</h1>
+    <h1>Update Cafe</h1>
     <CafeForm v-on:submitted-cafe="updateCafe" :cafe="cafe"/>
 </div>
 </template>

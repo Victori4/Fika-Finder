@@ -34,7 +34,7 @@
       </div>
 
       <div class="form-group row">
-        <label for="categories" class="col-4 col-form-label">Categories:</label>
+        <label for="categories" class="col-4 col-form-label">Category:</label>
         <div class="col-8">
         <select id="categories" class="form-control" v-model="cafe.categories">
          <option v-for="category in categoryOptions"

@@ -1,6 +1,6 @@
 <template>
   <div>
-    <h1>Add a new category</h1>
+    <h1>Add Category</h1>
     <div class="container">
       <form @submit.prevent="createCategory">
         <div class="form-group row">

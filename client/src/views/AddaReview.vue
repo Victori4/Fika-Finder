@@ -1,6 +1,6 @@
 <template>
     <div>
-    <h1>Add A Review</h1>
+    <h1>Add Review</h1>
     <div class="container">
       <form @submit.prevent="createReview">
         <div class="form-group row">

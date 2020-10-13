@@ -20,3 +20,24 @@
     margin-left: 0.5vw;
     margin-right: 0.5vw;
 }
+
+.priceIcon {
+    margin-left: 1vw;
+    margin-right: 1vw;
+}
+
+#categoriesList {
+    list-style-type: none;
+    display: inline;
+    padding: 1vw;
+}
+
+#categoriesList li {
+    display: inline;
+    margin-left: 0.5vw;
+    margin-right: 0.5vw;
+}
+
+.cafebuttons {
+    margin-bottom: 3vh;
+}
