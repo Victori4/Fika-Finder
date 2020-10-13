@@ -24,7 +24,7 @@
     <b-button :href="'/addareview/' + cafe._id" size="sm" class="cafebuttons">Add review</b-button>
     <p v-if="!reviews.length">There are no reviews yet.</p>
 
-    <div v-for="review in reviews" v-bind:key="review._id">
+    <div v-for="review in reviews" v-bind:key="review._id" id="reviewscontainer">
       <reviewItem :review="review" v-on:delete-review="deleteReview"></reviewItem>
     </div>
 </div>

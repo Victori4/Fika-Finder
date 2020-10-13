@@ -11,7 +11,11 @@
         <b-row v-for="cafe in cafes" v-bind:key="cafe._id" class="listitem">
           <b-col><a :href="'/cafes/' + cafe._id">{{ cafe.name }}</a></b-col>
           <b-col>{{ cafe.location }}</b-col>
-          <b-col>{{ cafe.price }}</b-col>
+          <b-col> <p>
+      <span v-for="index in parseInt(cafe.price)" :key="index">
+        $
+      </span>
+    </p></b-col>
         </b-row>
       </b-container>
     </div>
