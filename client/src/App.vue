@@ -13,6 +13,15 @@
     </b-navbar>
     <!-- Render the content of the current page view -->
     <router-view/>
+    <footer>
+      <div class="container">
+        <div class="row">
+          <div class="col">
+            <p>Developed in 2020 <a target="_blank" href="https://git.chalmers.se/courses/dit341/2020/group-22-web">GitLab Repository</a></p>
+          </div>
+        </div>
+      </div>
+    </footer>
   </div>
 </template>
 

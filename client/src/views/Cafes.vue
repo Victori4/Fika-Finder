@@ -1,7 +1,8 @@
 <template>
     <div>
       <h1>Cafes</h1>
-      <b-button href="/addacafe" size="sm">Add cafe</b-button>
+       <img src="../assets/img/cafe.svg" alt="Clipart image of a cafe exterior" class="img-fluid img-resize">
+      <b-button href="/addacafe" size="sm" class="cafebuttons">Add cafe</b-button>
       <b-container class="list">
         <b-row class="listheading">
           <b-col>Name</b-col>
@@ -11,7 +12,7 @@
         <b-row v-for="cafe in cafes" v-bind:key="cafe._id" class="listitem">
           <b-col><a :href="'/cafes/' + cafe._id">{{ cafe.name }}</a></b-col>
           <b-col>{{ cafe.location }}</b-col>
-          <b-col> <p>
+          <b-col> <p v-if= "cafe.price !=null">
       <span v-for="index in parseInt(cafe.price)" :key="index">
         $
       </span>
