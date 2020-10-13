@@ -2,19 +2,19 @@
   <div>
     <h1>Add a new category</h1>
     <div class="container">
-    <form @submit.prevent="createCategory">
-     <div class="form-group row">
-        <label for="name" class="col-4 col-form-label">Category name:</label>
-        <div class="col-8">
-        <input id="name" class="form-control" v-model="name" placeholder="Ex. cat friendly">
+      <form @submit.prevent="createCategory">
+        <div class="form-group row">
+          <label for="name" class="col-4 col-form-label">Category name:</label>
+          <div class="col-8">
+            <input id="name" class="form-control" v-model="name" placeholder="Ex. cat friendly">
+          </div>
         </div>
-      </div>
-      <div class="form-group row">
-        <label for="description" class="col-4 col-form-label">Description:</label>
-        <div class="col-8">
-        <input id="description" class="form-control" type="description" v-model="description" placeholder="Ex. you can bring your cat">
+        <div class="form-group row">
+          <label for="description" class="col-4 col-form-label">Description:</label>
+          <div class="col-8">
+            <input id="description" class="form-control" type="description" v-model="description" placeholder="Ex. you can bring your cat">
+          </div>
         </div>
-      </div>
         <input type="submit" class="btn btn-primary" value="Submit" />
       </form>
     </div>

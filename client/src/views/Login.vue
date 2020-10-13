@@ -1,20 +1,31 @@
 <template>
   <div>
     <h1>Please log in</h1>
-    <form @submit.prevent="login">
-     <p>
-        <label for="email">Email:</label>
-        <input id="email" v-model="email" placeholder="email">
-      </p>
-      <p>
-        <label for="password">Password:</label>
-        <input id="password" type="password" v-model="password" placeholder="password">
-      </p>
-      <p>
-        <input type="submit" value="Login" />
-      </p>
-    </form>
-    <b-button href="/addauser">Register</b-button>
+    <div class="container">
+      <form @submit.prevent="login">
+        <div class="form-group row">
+          <label for="email" class="col-4 col-form-label">Email:</label>
+          <div class="col-8">
+            <input id="email" class="form-control" v-model="email" placeholder="Ex. test@test.com">
+          </div>
+        </div>
+        <div class="form-group row">
+          <label for="password" class="col-4 col-form-label">Password:</label>
+          <div class="col-8">
+            <input id="password" class="form-control" type="password" v-model="password"
+            placeholder="Ex. VerySecureP4ssword!">
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-6">
+            <b-button href="/addauser">Register</b-button>
+          </div>
+          <div class="col-6">
+            <input type="submit" class="btn btn-primary" value="Login" />
+          </div>
+        </div>
+      </form>
+    </div>
 
   </div>
 </template>

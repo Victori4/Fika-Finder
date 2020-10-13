@@ -1,15 +1,18 @@
 <template>
     <div>
         <h1>Update Password</h1>
-        <form @submit.prevent="updatePassword">
-        <p>
-            <label for="password">Password:</label>
-            <input id="password" type="password" v-model="password" placeholder="password">
-        </p>
-        <p>
-            <input type="submit" value="Update password" />
-        </p>
-        </form>
+        <div class="container">
+          <form @submit.prevent="updatePassword">
+          <div class="form-group row">
+              <label for="password" class="col-4 col-form-label">Password:</label>
+              <div class="col-8">
+                <input id="password" type="password" class="form-control" v-model="password"
+                placeholder="Ex. VerySecuryP4ssword!">
+              </div>
+          </div>
+          <input type="submit" class="btn btn-primary" value="Update password" />
+          </form>
+        </div>
     </div>
 </template>
 
