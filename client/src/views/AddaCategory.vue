@@ -1,19 +1,23 @@
 <template>
   <div>
-    <h1>Please enter category name and description</h1>
-    <form @submit.prevent="createCategory">
-     <p>
-        <label for="name">Category name:</label>
-        <input id="name" v-model="name" placeholder="name">
-      </p>
-      <p>
-        <label for="description">Description:</label>
-        <input id="description" type="description" v-model="description" placeholder="description">
-      </p>
-      <p>
-        <input type="submit" value="Submit" />
-      </p>
-    </form>
+    <h1>Add Category</h1>
+    <div class="container">
+      <form @submit.prevent="createCategory">
+        <div class="form-group row">
+          <label for="name" class="col-4 col-form-label">Category name:</label>
+          <div class="col-8">
+            <input id="name" class="form-control" v-model="name" placeholder="Ex. cat friendly">
+          </div>
+        </div>
+        <div class="form-group row">
+          <label for="description" class="col-4 col-form-label">Description:</label>
+          <div class="col-8">
+            <input id="description" class="form-control" type="description" v-model="description" placeholder="Ex. you can bring your cat">
+          </div>
+        </div>
+        <input type="submit" class="btn btn-primary" value="Submit" />
+      </form>
+    </div>
   </div>
 </template>
 

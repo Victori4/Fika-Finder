@@ -1,3 +1,125 @@
 #nav a {
-    margin-left: 10px;
+    margin: 0vw 1vw 0vw 1vw;
+}
+
+.list {
+    margin-top: 3vh;
+}
+
+.listheading {
+    margin-bottom: 1.5vh;
+    font-weight: bold;
+    font-size: 1.1rem;
+}
+
+.listitem {
+    margin-bottom: 2vh;
+}
+
+.button-spacer {
+    margin-left: 0.5vw;
+    margin-right: 0.5vw;
+}
+
+.priceIcon {
+    margin-left: 1vw;
+    margin-right: 1vw;
+}
+
+#categoriesList {
+    list-style-type: none;
+    display: inline;
+    padding: 1vw;
+}
+
+#categoriesList li {
+    display: inline;
+    margin-left: 0.5vw;
+    margin-right: 0.5vw;
+}
+
+.cafebuttons {
+    margin-top: 3vh;
+    margin-bottom: 3vh;
+}
+
+.reviewsitem {
+    border: 1px solid #ced4da;
+    padding: 15px;
+    margin-bottom: 15px;
+    border-radius: .25rem;
+}
+
+#reviewscontainer {
+    padding: 0 15px 0 15px;
+}
+
+@media (min-width: 768px) {
+    #contactheading {display: none;}
+    .img-resize {
+        max-width: 20%;
+        display: block;
+        margin-left: auto;
+        margin-right: auto;
+    }
+}
+
+@media (max-width: 768px) {
+    .jumbotron {
+        margin-bottom: 0;
+    }
+    .img-resize {
+        max-width: 50%;
+        display: block;
+        margin-left: auto;
+        margin-right: auto;
+    }
+}
+
+footer {
+    background-color: #99DDFF;
+}
+
+nav {
+    background-color:#99DDFF;
+}
+
+.jumbotron {
+    background-color: #eedd88;
+}
+
+footer p {
+    margin-top: 1rem;
+}
+
+
+/*
+Code below was taken from https://medium.com/@zerox/keep-that-damn-footer-at-the-bottom-c7a921cb9551
+This will make the footer stick to the bottom of the page at all times.
+*/
+
+* {
+    box-sizing: border-box;
+}
+*:before, *:after {
+    box-sizing: border-box;
+}
+
+html, body {
+    height: 100%;
+    position: relative;
+}
+
+#app {
+    min-height: 100vh; 
+    overflow: hidden;
+    display: block;
+    position: relative;
+    padding-bottom: 100px;
+}
+
+footer {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
 }
