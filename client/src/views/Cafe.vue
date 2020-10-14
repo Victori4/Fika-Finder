@@ -2,6 +2,9 @@
 <div id="cafepage">
     <h1>{{ cafe.name }}</h1>
     <b-button :href="'/updatecafe/' + cafe._id" size="sm" class="cafebuttons">Update cafe</b-button>
+    <b-alert v-model="showDismissibleAlert1" variant="danger" dismissible>
+        {{ message.cafe }}
+    </b-alert>
     <div class="container">
       <div class="row">
         <div class="col-md">
@@ -30,7 +33,11 @@
 
     <h2>Reviews</h2>
     <b-button :href="'/addareview/' + cafe._id" size="sm" class="cafebuttons">Add review</b-button>
-    <p v-if="!reviews.length">There are no reviews yet.</p>
+    <b-alert v-model="showDismissibleAlert2" variant="danger" dismissible>
+        {{ message.reviews }}
+      </b-alert>
+
+    <p v-if="!reviews.length && message === ''">There are no reviews yet.</p>
 
     <div v-for="review in reviews" v-bind:key="review._id" id="reviewscontainer">
       <reviewItem :review="review" v-on:delete-review="deleteReview"></reviewItem>
@@ -54,36 +61,46 @@ export default {
         this.cafe = response.data
       })
       .catch(error => {
-        this.message = error.message
-        console.error(error)
+        if (error.response) {
+          if (error.response.status === 404) {
+            this.message.cafe = 'Could not find the cafe'
+          }
+        } else {
+          this.message.cafe = 'Could not load the cafe, please try again later'
+        }
+        this.showDismissibleAlert1 = true
         this.cafe = {}
-        // TODO: display error message
       })
       .then(() => {
-        //   This code is always executed at the end. After success or failure.
       })
 
     Api.get('/cafes/' + this.$route.params.id + '/reviews')
       .then(response => {
-        console.log(response.data)
+        // console.log(response.data)
         this.reviews = response.data.reviews
       })
       .catch(error => {
-        this.message = error.message
-        console.error(error)
+        if (error.response) {
+          if (error.response.status === 404) {
+            this.message.reviews = 'Could not find any reviews'
+          }
+        } else {
+          this.message.reviews = 'Could not load the reviews, please try again later'
+        }
+        this.showDismissibleAlert2 = true
         this.reviews = []
-        // TODO: display error message
       })
       .then(() => {
-        //   This code is always executed at the end. After success or failure.
       })
   },
   data() {
     return {
       cafe: '',
       reviews: [],
-      message: '',
-      text: ''
+      message: { reviews: '', cafe: '' },
+      text: '',
+      showDismissibleAlert1: false,
+      showDismissibleAlert2: false
     }
   },
   methods: {

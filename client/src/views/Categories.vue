@@ -3,6 +3,9 @@
       <h1>Categories</h1>
       <b-button href="/addacategory" size="sm" class="button-spacer">Add a category</b-button>
       <b-button v-on:click="deleteCategories" variant="danger" size="sm" class="button-spacer">Delete all categories</b-button>
+      <b-alert v-model="showDismissibleAlert" variant="danger" dismissible>
+        {{ message }}
+      </b-alert>
       <b-container class="list">
         <b-row class="listheading">
           <b-col cols="4">Name</b-col>
@@ -24,27 +27,30 @@ export default {
 
   mounted() {
     console.log('PAGE is loaded')
-    // Load the real categories from the server
     Api.get('/categories')
       .then(response => {
-        // console.log(response.data)
         this.categories = response.data.categories
       })
       .catch(error => {
-        this.message = error.message
-        console.error(error)
+        if (error.response) {
+          if (error.response.status === 404) {
+            this.message = 'Could not find any categories'
+          }
+        } else {
+          this.message = 'Could not load the categories, please try again later'
+        }
         this.categories = []
-        // TODO: display error message
+        this.showDismissibleAlert = true
       })
       .then(() => {
-        //   This code is always executed at the end. After success or failure.
       })
   },
   data() {
     return {
       categories: [],
       message: '',
-      text: ''
+      text: '',
+      showDismissibleAlert: false
     }
   },
   methods: {

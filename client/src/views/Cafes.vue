@@ -3,6 +3,9 @@
       <h1>Cafes</h1>
        <img src="../assets/img/cafe.svg" alt="Clipart image of a cafe exterior" class="img-fluid img-resize">
       <b-button href="/addacafe" size="sm" class="cafebuttons">Add cafe</b-button>
+      <b-alert v-model="showDismissibleAlert" variant="danger" dismissible>
+        {{ message }}
+      </b-alert>
       <b-container class="list">
         <b-row class="listheading">
           <b-col>Name</b-col>
@@ -30,27 +33,30 @@ export default {
 
   mounted() {
     console.log('PAGE is loaded')
-    // Load the real cafes from the server
     Api.get('/cafes')
       .then(response => {
-        // console.log(response.data)
         this.cafes = response.data.cafes
       })
       .catch(error => {
-        this.message = error.message
-        console.error(error)
+        if (error.response) {
+          if (error.response.status === 404) {
+            this.message = 'Could not find any cafes'
+          }
+        } else {
+          this.message = 'Could not load the cafes, please try again later'
+        }
         this.cafes = []
-        // TODO: display error message
+        this.showDismissibleAlert = true
       })
       .then(() => {
-        //   This code is always executed at the end. After success or failure.
       })
   },
   data() {
     return {
       cafes: [],
       message: '',
-      text: ''
+      text: '',
+      showDismissibleAlert: false
     }
   }
 }
