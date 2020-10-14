@@ -4,6 +4,9 @@
     <b-alert v-model="showDismissibleAlert" variant="danger" dismissible>
         {{ message }}
     </b-alert>
+    <b-alert v-model="showDismissibleSuccess" variant="success" dismissible>
+        {{ message }}
+    </b-alert>
     <cafeForm v-on:submitted-cafe="createCafe" :cafe="cafe"/>
 </div>
 </template>
@@ -34,6 +37,7 @@ export default {
         }
       },
       showDismissibleAlert: false,
+      showDismissibleSuccess: false,
       message: ''
     }
   },
@@ -54,7 +58,7 @@ export default {
       }
       Api.post('/cafes', cafe)
         .then(response => {
-          console.log(response.data)
+          this.message = 'Cafe added!'
           this.cafe.name = ''
           this.cafe.openingHours = ''
           this.cafe.location = ''
@@ -63,6 +67,7 @@ export default {
           this.cafe.contact.email = ''
           this.cafe.contact.website = ''
           this.cafe.contact.phoneNumber = ''
+          this.showDismissibleSuccess = true
         })
         .catch(error => {
           if (error) {

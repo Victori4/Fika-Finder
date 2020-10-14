@@ -12,6 +12,11 @@
           <b-col>Location</b-col>
           <b-col>Price</b-col>
         </b-row>
+        <b-row id="loading">
+          <b-col>
+            <b-icon icon="cup" animation="spin" font-scale="4" shift-v="8"></b-icon>
+            </b-col>
+        </b-row>
         <b-row v-for="cafe in cafes" v-bind:key="cafe._id" class="listitem">
           <b-col><a :href="'/cafes/' + cafe._id">{{ cafe.name }}</a></b-col>
           <b-col>{{ cafe.location }}</b-col>

@@ -92,6 +92,11 @@ footer p {
     margin-top: 1rem;
 }
 
+#loading {
+    padding: 2.5vh;
+
+}
+
 
 /*
 Code below was taken from https://medium.com/@zerox/keep-that-damn-footer-at-the-bottom-c7a921cb9551

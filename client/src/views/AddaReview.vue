@@ -1,10 +1,13 @@
 <template>
     <div>
     <h1>Add Review</h1>
-    <b-alert v-model="showDismissibleAlert" variant="danger" dismissible>
+    <div class="container">
+      <b-alert v-model="showDismissibleAlert" variant="danger" dismissible>
        {{ message }}
     </b-alert>
-    <div class="container">
+    <b-alert v-model="showDismissibleSuccess" variant="success" dismissible>
+        {{ message }}
+      </b-alert>
       <form @submit.prevent="createReview">
         <div class="form-group row">
           <label for="author" class="col-4 col-form-label">Your name:</label>
@@ -50,6 +53,7 @@ export default {
       comment: '',
       cafe: '',
       showDismissibleAlert: false,
+      showDismissibleSuccess: false,
       message: ''
     }
   },
@@ -63,11 +67,12 @@ export default {
       }
       Api.post('/cafes/' + this.$route.params.id + '/reviews', review)
         .then(response => {
-          console.log(response.data)
+          this.message = 'Review added!'
           this.author = ''
           this.rating = null
           this.comment = ''
           this.cafe = ''
+          this.showDismissibleSuccess = true
         })
         .catch(error => {
           if (error) {
@@ -77,7 +82,6 @@ export default {
           }
         })
         .then(() => {
-        //   This code is always executed at the end. After success or failure.
         })
     }
   }

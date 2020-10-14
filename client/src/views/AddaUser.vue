@@ -1,10 +1,13 @@
 <template>
   <div>
     <h1>Enter your details</h1>
-    <b-alert v-model="showDismissibleAlert" variant="danger" dismissible>
+    <div class="container">
+     <b-alert v-model="showDismissibleAlert" variant="danger" dismissible>
         {{ message }}
     </b-alert>
-    <div class="container">
+    <b-alert v-model="showDismissibleSuccess" variant="success" dismissible>
+        {{ message }}
+      </b-alert>
       <form @submit.prevent="register">
         <div class="form-group row">
           <label for="username" class="col-4 col-form-label">Username:</label>
@@ -44,6 +47,7 @@ export default {
       email: '',
       password: '',
       showDismissibleAlert: false,
+      showDismissibleSuccess: false,
       message: ''
     }
   },
@@ -56,10 +60,11 @@ export default {
       }
       Api.post('/users', user)
         .then(response => {
-          console.log(response.data)
+          this.message = 'User registered!'
           this.username = ''
           this.email = ''
           this.password = ''
+          this.showDismissibleSuccess = true
         })
         .catch(error => {
           if (error) {
