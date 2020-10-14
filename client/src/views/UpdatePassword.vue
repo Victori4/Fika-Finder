@@ -1,6 +1,9 @@
 <template>
     <div>
         <h1>Update Password</h1>
+        <b-alert v-model="showDismissibleAlert" variant="danger" dismissible>
+        {{ message }}
+    </b-alert>
         <div class="container">
           <form @submit.prevent="updatePassword">
           <div class="form-group row">
@@ -46,7 +49,9 @@ export default {
     return {
       username: '',
       email: '',
-      password: ''
+      password: '',
+      showDismissibleAlert: false,
+      message: ''
     }
   },
   methods: {
@@ -62,12 +67,13 @@ export default {
           console.log(response.data)
         })
         .catch(error => {
-          this.message = error.message
-          console.error(error)
-          this.username = ''
-          this.email = ''
-          this.password = ''
-        // TODO: display error message
+          if (error) {
+            this.message = 'Could not update cafe, please try again later'
+            this.showDismissibleAlert = true
+            this.username = ''
+            this.email = ''
+            this.password = ''
+          }
         })
         .then(() => {
         //   This code is always executed at the end. After success or failure.

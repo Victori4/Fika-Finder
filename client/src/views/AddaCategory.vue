@@ -1,6 +1,9 @@
 <template>
   <div>
     <h1>Add Category</h1>
+        <b-alert v-model="showDismissibleAlert" variant="danger" dismissible>
+        {{ message }}
+    </b-alert>
     <div class="container">
       <form @submit.prevent="createCategory">
         <div class="form-group row">
@@ -30,7 +33,9 @@ export default {
   data() {
     return {
       name: '',
-      description: ''
+      description: '',
+      showDismissibleAlert: false,
+      message: ''
     }
   },
   methods: {
@@ -46,10 +51,11 @@ export default {
           this.description = ''
         })
         .catch(error => {
-          this.message = error.message
-          console.error(error)
-          this.categories = []
-        // TODO: display error message
+          if (error) {
+            this.message = 'Could not add catergory, please try again later'
+            this.showDismissibleAlert = true
+            this.categories = []
+          }
         })
         .then(() => {
         //   This code is always executed at the end. After success or failure.

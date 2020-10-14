@@ -1,6 +1,9 @@
 <template>
   <div>
     <h1>Enter your details</h1>
+    <b-alert v-model="showDismissibleAlert" variant="danger" dismissible>
+        {{ message }}
+    </b-alert>
     <div class="container">
       <form @submit.prevent="register">
         <div class="form-group row">
@@ -39,7 +42,9 @@ export default {
     return {
       username: '',
       email: '',
-      password: ''
+      password: '',
+      showDismissibleAlert: false,
+      message: ''
     }
   },
   methods: {
@@ -57,13 +62,13 @@ export default {
           this.password = ''
         })
         .catch(error => {
-          this.message = error.message
-          console.error(error)
-          this.users = []
-        // TODO: display error message
+          if (error) {
+            this.message = 'Could not create user, please try again later'
+            this.showDismissibleAlert = true
+            this.users = []
+          }
         })
         .then(() => {
-        //   This code is always executed at the end. After success or failure.
         })
     }
   }

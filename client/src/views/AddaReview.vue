@@ -1,6 +1,9 @@
 <template>
     <div>
     <h1>Add Review</h1>
+    <b-alert v-model="showDismissibleAlert" variant="danger" dismissible>
+       {{ message }}
+    </b-alert>
     <div class="container">
       <form @submit.prevent="createReview">
         <div class="form-group row">
@@ -45,7 +48,9 @@ export default {
       author: '',
       rating: null,
       comment: '',
-      cafe: ''
+      cafe: '',
+      showDismissibleAlert: false,
+      message: ''
     }
   },
   methods: {
@@ -65,10 +70,11 @@ export default {
           this.cafe = ''
         })
         .catch(error => {
-          this.message = error.message
-          console.error(error)
-          this.cafes = {}
-        // TODO: display error message
+          if (error) {
+            this.message = 'Could not add review, please try again later'
+            this.showDismissibleAlert = true
+            this.cafes = {}
+          }
         })
         .then(() => {
         //   This code is always executed at the end. After success or failure.

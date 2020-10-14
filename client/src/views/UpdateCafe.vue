@@ -1,6 +1,9 @@
 <template>
 <div>
     <h1>Update Cafe</h1>
+    <b-alert v-model="showDismissibleAlert" variant="danger" dismissible>
+        {{ message }}
+    </b-alert>
     <CafeForm v-on:submitted-cafe="updateCafe" :cafe="cafe"/>
 </div>
 </template>
@@ -44,7 +47,9 @@ export default {
           website: '',
           phoneNumber: ''
         }
-      }
+      },
+      showDismissibleAlert: false,
+      message: ''
     }
   },
   methods: {
@@ -67,13 +72,13 @@ export default {
           console.log(response.data)
         })
         .catch(error => {
-          this.message = error.message
-          console.error(error)
-          this.cafes = []
-        // TODO: display error message
+          if (error) {
+            this.message = 'Could not update cafe, please try again later'
+            this.showDismissibleAlert = true
+            this.cafes = []
+          }
         })
         .then(() => {
-        //   This code is always executed at the end. After success or failure.
         })
     }
   }
