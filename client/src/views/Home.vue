@@ -1,14 +1,14 @@
 <template>
   <div id="content-wrap">
-    <b-jumbotron header="Fika Finder" lead="Welcome to Fika Finder">
+    <b-jumbotron header="Fika Finder" lead="Slogan">
     </b-jumbotron>
     <div class="container">
       <div class="row">
         <div class="col-md-4">
-          <img src="../assets/img/FIKA.svg" alt="Line drawing of a Swedish cinnamon bun, coffee cup and spoon on a plate" class="img-fluid">
+          <img src="../assets/img/FIKA.svg" alt="Line drawing of a Swedish cinnamon bun, coffee cup and spoon on a plate" id="welcomeimg" class="img-fluid">
           </div>
         <div class="col-md-8">
-          <h1>What can I do with this website?</h1>
+          <h1>Welcome to Fika Finder!</h1>
           <p>Use this to find cafes, review them and become a user</p>
           <p>Fika Finder was developed by Team 22 for DIT341 of the SEM BSc programme at Gothenburg University</p>
           <p>Jennifer Nord, Victoria Vu, Fayona Cowperthwaite, Gothenburg, 2020</p>

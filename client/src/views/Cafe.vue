@@ -1,7 +1,7 @@
 <template>
 <div id="cafepage">
     <h1>{{ cafe.name }}</h1>
-    <b-button :href="'/updatecafe/' + cafe._id" size="sm" class="cafebuttons">Update cafe</b-button>
+    <b-button :href="'/updatecafe/' + cafe._id" size="sm" class="cafebuttons btn-primary">Update cafe</b-button>
     <b-alert v-model="showDismissibleAlert1" variant="danger" dismissible>
         {{ message.cafe }}
     </b-alert>
@@ -32,7 +32,7 @@
     </div>
 
     <h2>Reviews</h2>
-    <b-button :href="'/addareview/' + cafe._id" size="sm" class="cafebuttons">Add review</b-button>
+    <b-button :href="'/addareview/' + cafe._id" size="sm" class="cafebuttons btn-primary">Add review</b-button>
     <b-alert v-model="showDismissibleAlert2" variant="danger" dismissible>
         {{ message.reviews }}
       </b-alert>

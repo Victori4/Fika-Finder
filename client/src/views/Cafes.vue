@@ -2,7 +2,7 @@
     <div>
       <h1>Cafes</h1>
        <img src="../assets/img/cafe.svg" alt="Clipart image of a cafe exterior" class="img-fluid img-resize">
-      <b-button href="/addacafe" size="sm" class="cafebuttons">Add cafe</b-button>
+      <b-button href="/addacafe" size="sm" class="cafebuttons btn-primary">Add cafe</b-button>
       <b-container class="list">
         <b-alert v-model="showDismissibleAlert" variant="danger" dismissible>
           {{ message }}
@@ -14,7 +14,10 @@
         </b-row>
         <b-row id="loading" v-bind:class="isLoading">
           <b-col>
-            <b-icon icon="cup" animation="spin" font-scale="4" shift-v="8"></b-icon>
+            <b-iconstack font-scale="4" animation="spin">
+              <b-icon stacked icon="cup" scale="1" ></b-icon>
+              <b-icon stacked icon="droplet-fill" animation="throb" scale="0.5" shift-v="8.5" shift-h="4" rotate="220" id="dropletspill"></b-icon>
+            </b-iconstack>
           </b-col>
         </b-row>
         <b-row v-for="cafe in cafes" v-bind:key="cafe._id" class="listitem">

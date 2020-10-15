@@ -1,7 +1,7 @@
 <template>
     <div>
       <h1>Categories</h1>
-      <b-button href="/addacategory" size="sm" class="button-spacer">Add a category</b-button>
+      <b-button href="/addacategory" size="sm" class="button-spacer btn-primary">Add a category</b-button>
       <b-button v-on:click="deleteCategories" variant="danger" size="sm" class="button-spacer">Delete all categories</b-button>
       <b-container class="list">
         <b-alert v-model="showDismissibleAlert" variant="danger" dismissible>
@@ -13,7 +13,10 @@
         </b-row>
         <b-row id="loading" v-bind:class="isLoading">
           <b-col>
-            <b-icon icon="cup" animation="spin" font-scale="4" shift-v="8"></b-icon>
+             <b-iconstack font-scale="4" animation="spin">
+              <b-icon stacked icon="cup" scale="1" ></b-icon>
+              <b-icon stacked icon="droplet-fill" animation="throb" scale="0.5" shift-v="8.5" shift-h="4" rotate="220" id="dropletspill"></b-icon>
+            </b-iconstack>
           </b-col>
         </b-row>
         <b-row v-for="category in categories" v-bind:key="category._id" class="listitem">

@@ -4,7 +4,7 @@
     <b-alert v-model="showDismissibleAlert" variant="danger" dismissible>
         {{ message }}
     </b-alert>
-    <b-button :href="'/updatepassword/' + user._id">Update password</b-button>
+    <b-button class="btn-primary" :href="'/updatepassword/' + user._id">Update password</b-button>
   </div>
 </template>
 

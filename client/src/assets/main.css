@@ -1,19 +1,37 @@
-#nav a {
+nav a {
     margin: 0vw 1vw 0vw 1vw;
+    color: black;
+}
+
+nav a:hover {
+    color: purple;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+nav {
+    padding: 1rem 0.5rem 1rem 0.5rem!important;
+}
+
+h1 {
+    margin-top: 3vh;
 }
 
 .list {
     margin-top: 3vh;
+
 }
 
 .listheading {
     margin-bottom: 1.5vh;
     font-weight: bold;
     font-size: 1.1rem;
+    border-bottom: 1px solid #ced4da;
 }
 
 .listitem {
     margin-bottom: 2vh;
+    border-bottom: 1px solid #ced4da;
 }
 
 .button-spacer {
@@ -48,6 +66,7 @@
     padding: 15px;
     margin-bottom: 15px;
     border-radius: .25rem;
+    background-color: #ecd5e3;
 }
 
 #reviewscontainer {
@@ -59,15 +78,39 @@
 }
 
 footer {
-    background-color: #99DDFF;
+    background-color: #fcb9aa; 
+    }
+
+footer a, .list a {
+    color: purple;
+}
+
+footer a:hover, .list a:hover{
+    color: black;
+    text-decoration: none;
+    font-weight: bold;
 }
 
 nav {
-    background-color:#99DDFF;
+    background-color: #a2e1db;
+    -webkit-box-shadow: 0 2px 2px 0 rgba(0,0,0,0.14), 0 3px 1px -2px rgba(0,0,0,0.12), 0 1px 5px 0 rgba(0,0,0,0.2);
+    box-shadow: 0 2px 2px 0 rgba(0,0,0,0.14), 0 3px 1px -2px rgba(0,0,0,0.12), 0 1px 5px 0 rgba(0,0,0,0.2); 
 }
 
 .jumbotron {
-    background-color: #eedd88;
+    background-color: #55cbcd; 
+    -webkit-box-shadow: 0 2px 2px 0 rgba(0,0,0,0.14), 0 3px 1px -2px rgba(0,0,0,0.12), 0 1px 5px 0 rgba(0,0,0,0.2);
+    box-shadow: 0 2px 2px 0 rgba(0,0,0,0.14), 0 3px 1px -2px rgba(0,0,0,0.12), 0 1px 5px 0 rgba(0,0,0,0.2);
+}
+
+.btn-primary {
+    background-color: #55cbcd; 
+    border-color: #ced4da;
+}
+
+.btn-primary:hover {
+    background-color:#2f8377;
+    border-color: #369688;
 }
 
 footer p {
@@ -76,6 +119,14 @@ footer p {
 
 #loading {
     padding: 3.5vh;
+}
+
+#loading svg {
+    color: purple;
+}
+
+#dropletspill {
+    color: #6f4e37!important;
 }
 
 @media (min-width: 768px) {
@@ -94,6 +145,12 @@ footer p {
     }
     .img-resize {
         max-width: 50%;
+        display: block;
+        margin-left: auto;
+        margin-right: auto;
+    }
+    #welcomeimg {
+        max-width: 60%;
         display: block;
         margin-left: auto;
         margin-right: auto;
