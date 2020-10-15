@@ -3,9 +3,9 @@
     <h1>Add Review</h1>
     <div class="container">
       <b-alert v-model="showDismissibleAlert" variant="danger" dismissible>
-       {{ message }}
-    </b-alert>
-    <b-alert v-model="showDismissibleSuccess" variant="success" dismissible>
+        {{ message }}
+      </b-alert>
+      <b-alert v-model="showDismissibleSuccess" variant="success" dismissible>
         {{ message }}
       </b-alert>
       <form @submit.prevent="createReview">

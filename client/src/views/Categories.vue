@@ -3,13 +3,18 @@
       <h1>Categories</h1>
       <b-button href="/addacategory" size="sm" class="button-spacer">Add a category</b-button>
       <b-button v-on:click="deleteCategories" variant="danger" size="sm" class="button-spacer">Delete all categories</b-button>
-      <b-alert v-model="showDismissibleAlert" variant="danger" dismissible>
-        {{ message }}
-      </b-alert>
       <b-container class="list">
+        <b-alert v-model="showDismissibleAlert" variant="danger" dismissible>
+          {{ message }}
+        </b-alert>
         <b-row class="listheading">
           <b-col cols="4">Name</b-col>
           <b-col cols="8">Description</b-col>
+        </b-row>
+        <b-row id="loading" v-bind:class="isLoading">
+          <b-col>
+            <b-icon icon="cup" animation="spin" font-scale="4" shift-v="8"></b-icon>
+          </b-col>
         </b-row>
         <b-row v-for="category in categories" v-bind:key="category._id" class="listitem">
           <b-col cols="4">{{ category.name }}</b-col>
@@ -29,9 +34,11 @@ export default {
     console.log('PAGE is loaded')
     Api.get('/categories')
       .then(response => {
+        this.isLoading = 'hideLoading'
         this.categories = response.data.categories
       })
       .catch(error => {
+        this.isLoading = 'hideLoading'
         if (error.response) {
           if (error.response.status === 404) {
             this.message = 'Could not find any categories'
@@ -50,7 +57,8 @@ export default {
       categories: [],
       message: '',
       text: '',
-      showDismissibleAlert: false
+      showDismissibleAlert: false,
+      isLoading: ''
     }
   },
   methods: {

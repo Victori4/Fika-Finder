@@ -1,21 +1,21 @@
 <template>
     <div>
-        <h1>Update Password</h1>
+      <h1>Update Password</h1>
+      <div class="container">
         <b-alert v-model="showDismissibleAlert" variant="danger" dismissible>
-        {{ message }}
-    </b-alert>
-        <div class="container">
-          <form @submit.prevent="updatePassword">
-          <div class="form-group row">
-              <label for="password" class="col-4 col-form-label">Password:</label>
-              <div class="col-8">
-                <input id="password" type="password" class="form-control" v-model="password"
-                placeholder="Ex. VerySecuryP4ssword!">
-              </div>
-          </div>
-          <input type="submit" class="btn btn-primary" value="Update password" />
-          </form>
+          {{ message }}
+        </b-alert>
+        <form @submit.prevent="updatePassword">
+        <div class="form-group row">
+            <label for="password" class="col-4 col-form-label">Password:</label>
+            <div class="col-8">
+              <input id="password" type="password" class="form-control" v-model="password"
+              placeholder="Ex. VerySecuryP4ssword!">
+            </div>
         </div>
+        <input type="submit" class="btn btn-primary" value="Update password" />
+        </form>
+      </div>
     </div>
 </template>
 

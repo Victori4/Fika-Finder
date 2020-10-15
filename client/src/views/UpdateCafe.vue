@@ -1,9 +1,11 @@
 <template>
 <div>
     <h1>Update Cafe</h1>
-    <b-alert v-model="showDismissibleAlert" variant="danger" dismissible>
-        {{ message }}
-    </b-alert>
+    <b-container>
+      <b-alert v-model="showDismissibleAlert" variant="danger" dismissible>
+          {{ message }}
+      </b-alert>
+    </b-container>
     <CafeForm v-on:submitted-cafe="updateCafe" :cafe="cafe"/>
 </div>
 </template>

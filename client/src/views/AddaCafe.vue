@@ -1,12 +1,14 @@
 <template>
 <div>
     <h1>Add Cafe</h1>
-    <b-alert v-model="showDismissibleAlert" variant="danger" dismissible>
-        {{ message }}
-    </b-alert>
-    <b-alert v-model="showDismissibleSuccess" variant="success" dismissible>
-        {{ message }}
-    </b-alert>
+    <b-container>
+      <b-alert v-model="showDismissibleAlert" variant="danger" dismissible>
+          {{ message }}
+      </b-alert>
+      <b-alert v-model="showDismissibleSuccess" variant="success" dismissible>
+          {{ message }}
+      </b-alert>
+    </b-container>
     <cafeForm v-on:submitted-cafe="createCafe" :cafe="cafe"/>
 </div>
 </template>

@@ -1,10 +1,10 @@
 <template>
   <div>
     <h1>Please log in</h1>
-    <b-alert v-model="showDismissibleAlert" variant="danger" dismissible>
-        {{ message }}
-    </b-alert>
     <div class="container">
+      <b-alert v-model="showDismissibleAlert" variant="danger" dismissible>
+          {{ message }}
+      </b-alert>
       <form @submit.prevent="login">
         <div class="form-group row">
           <label for="email" class="col-4 col-form-label">Email:</label>
@@ -20,10 +20,10 @@
           </div>
         </div>
         <div class="row">
-          <div class="col-6">
+          <div class="col-6 col-md-4 order-md-2">
             <b-button href="/addauser">Register</b-button>
           </div>
-          <div class="col-6">
+          <div class="col-6 col-md-4 order-md-1 offset-md-4">
             <input type="submit" class="btn btn-primary" value="Login" />
           </div>
         </div>

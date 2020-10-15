@@ -54,6 +54,30 @@
     padding: 0 15px 0 15px;
 }
 
+.hideLoading {
+    display: none;
+}
+
+footer {
+    background-color: #99DDFF;
+}
+
+nav {
+    background-color:#99DDFF;
+}
+
+.jumbotron {
+    background-color: #eedd88;
+}
+
+footer p {
+    margin-top: 1rem;
+}
+
+#loading {
+    padding: 3.5vh;
+}
+
 @media (min-width: 768px) {
     #contactheading {display: none;}
     .img-resize {
@@ -75,28 +99,6 @@
         margin-right: auto;
     }
 }
-
-footer {
-    background-color: #99DDFF;
-}
-
-nav {
-    background-color:#99DDFF;
-}
-
-.jumbotron {
-    background-color: #eedd88;
-}
-
-footer p {
-    margin-top: 1rem;
-}
-
-#loading {
-    padding: 2.5vh;
-
-}
-
 
 /*
 Code below was taken from https://medium.com/@zerox/keep-that-damn-footer-at-the-bottom-c7a921cb9551
