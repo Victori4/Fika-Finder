@@ -2,6 +2,12 @@
   <div>
     <h1>Enter your details</h1>
     <div class="container">
+      <b-alert v-model="showDismissibleAlert" variant="danger" dismissible>
+        {{ message }}
+      </b-alert>
+      <b-alert v-model="showDismissibleSuccess" variant="success" dismissible>
+        {{ message }}
+      </b-alert>
       <form @submit.prevent="register">
         <div class="form-group row">
           <label for="username" class="col-4 col-form-label">Username:</label>
@@ -39,7 +45,10 @@ export default {
     return {
       username: '',
       email: '',
-      password: ''
+      password: '',
+      showDismissibleAlert: false,
+      showDismissibleSuccess: false,
+      message: ''
     }
   },
   methods: {
@@ -51,19 +60,20 @@ export default {
       }
       Api.post('/users', user)
         .then(response => {
-          console.log(response.data)
+          this.message = 'User registered!'
           this.username = ''
           this.email = ''
           this.password = ''
+          this.showDismissibleSuccess = true
         })
         .catch(error => {
-          this.message = error.message
-          console.error(error)
-          this.users = []
-        // TODO: display error message
+          if (error) {
+            this.message = 'Could not create user, please try again later'
+            this.showDismissibleAlert = true
+            this.users = []
+          }
         })
         .then(() => {
-        //   This code is always executed at the end. After success or failure.
         })
     }
   }

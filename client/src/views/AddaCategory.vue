@@ -2,6 +2,12 @@
   <div>
     <h1>Add Category</h1>
     <div class="container">
+      <b-alert v-model="showDismissibleAlert" variant="danger" dismissible>
+        {{ message }}
+      </b-alert>
+      <b-alert v-model="showDismissibleSuccess" variant="success" dismissible>
+        {{ message }}
+      </b-alert>
       <form @submit.prevent="createCategory">
         <div class="form-group row">
           <label for="name" class="col-4 col-form-label">Category name:</label>
@@ -30,7 +36,10 @@ export default {
   data() {
     return {
       name: '',
-      description: ''
+      description: '',
+      showDismissibleAlert: false,
+      showDismissibleSuccess: false,
+      message: ''
     }
   },
   methods: {
@@ -41,18 +50,19 @@ export default {
       }
       Api.post('/categories', category)
         .then(response => {
-          console.log(response.data)
+          this.message = 'Category added!'
           this.name = ''
           this.description = ''
+          this.showDismissibleSuccess = true
         })
         .catch(error => {
-          this.message = error.message
-          console.error(error)
-          this.categories = []
-        // TODO: display error message
+          if (error) {
+            this.message = 'Could not add catergory, please try again later'
+            this.showDismissibleAlert = true
+            this.categories = []
+          }
         })
         .then(() => {
-        //   This code is always executed at the end. After success or failure.
         })
     }
   }

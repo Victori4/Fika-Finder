@@ -2,6 +2,12 @@
     <div>
     <h1>Add Review</h1>
     <div class="container">
+      <b-alert v-model="showDismissibleAlert" variant="danger" dismissible>
+        {{ message }}
+      </b-alert>
+      <b-alert v-model="showDismissibleSuccess" variant="success" dismissible>
+        {{ message }}
+      </b-alert>
       <form @submit.prevent="createReview">
         <div class="form-group row">
           <label for="author" class="col-4 col-form-label">Your name:</label>
@@ -45,7 +51,10 @@ export default {
       author: '',
       rating: null,
       comment: '',
-      cafe: ''
+      cafe: '',
+      showDismissibleAlert: false,
+      showDismissibleSuccess: false,
+      message: ''
     }
   },
   methods: {
@@ -58,20 +67,21 @@ export default {
       }
       Api.post('/cafes/' + this.$route.params.id + '/reviews', review)
         .then(response => {
-          console.log(response.data)
+          this.message = 'Review added!'
           this.author = ''
           this.rating = null
           this.comment = ''
           this.cafe = ''
+          this.showDismissibleSuccess = true
         })
         .catch(error => {
-          this.message = error.message
-          console.error(error)
-          this.cafes = {}
-        // TODO: display error message
+          if (error) {
+            this.message = 'Could not add review, please try again later'
+            this.showDismissibleAlert = true
+            this.cafes = {}
+          }
         })
         .then(() => {
-        //   This code is always executed at the end. After success or failure.
         })
     }
   }

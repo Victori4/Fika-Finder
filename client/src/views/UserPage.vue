@@ -1,6 +1,9 @@
 <template>
   <div>
     <h1>Welcome, {{ user.username }}!</h1>
+    <b-alert v-model="showDismissibleAlert" variant="danger" dismissible>
+        {{ message }}
+    </b-alert>
     <b-button :href="'/updatepassword/' + user._id">Update password</b-button>
   </div>
 </template>
@@ -17,25 +20,29 @@ export default {
         username: '',
         email: '',
         password: ''
-      }
+      },
+      showDismissibleAlert: false,
+      message: ''
     }
   },
   mounted() {
     console.log('PAGE is loaded')
-    // Load the real cafes from the server
     Api.get('/users/' + this.$route.params.id)
       .then(response => {
-        // console.log(response.data)
         this.user = response.data
       })
       .catch(error => {
-        this.message = error.message
-        console.error(error)
+        if (error.response) {
+          if (error.response.status === 404) {
+            this.message = 'Could not find any cafes'
+          }
+        } else {
+          this.message = 'Could not load the cafes, please try again later'
+        }
+        this.showDismissibleAlert = true
         this.user = {}
-        // TODO: display error message
       })
       .then(() => {
-        //   This code is always executed at the end. After success or failure.
       })
   }
 }

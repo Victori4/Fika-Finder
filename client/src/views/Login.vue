@@ -2,6 +2,9 @@
   <div>
     <h1>Please log in</h1>
     <div class="container">
+      <b-alert v-model="showDismissibleAlert" variant="danger" dismissible>
+          {{ message }}
+      </b-alert>
       <form @submit.prevent="login">
         <div class="form-group row">
           <label for="email" class="col-4 col-form-label">Email:</label>
@@ -17,10 +20,10 @@
           </div>
         </div>
         <div class="row">
-          <div class="col-6">
+          <div class="col-6 col-md-4 order-md-2">
             <b-button href="/addauser">Register</b-button>
           </div>
-          <div class="col-6">
+          <div class="col-6 col-md-4 order-md-1 offset-md-4">
             <input type="submit" class="btn btn-primary" value="Login" />
           </div>
         </div>
@@ -38,7 +41,9 @@ export default {
   data() {
     return {
       email: '',
-      password: ''
+      password: '',
+      showDismissibleAlert: false,
+      message: ''
     }
   },
   methods: {
@@ -47,22 +52,30 @@ export default {
         .then(response => {
           for (var i = 0; i < response.data.users.length; i++) {
             if (response.data.users[i].email === this.email &&
-            response.data.users[i].password === this.password) {
-              this.$router.push({ path: '/userpage/' + response.data.users[i]._id }) // add the id
-              this.email = ''
-              this.password = ''
+              response.data.users[i].password === this.password) {
+              this.$router.push({ path: '/userpage/' + response.data.users[i]._id })
             }
+          }
+          this.email = ''
+          this.password = ''
+          if (this.email === '' && this.password === '') {
+            this.message = 'Please enter the correct credentials'
+            this.showDismissibleAlert = true
           }
         })
         .catch(error => {
-          this.message = error.message
-          console.error(error)
+          if (error.response) {
+            if (error.response.status === 404) {
+              this.message = 'Could not find any users'
+            }
+          } else {
+            this.message = 'Could not load the user, please try again later'
+          }
+          this.showDismissibleAlert = true
           this.email = ''
           this.password = ''
-        // TODO: display error message
         })
         .then(() => {
-        //   This code is always executed at the end. After success or failure.
         })
     }
   }

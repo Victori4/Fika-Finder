@@ -1,6 +1,14 @@
 <template>
 <div>
     <h1>Add Cafe</h1>
+    <b-container>
+      <b-alert v-model="showDismissibleAlert" variant="danger" dismissible>
+          {{ message }}
+      </b-alert>
+      <b-alert v-model="showDismissibleSuccess" variant="success" dismissible>
+          {{ message }}
+      </b-alert>
+    </b-container>
     <cafeForm v-on:submitted-cafe="createCafe" :cafe="cafe"/>
 </div>
 </template>
@@ -29,7 +37,10 @@ export default {
           website: '',
           phoneNumber: ''
         }
-      }
+      },
+      showDismissibleAlert: false,
+      showDismissibleSuccess: false,
+      message: ''
     }
   },
   methods: {
@@ -49,7 +60,7 @@ export default {
       }
       Api.post('/cafes', cafe)
         .then(response => {
-          console.log(response.data)
+          this.message = 'Cafe added!'
           this.cafe.name = ''
           this.cafe.openingHours = ''
           this.cafe.location = ''
@@ -58,15 +69,16 @@ export default {
           this.cafe.contact.email = ''
           this.cafe.contact.website = ''
           this.cafe.contact.phoneNumber = ''
+          this.showDismissibleSuccess = true
         })
         .catch(error => {
-          this.message = error.message
-          console.error(error)
-          this.cafes = []
-        // TODO: display error message
+          if (error) {
+            this.message = 'Could not add cafe, please try again later'
+            this.showDismissibleAlert = true
+            this.cafes = []
+          }
         })
         .then(() => {
-        //   This code is always executed at the end. After success or failure.
         })
     }
   }

@@ -1,18 +1,21 @@
 <template>
     <div>
-        <h1>Update Password</h1>
-        <div class="container">
-          <form @submit.prevent="updatePassword">
-          <div class="form-group row">
-              <label for="password" class="col-4 col-form-label">Password:</label>
-              <div class="col-8">
-                <input id="password" type="password" class="form-control" v-model="password"
-                placeholder="Ex. VerySecuryP4ssword!">
-              </div>
-          </div>
-          <input type="submit" class="btn btn-primary" value="Update password" />
-          </form>
+      <h1>Update Password</h1>
+      <div class="container">
+        <b-alert v-model="showDismissibleAlert" variant="danger" dismissible>
+          {{ message }}
+        </b-alert>
+        <form @submit.prevent="updatePassword">
+        <div class="form-group row">
+            <label for="password" class="col-4 col-form-label">Password:</label>
+            <div class="col-8">
+              <input id="password" type="password" class="form-control" v-model="password"
+              placeholder="Ex. VerySecuryP4ssword!">
+            </div>
         </div>
+        <input type="submit" class="btn btn-primary" value="Update password" />
+        </form>
+      </div>
     </div>
 </template>
 
@@ -46,7 +49,9 @@ export default {
     return {
       username: '',
       email: '',
-      password: ''
+      password: '',
+      showDismissibleAlert: false,
+      message: ''
     }
   },
   methods: {
@@ -62,12 +67,13 @@ export default {
           console.log(response.data)
         })
         .catch(error => {
-          this.message = error.message
-          console.error(error)
-          this.username = ''
-          this.email = ''
-          this.password = ''
-        // TODO: display error message
+          if (error) {
+            this.message = 'Could not update cafe, please try again later'
+            this.showDismissibleAlert = true
+            this.username = ''
+            this.email = ''
+            this.password = ''
+          }
         })
         .then(() => {
         //   This code is always executed at the end. After success or failure.

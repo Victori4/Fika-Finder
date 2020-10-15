@@ -4,10 +4,18 @@
        <img src="../assets/img/cafe.svg" alt="Clipart image of a cafe exterior" class="img-fluid img-resize">
       <b-button href="/addacafe" size="sm" class="cafebuttons">Add cafe</b-button>
       <b-container class="list">
+        <b-alert v-model="showDismissibleAlert" variant="danger" dismissible>
+          {{ message }}
+        </b-alert>
         <b-row class="listheading">
           <b-col>Name</b-col>
           <b-col>Location</b-col>
           <b-col>Price</b-col>
+        </b-row>
+        <b-row id="loading" v-bind:class="isLoading">
+          <b-col>
+            <b-icon icon="cup" animation="spin" font-scale="4" shift-v="8"></b-icon>
+          </b-col>
         </b-row>
         <b-row v-for="cafe in cafes" v-bind:key="cafe._id" class="listitem">
           <b-col><a :href="'/cafes/' + cafe._id">{{ cafe.name }}</a></b-col>
@@ -30,27 +38,33 @@ export default {
 
   mounted() {
     console.log('PAGE is loaded')
-    // Load the real cafes from the server
     Api.get('/cafes')
       .then(response => {
-        // console.log(response.data)
+        this.isLoading = 'hideLoading'
         this.cafes = response.data.cafes
       })
       .catch(error => {
-        this.message = error.message
-        console.error(error)
+        this.isLoading = 'hideLoading'
+        if (error.response) {
+          if (error.response.status === 404) {
+            this.message = 'Could not find any cafes'
+          }
+        } else {
+          this.message = 'Could not load the cafes, please try again later'
+        }
         this.cafes = []
-        // TODO: display error message
+        this.showDismissibleAlert = true
       })
       .then(() => {
-        //   This code is always executed at the end. After success or failure.
       })
   },
   data() {
     return {
       cafes: [],
       message: '',
-      text: ''
+      text: '',
+      showDismissibleAlert: false,
+      isLoading: ''
     }
   }
 }
