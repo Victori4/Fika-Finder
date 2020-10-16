@@ -28,7 +28,6 @@
             placeholder="Ex. VerySecureP4ssword!">
           </div>
         </div>
-
         <input type="submit" class="btn btn-primary" value="Register" />
       </form>
     </div>
@@ -36,7 +35,6 @@
 </template>
 
 <script>
-
 import { Api } from '@/Api'
 
 export default {
@@ -72,8 +70,6 @@ export default {
             this.showDismissibleAlert = true
             this.users = []
           }
-        })
-        .then(() => {
         })
     }
   }

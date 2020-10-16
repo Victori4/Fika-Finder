@@ -29,7 +29,6 @@
         </div>
       </form>
     </div>
-
   </div>
 </template>
 
@@ -48,16 +47,21 @@ export default {
   },
   methods: {
     login() {
+      // This is a fake login method, please do not do this at home
       Api.get('/users')
         .then(response => {
+          // Looping through all users of the database to find the user that matches the email
+          // and password from the form
           for (var i = 0; i < response.data.users.length; i++) {
             if (response.data.users[i].email === this.email &&
-              response.data.users[i].password === this.password) {
+                response.data.users[i].password === this.password) {
+              // A user with matching email and password has been found so we are redirecting the user
               this.$router.push({ path: '/userpage/' + response.data.users[i]._id })
             }
           }
           this.email = ''
           this.password = ''
+
           if (this.email === '' && this.password === '') {
             this.message = 'Please enter the correct credentials'
             this.showDismissibleAlert = true
@@ -74,8 +78,6 @@ export default {
           this.showDismissibleAlert = true
           this.email = ''
           this.password = ''
-        })
-        .then(() => {
         })
     }
   }

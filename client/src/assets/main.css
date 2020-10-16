@@ -11,10 +11,22 @@ nav a:hover {
 
 nav {
     padding: 1rem 0rem 1rem 0rem!important;
+    background-color: #a2e1db;
+    -webkit-box-shadow: 0 2px 2px 0 rgba(0,0,0,0.14), 
+                        0 3px 1px -2px rgba(0,0,0,0.12), 
+                        0 1px 5px 0 rgba(0,0,0,0.2);
+    box-shadow: 0 2px 2px 0 rgba(0,0,0,0.14), 
+                0 3px 1px -2px rgba(0,0,0,0.12), 
+                0 1px 5px 0 rgba(0,0,0,0.2); 
 }
 
 #logo {
     height: 5vh;
+}
+
+.priceIcon {
+    margin-left: 1vw;
+    margin-right: 1vw;
 }
 
 h1 {
@@ -46,17 +58,6 @@ h4 {
     border-bottom: 1px solid #ced4da;
 }
 
-.button-spacer {
-    margin-top: 2vh;
-    margin-left: 0.5vw;
-    margin-right: 0.5vw;
-}
-
-.priceIcon {
-    margin-left: 1vw;
-    margin-right: 1vw;
-}
-
 #categoriesList {
     list-style-type: none;
     display: inline;
@@ -67,11 +68,6 @@ h4 {
     display: inline;
     margin-left: 0.5vw;
     margin-right: 0.5vw;
-}
-
-.cafebuttons {
-    margin-top: 3vh;
-    margin-bottom: 3vh;
 }
 
 .reviewsitem {
@@ -104,12 +100,6 @@ footer a:hover, .list a:hover{
     font-weight: bold;
 }
 
-nav {
-    background-color: #a2e1db;
-    -webkit-box-shadow: 0 2px 2px 0 rgba(0,0,0,0.14), 0 3px 1px -2px rgba(0,0,0,0.12), 0 1px 5px 0 rgba(0,0,0,0.2);
-    box-shadow: 0 2px 2px 0 rgba(0,0,0,0.14), 0 3px 1px -2px rgba(0,0,0,0.12), 0 1px 5px 0 rgba(0,0,0,0.2); 
-}
-
 .jumbotron {
     background-image: url("img/background-image.png");
     background-size: cover;
@@ -131,6 +121,17 @@ nav {
     border-color: #369688;
 }
 
+.button-spacer {
+    margin-top: 2vh;
+    margin-left: 0.5vw;
+    margin-right: 0.5vw;
+}
+
+.cafebuttons {
+    margin-top: 3vh;
+    margin-bottom: 3vh;
+}
+
 footer p {
     margin-top: 1rem;
 }
@@ -148,7 +149,10 @@ footer p {
 }
 
 @media (min-width: 768px) {
-    #contactheading {display: none;}
+    #contactheading {
+        display: none;
+    }
+
     .img-resize {
         max-width: 20%;
         display: block;
@@ -168,12 +172,14 @@ footer p {
     .jumbotron {
         margin-bottom: 0;
     }
+
     .img-resize {
         max-width: 50%;
         display: block;
         margin-left: auto;
         margin-right: auto;
     }
+    
     #welcomeimg {
         max-width: 60%;
         display: block;

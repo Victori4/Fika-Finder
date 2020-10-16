@@ -1,5 +1,5 @@
 <template>
-    <div>
+  <div>
     <h1>Add Review</h1>
     <div class="container">
       <b-alert v-model="showDismissibleAlert" variant="danger" dismissible>
@@ -33,15 +33,13 @@
             <textarea id="review" v-model="comment" class="form-control"></textarea>
           </div>
         </div>
-
         <input type="submit" class="btn btn-primary" value="Submit" />
       </form>
     </div>
-</div>
+  </div>
 </template>
 
 <script>
-
 import { Api } from '@/Api'
 
 export default {
@@ -63,7 +61,7 @@ export default {
         author: this.author,
         rating: this.rating,
         comment: this.comment,
-        cafe: this.$route.params.id
+        cafe: this.$route.params.id // Get the cafe id from the url
       }
       Api.post('/cafes/' + this.$route.params.id + '/reviews', review)
         .then(response => {
@@ -80,8 +78,6 @@ export default {
             this.showDismissibleAlert = true
             this.cafes = {}
           }
-        })
-        .then(() => {
         })
     }
   }
