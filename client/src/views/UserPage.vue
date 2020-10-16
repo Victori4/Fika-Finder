@@ -43,8 +43,6 @@ export default {
         this.showDismissibleAlert = true
         this.user = {}
       })
-      .then(() => {
-      })
   }
 }
 </script>

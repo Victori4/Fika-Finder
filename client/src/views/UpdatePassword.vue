@@ -1,22 +1,25 @@
 <template>
-    <div>
-      <h1>Update Password</h1>
-      <div class="container">
-        <b-alert v-model="showDismissibleAlert" variant="danger" dismissible>
-          {{ message }}
-        </b-alert>
-        <form @submit.prevent="updatePassword">
+  <div>
+    <h1>Update Password</h1>
+    <div class="container">
+      <b-alert v-model="showDismissibleAlert" variant="danger" dismissible>
+        {{ message }}
+      </b-alert>
+      <b-alert v-model="showDismissibleSuccess" variant="success" dismissible>
+        {{ message }}
+      </b-alert>
+      <form @submit.prevent="updatePassword">
         <div class="form-group row">
             <label for="password" class="col-4 col-form-label">Password:</label>
             <div class="col-8">
               <input id="password" type="password" class="form-control" v-model="password"
-              placeholder="Ex. VerySecuryP4ssword!">
+                placeholder="Ex. VerySecuryP4ssword!">
             </div>
         </div>
         <input type="submit" class="btn btn-primary" value="Update password" />
-        </form>
-      </div>
+      </form>
     </div>
+  </div>
 </template>
 
 <script>
@@ -25,24 +28,17 @@ import { Api } from '@/Api'
 export default {
   name: 'updatepassword',
   mounted() {
-    // Load the real cafes from the server
     Api.get('/users/' + this.$route.params.id)
       .then(response => {
-        console.log(response.data)
         this.username = response.data.username
         this.email = response.data.email
         this.password = response.data.password
       })
       .catch(error => {
         this.message = error.message
-        console.error(error)
         this.username = ''
         this.email = ''
         this.password = ''
-        // TODO: display error message
-      })
-      .then(() => {
-        //   This code is always executed at the end. After success or failure.
       })
   },
   data() {
@@ -51,6 +47,7 @@ export default {
       email: '',
       password: '',
       showDismissibleAlert: false,
+      showDismissibleSuccess: false,
       message: ''
     }
   },
@@ -64,7 +61,8 @@ export default {
 
       Api.patch('/users/' + this.$route.params.id, user)
         .then(response => {
-          console.log(response.data)
+          this.message = 'Password updated!'
+          this.showDismissibleSuccess = true
         })
         .catch(error => {
           if (error) {
@@ -74,9 +72,6 @@ export default {
             this.email = ''
             this.password = ''
           }
-        })
-        .then(() => {
-        //   This code is always executed at the end. After success or failure.
         })
     }
   }

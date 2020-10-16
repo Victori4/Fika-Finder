@@ -2,15 +2,15 @@
   <div id="app">
     <b-navbar id="nav">
       <div class="container">
-      <div>
-       <router-link to="/"><img id="logo" src="./assets/img/fikaFinderMug.png"></router-link>
-       <router-link to="/">Home</router-link>
-       <router-link to="/cafes">Cafes</router-link>
-       <router-link to="/categories">Categories</router-link>
-      </div>
-      <b-navbar-nav class="ml-auto">
-        <router-link to="/login">Login</router-link>
-      </b-navbar-nav>
+        <div>
+          <router-link to="/"><img id="logo" src="./assets/img/fikaFinderMug.png"></router-link>
+          <router-link to="/">Home</router-link>
+          <router-link to="/cafes">Cafes</router-link>
+          <router-link to="/categories">Categories</router-link>
+        </div>
+        <b-navbar-nav class="ml-auto">
+          <router-link to="/login">Login</router-link>
+        </b-navbar-nav>
       </div>
     </b-navbar>
     <!-- Render the content of the current page view -->

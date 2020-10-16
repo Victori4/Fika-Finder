@@ -28,7 +28,6 @@
 </template>
 
 <script>
-
 import { Api } from '@/Api'
 
 export default {
@@ -61,8 +60,6 @@ export default {
             this.showDismissibleAlert = true
             this.categories = []
           }
-        })
-        .then(() => {
         })
     }
   }

@@ -1,17 +1,19 @@
 <template>
-<div>
+  <div>
     <h1>Update Cafe</h1>
     <b-container>
       <b-alert v-model="showDismissibleAlert" variant="danger" dismissible>
           {{ message }}
       </b-alert>
+      <b-alert v-model="showDismissibleSuccess" variant="success" dismissible>
+        {{ message }}
+      </b-alert>
     </b-container>
     <CafeForm v-on:submitted-cafe="updateCafe" :cafe="cafe"/>
-</div>
+  </div>
 </template>
 
 <script>
-
 import { Api } from '@/Api'
 import CafeForm from '@/components/CafeForm.vue'
 
@@ -20,20 +22,14 @@ export default {
   components: { CafeForm },
   mounted() {
     console.log('PAGE is loaded')
-    // Load the real cafes from the server
     Api.get('/cafes/' + this.$route.params.id)
       .then(response => {
-        // console.log(response.data)
         this.cafe = response.data
       })
       .catch(error => {
         this.message = error.message
         console.error(error)
         this.cafe = []
-        // TODO: display error message
-      })
-      .then(() => {
-        //   This code is always executed at the end. After success or failure.
       })
   },
   data() {
@@ -42,7 +38,7 @@ export default {
         name: '',
         openingHours: '',
         location: '',
-        price: null, // ?
+        price: null,
         categories: [],
         contact: {
           email: '',
@@ -51,17 +47,17 @@ export default {
         }
       },
       showDismissibleAlert: false,
+      showDismissibleSuccess: false,
       message: ''
     }
   },
   methods: {
     updateCafe(cafeInstance) {
-      console.log(cafeInstance)
       const cafe = {
         name: cafeInstance.name,
         openingHours: cafeInstance.openingHours,
         location: cafeInstance.location,
-        price: cafeInstance.price, // ?
+        price: cafeInstance.price,
         categories: cafeInstance.categories,
         contact: {
           email: cafeInstance.contact.email,
@@ -71,7 +67,8 @@ export default {
       }
       Api.put('/cafes/' + this.$route.params.id, cafe)
         .then(response => {
-          console.log(response.data)
+          this.message = 'Cafe updated!'
+          this.showDismissibleSuccess = true
         })
         .catch(error => {
           if (error) {
@@ -79,8 +76,6 @@ export default {
             this.showDismissibleAlert = true
             this.cafes = []
           }
-        })
-        .then(() => {
         })
     }
   }

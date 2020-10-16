@@ -1,36 +1,32 @@
 <template>
-<div>
-    <h1>Add Cafe</h1>
-    <b-container>
-      <b-alert v-model="showDismissibleAlert" variant="danger" dismissible>
-          {{ message }}
-      </b-alert>
-      <b-alert v-model="showDismissibleSuccess" variant="success" dismissible>
-          {{ message }}
-      </b-alert>
-    </b-container>
-    <cafeForm v-on:submitted-cafe="createCafe" :cafe="cafe"/>
-</div>
+  <div>
+      <h1>Add Cafe</h1>
+      <b-container>
+        <b-alert v-model="showDismissibleAlert" variant="danger" dismissible>
+            {{ message }}
+        </b-alert>
+        <b-alert v-model="showDismissibleSuccess" variant="success" dismissible>
+            {{ message }}
+        </b-alert>
+      </b-container>
+      <cafeForm v-on:submitted-cafe="createCafe" :cafe="cafe"/>
+  </div>
 </template>
 
 <script>
-
 import { Api } from '@/Api'
 import cafeForm from '@/components/CafeForm.vue'
 
 export default {
   name: 'addacafe',
   components: { cafeForm },
-  // mount get /categories
-  // template: v-for through categories key=_id display name for user
-
   data() {
     return {
       cafe: {
         name: '',
         openingHours: '',
         location: '',
-        price: null, // ?
+        price: null,
         categories: [],
         contact: {
           email: '',
@@ -45,12 +41,11 @@ export default {
   },
   methods: {
     createCafe(cafeInstance) {
-      console.log(cafeInstance)
       const cafe = {
         name: cafeInstance.name,
         openingHours: cafeInstance.openingHours,
         location: cafeInstance.location,
-        price: cafeInstance.price, // ?
+        price: cafeInstance.price,
         categories: cafeInstance.categories,
         contact: {
           email: cafeInstance.contact.email,
@@ -77,8 +72,6 @@ export default {
             this.showDismissibleAlert = true
             this.cafes = []
           }
-        })
-        .then(() => {
         })
     }
   }

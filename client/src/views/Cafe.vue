@@ -1,5 +1,5 @@
 <template>
-<div id="cafepage">
+  <div id="cafepage">
     <h1>{{ cafe.name }}</h1>
     <img src="../assets/img/takeaway-coffee.svg" class="img-fluid small-image">
     <b-button :href="'/updatecafe/' + cafe._id" size="sm" class="cafebuttons btn-primary">Update cafe</b-button>
@@ -12,9 +12,7 @@
           <p><b-icon-geo-alt alt="Location"></b-icon-geo-alt> {{ cafe.location }}</p>
           <p><b-icon-clock alt="Opening hours"></b-icon-clock> {{ cafe.openingHours }}</p>
           <p v-if= "cafe.price !=null">
-            <span v-for="index in parseInt(cafe.price)" :key="index">
-              $
-            </span>
+            <span v-for="index in parseInt(cafe.price)" :key="index">$</span>
           </p>
           <p>
             <b-icon-tags alt="Categories"></b-icon-tags>
@@ -24,7 +22,7 @@
           </p>
         </div>
         <div class="col-md">
-        <h2 id="contactheading">Contact</h2>
+          <h2 id="contactheading">Contact</h2>
           <p><b-icon-globe alt="Website"></b-icon-globe> {{ cafe.contact.website }}</p>
           <p><b-icon-telephone alt="Phone number"></b-icon-telephone> {{ cafe.contact.phoneNumber }}</p>
           <p><b-icon-envelope alt="Email"></b-icon-envelope> {{ cafe.contact.email }}</p>
@@ -43,7 +41,7 @@
     <div v-for="review in reviews" v-bind:key="review._id" id="reviewscontainer">
       <reviewItem :review="review" v-on:delete-review="deleteReview"></reviewItem>
     </div>
-</div>
+  </div>
 </template>
 
 <script>
@@ -55,10 +53,8 @@ export default {
   components: { reviewItem },
   mounted() {
     console.log('PAGE is loaded')
-    // Load the real cafes from the server
     Api.get('/cafes/' + this.$route.params.id)
       .then(response => {
-        // console.log(response.data)
         this.cafe = response.data
       })
       .catch(error => {
@@ -72,12 +68,9 @@ export default {
         this.showDismissibleAlert1 = true
         this.cafe = {}
       })
-      .then(() => {
-      })
 
     Api.get('/cafes/' + this.$route.params.id + '/reviews')
       .then(response => {
-        // console.log(response.data)
         this.reviews = response.data.reviews
       })
       .catch(error => {
@@ -90,8 +83,6 @@ export default {
         }
         this.showDismissibleAlert2 = true
         this.reviews = []
-      })
-      .then(() => {
       })
   },
   data() {
@@ -106,9 +97,11 @@ export default {
   },
   methods: {
     deleteReview(id) {
+      // Delete from the API database
       Api.delete('/cafes/' + this.$route.params.id + `/reviews/${id}`)
         .then(response => {
           this.message = response.data
+          // Delete the review from the data array
           const index = this.reviews.findIndex(review => review._id === id)
           this.reviews.splice(index, 1)
         })
