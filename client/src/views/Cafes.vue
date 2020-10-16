@@ -20,6 +20,7 @@
             </b-iconstack>
           </b-col>
         </b-row>
+        <p v-if="!cafes.length && message === ''">There are no cafes yet.</p>
         <b-row v-for="cafe in cafes" v-bind:key="cafe._id" class="listitem">
           <b-col><a :href="'/cafes/' + cafe._id">{{ cafe.name }}</a></b-col>
           <b-col>{{ cafe.location }}</b-col>

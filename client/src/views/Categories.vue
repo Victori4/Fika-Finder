@@ -1,6 +1,7 @@
 <template>
     <div>
       <h1>Categories</h1>
+      <img src="../assets/img/latte.svg" class="img-fluid small-image">
       <b-button href="/addacategory" size="sm" class="button-spacer btn-primary">Add a category</b-button>
       <b-button v-on:click="deleteCategories" variant="danger" size="sm" class="button-spacer">Delete all categories</b-button>
       <b-container class="list">
@@ -19,6 +20,7 @@
             </b-iconstack>
           </b-col>
         </b-row>
+        <p v-if="!categories.length && message === ''">There are no categories yet.</p>
         <b-row v-for="category in categories" v-bind:key="category._id" class="listitem">
           <b-col cols="4">{{ category.name }}</b-col>
           <b-col cols="8">{{ category.description }}</b-col>

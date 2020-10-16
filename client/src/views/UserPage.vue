@@ -1,10 +1,11 @@
 <template>
   <div>
     <h1>Welcome, {{ user.username }}!</h1>
+    <img src="../assets/img/cafe-waitress.svg" class="img-fluid small-image">
     <b-alert v-model="showDismissibleAlert" variant="danger" dismissible>
         {{ message }}
     </b-alert>
-    <b-button class="btn-primary" :href="'/updatepassword/' + user._id">Update password</b-button>
+    <b-button class="btn-primary button-spacer" :href="'/updatepassword/' + user._id">Update password</b-button>
   </div>
 </template>
 

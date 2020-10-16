@@ -1,6 +1,7 @@
 <template>
 <div id="cafepage">
     <h1>{{ cafe.name }}</h1>
+    <img src="../assets/img/takeaway-coffee.svg" class="img-fluid small-image">
     <b-button :href="'/updatecafe/' + cafe._id" size="sm" class="cafebuttons btn-primary">Update cafe</b-button>
     <b-alert v-model="showDismissibleAlert1" variant="danger" dismissible>
         {{ message.cafe }}
