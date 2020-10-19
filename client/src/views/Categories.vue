@@ -20,7 +20,7 @@
           </b-iconstack>
         </b-col>
       </b-row>
-      <p v-if="!categories.length && message === ''">There are no categories yet.</p>
+      <p v-if="!categories.length && isLoading === 'hideLoading'">There are no categories yet.</p>
       <b-row v-for="category in categories" v-bind:key="category._id" class="listitem">
         <b-col cols="4">{{ category.name }}</b-col>
         <b-col cols="8">{{ category.description }}</b-col>
