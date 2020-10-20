@@ -78,6 +78,12 @@ Our system will help users to find cafes they want to visit by looking at other 
 
 ![ER Diagram](./images/er_diagram.png)
 
+#### Final ER Diagram
+
+![ER Diagram](./images/er_diagram_updated.png)
+
+This diagram represents the final system's entities and their relationships.
+
 ## Teaser (MS3)
 
 ![Teaser](./images/teaser.png)
