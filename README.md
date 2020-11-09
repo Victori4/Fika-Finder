@@ -1,3 +1,13 @@
+## Purpose 
+This project was created for DIT341, the Web Developement course in the second year of the SEM BSc programme at Gothenburg University. It allows users to create a user account and work with adding/removing cafes, categories and reviews. 
+
+Fika Finder was developed by fika fanatics:  
+Fayona Cowperthwaite (guscowfa@student.gu.se)   
+Jennifer Nord (gusnorjea@student.gu.se)  
+Victoria Vu (gusvuvij@student.gu.se)  
+
+The template that was used for this project can be found here: https://github.com/dit341/group-00-web
+
 # Backend and Frontend Template
 
 Latest version: https://git.ita.chalmers.se/courses/dit341/group-00-web (public Github [mirror](https://github.com/dit341/group-00-web))
